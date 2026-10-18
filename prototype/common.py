@@ -11,6 +11,7 @@ METADATA_DIR = ROOT / "metadata"
 MEDIA_DIR = ROOT / "media"
 LOGS_DIR = ROOT / "logs"
 DOCS_DIR = ROOT / "docs"
+DATASET_DIR = ROOT / "dataset"
 
 for _d in (METADATA_DIR, LOGS_DIR):
     _d.mkdir(parents=True, exist_ok=True)

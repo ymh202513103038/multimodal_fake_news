@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-10-18T08:50:02+00:00",
+  "count": 2,
+  "schema": "ex-style case index: id/event/topic/label/reason + modality files",
+  "cases": [
+    {
+      "id": "yt_gdwzqEosLtU",
+      "event": null,
+      "topic": null,
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=gdwzqEosLtU",
+      "video_id": "gdwzqEosLtU",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Karoline Leavitt blasts CNN for their fake news coverage in another blow to the struggling network",
+      "metrics": {
+        "views": 276873,
+        "likes": 6274,
+        "comments": 1267
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "yt_gdwzqEosLtU",
+      "files": {
+        "image": [
+          "yt_gdwzqEosLtU/image/gdwzqEosLtU.png"
+        ],
+        "video": [
+          "yt_gdwzqEosLtU/video/gdwzqEosLtU.mp4"
+        ],
+        "wav": [
+          "yt_gdwzqEosLtU/wav/gdwzqEosLtU.wav"
+        ],
+        "text": [
+          "yt_gdwzqEosLtU/text/text.txt",
+          "yt_gdwzqEosLtU/text/subs.vtt"
+        ],
+        "reason": [
+          "yt_gdwzqEosLtU/reason/reason.txt"
+        ],
+        "web": [
+          "yt_gdwzqEosLtU/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "yt_zCZZkBsIhso",
+      "event": null,
+      "topic": null,
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=zCZZkBsIhso",
+      "video_id": "zCZZkBsIhso",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Fake News CNN",
+      "metrics": {
+        "views": 43217,
+        "likes": 4034,
+        "comments": 0
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "yt_zCZZkBsIhso",
+      "files": {
+        "image": [
+          "yt_zCZZkBsIhso/image/zCZZkBsIhso.png"
+        ],
+        "text": [
+          "yt_zCZZkBsIhso/text/text.txt",
+          "yt_zCZZkBsIhso/text/subs.vtt"
+        ],
+        "reason": [
+          "yt_zCZZkBsIhso/reason/reason.txt"
+        ],
+        "web": [
+          "yt_zCZZkBsIhso/web/source.txt"
+        ]
+      }
+    }
+  ]
+}

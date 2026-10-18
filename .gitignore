@@ -15,6 +15,10 @@ secrets/
 # ---- 媒体与大文件（版权 + 体积：仅本地保留，索引在 metadata/）----
 media/
 
+# ---- 案例制数据集（媒体不入库；只保留总索引 index.json）----
+dataset/*
+!dataset/index.json
+
 # ---- 运行产物 ----
 logs/
 

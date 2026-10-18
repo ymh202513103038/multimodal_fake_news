@@ -9,16 +9,34 @@
 - 标注：帖子级人工标注 + 事实核查证据对齐（借 GroundLie360 的 evidence 思想）
 - 合规：只采公开内容、脱敏、小批量，每阶段过 docs/compliance_checklist.md
 
-## 目录
+## 目录（两层结构：原始采集层 → 案例数据集层）
 
 ```
 docs/            需求、合规清单、标注规范、路线图、全景采集方案（参考）
 prototype/       可运行链路：step1 X元数据 → step2 下载媒体 → step3 YouTube元数据
-                 → step4 YouTube媒体落盘(字幕/缩略图/音视频) → make_label_sheet 标注表 → validate 抽检
-metadata/        采集产物与标注表（jsonl/csv，入库；quota_ledger.jsonl 为配额账本）
-media/           媒体文件（不入库，见 .gitignore）
+                 → step4 YouTube媒体落盘(字幕/缩略图/音视频) → make_cases 案例组装
+                 → make_label_sheet 标注表 → validate 抽检
+metadata/        原始层：平台制采集产物与标注表（jsonl/csv，入库）
+media/           原始层：媒体本体（不入库，见 .gitignore）
+dataset/         数据集层：案例制（参考 ex 样例），六件套子目录；媒体不入库，仅 index.json 入库
 fake_news_env/   Python 虚拟环境（不入库）
 ```
+
+### dataset/ 案例结构（对齐 ex 参考样例）
+
+```
+dataset/
+├── index.json                 总索引：id/event/topic/label/reason + 各模态文件清单
+└── yt_{video_id}/             一个案例（同一事件的真假对用 index 的 event 字段归组）
+    ├── image/    缩略图 png（+日后关键帧、证据图）
+    ├── video/    mp4（硬链接自 media/，不占双份空间）
+    ├── wav/      16kHz 单声道 wav（ASR/声学特征）
+    ├── text/     text.txt（标题+简介+字幕纯文本）、subs.vtt
+    ├── reason/   reason.txt（标注理由，GroundLie360 式）
+    └── web/      source.txt（来源 URL + 证据链接；二期换网页快照）
+```
+
+重建/扩案例：`python prototype\make_cases.py`（--vids 指定、--fresh 重建）。
 
 ## 快速开始（mock 模式，无需任何账号/key）
 

@@ -52,6 +52,18 @@
   `python prototype/step4_youtube_media.py --what subs --limit 5`；
 - 待办：抽帧（fps≈1，ffmpeg 已随 imageio-ffmpeg 就绪，写个封装即可）；zh-Hans 翻译字幕被限流时依赖 en 字幕或 ASR。
 
+## 第 3.6 步：案例制数据集层（已就绪，实测 2 案例）
+
+`prototype/make_cases.py`：把原始层（metadata + media）组装成 ex 样例风格的案例制数据集 `dataset/`。
+
+- 一个案例 = 一条视频/主张，六件套子目录：image/ video/ wav/ text/ reason/ web/；
+- 标签与理由自动从 label_sheet.csv 回填（youtube:{video_id} 行）；未标注占位（待标注）；
+- video 用硬链接不占双份空间；wav 由 ffmpeg 转 16kHz；缩略图 webp→png；
+- 总索引 `dataset/index.json` 入库（含 id/event/topic/label/reason/files），
+  案例媒体不入库（.gitignore: dataset/* + !dataset/index.json）；
+- index 预留 `event` 字段：同一事件的真假样本对（如参考样例 case1 假/case2 真）在此归组，人工/二期自动配对；
+- 待办：web/ 从"记 URL"升级为存证据网页快照（archive.today/本地 HTML）；评论抓取进 text/comments.txt。
+
 ## 第 4 步：最小调度 Agent（未开始）
 
 - 任务队列 `prototype/tasks.json`：`{id, source, keyword, limit, status, retries, created_at}`；
