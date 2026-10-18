@@ -53,6 +53,8 @@ def main() -> None:
         if not line:
             continue
         r = json.loads(line)
+        if r.get("mode") == "mock":
+            continue  # mock 数据不进标注池
         rid = r.get("tweet_id") or r.get("video_id")
         if not rid:
             continue

@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import os
 import random
 import re
@@ -180,8 +181,6 @@ def fetch_live(query: str, limit: int, api_key: str, quota_cap: int) -> list[dic
 
 
 def main() -> None:
-    import json  # 仅账本读取用到
-
     ap = argparse.ArgumentParser(description="YouTube 最小试点：只取元数据，配额受账本保护")
     ap.add_argument("--query", default="fake news")
     ap.add_argument("--limit", type=int, default=10)
