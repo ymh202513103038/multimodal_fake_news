@@ -34,9 +34,25 @@ python validate_samples.py --sample 5
 
 真实采集：
 - X：先加 twscrape 账号（见 docs/roadmap.md），去掉 `--mock`；
-- YouTube：`$env:YT_API_KEY='...'` 后 `python step3_youtube_probe.py --query "fake news" --limit 10`，
-  注意先按 docs/roadmap.md 设置代理环境变量（本机直连 Google 超时）；
+- YouTube：先一次性 `setx YT_API_KEY "你的key"`（永久，key 不进代码/仓库，重开终端生效），
+  再 `python step3_youtube_probe.py --query "fake news" --limit 10`；
 - 视频媒体一律走 yt-dlp（不耗 API 配额），命令见 step3 脚本头部注释。
+
+## 每日自动扩数据集（YouTube 免费配额）
+
+```powershell
+# 手动跑一次（默认 10 个词 ≈ 1010 units，远低于 10000/天）
+python prototype\harvest_daily.py
+
+# 先看计划不花配额
+python prototype\harvest_daily.py --dry-run
+```
+
+- 关键词轮转：`prototype\youtube_keywords.txt`（一行一个，随时增删），
+  cursor 断点存在 `metadata\harvest_state.json`，每天接着上次的位置转；
+- 结果按 video_id 幂等去重进 `metadata\youtube_meta.jsonl`；
+- 配额双保险：账本 `metadata\quota_ledger.jsonl` + 单日上限 `--quota-cap`（默认 8000）；
+- 定时：Windows 计划任务每天调 `run_harvest.bat`（见 docs/roadmap.md 第 3 步）。
 
 ## Git / GitHub 约定
 

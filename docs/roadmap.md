@@ -21,6 +21,21 @@
 - 输出 `metadata/youtube_meta.jsonl`，以 `video_id` 关联（与 X 的 tweet_id 平行）；
 - 真实模式前置：设置代理环境变量（见下文「网络提示」）。
 
+### 每日收割器（已就绪，待 key 实测）
+
+`prototype/harvest_daily.py`：每天用免费配额轮转关键词扩数据集。
+
+- 词表 `prototype/youtube_keywords.txt`（15 个种子词，可随时增删）；
+- 默认 10 词/天 ≈ 1010 units（每个词 ≈ 101 units：search 100 + details 1）；
+- cursor 断点在 `metadata/harvest_state.json`，多天覆盖全部词表后循环；
+- 结果按 video_id 幂等去重；`--quota-cap 8000` 双保险；
+- 定时任务（key 实测通过后创建）：
+  `schtasks /Create /TN "FakeNews-YT-Harvest" /TR "C:\Users\10996\Documents\deepseek-harness\default-workspace\multimodal_fake_news\run_harvest.bat" /SC DAILY /ST 09:30 /F`
+  删除：`schtasks /Delete /TN "FakeNews-YT-Harvest" /F`；手动触发：`schtasks /Run /TN "FakeNews-YT-Harvest"`；
+  任务日志：`logs/harvest_task.log`。
+- 注意：googleapis 走 API 也要代理——python 进程需设 `HTTPS_PROXY` 环境变量；
+  计划任务场景可在 `run_harvest.bat` 里加一行 `set HTTPS_PROXY=http://127.0.0.1:7897`（实测直连失败时再加）。
+
 ## 第 4 步：最小调度 Agent（未开始）
 
 - 任务队列 `prototype/tasks.json`：`{id, source, keyword, limit, status, retries, created_at}`；

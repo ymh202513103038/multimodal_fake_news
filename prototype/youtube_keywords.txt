@@ -1,0 +1,18 @@
+# YouTube 每日收割关键词（一行一个；# 开头为注释）
+# 顺序轮转：每天从上次停的位置继续取 N 个，多天覆盖完整个列表后再从头循环
+# 原则：英文为主（一期范围）；同义变体分开写，检索结果不重叠才是增量
+fake news
+misinformation
+disinformation
+fake news exposed
+conspiracy theory exposed
+deepfake
+hoax exposed
+clickbait exposed
+viral rumor debunked
+fact check
+propaganda exposed
+manipulated video
+out of context image
+fake breaking news
+celebrity death hoax

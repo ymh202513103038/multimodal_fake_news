@@ -55,3 +55,18 @@ def read_jsonl(path: Path):
 def existing_ids(path: Path, field: str = "tweet_id") -> set:
     """读 jsonl 里已有的主键集合（X 用 tweet_id，YouTube 用 video_id）。"""
     return {r.get(field) for r in read_jsonl(path) if isinstance(r, dict)}
+
+
+def read_user_env_var(name: str):
+    """读 Windows 用户级环境变量的持久值。
+
+    setx 写入后只有"新开的进程"才会继承；本函数直接读注册表，
+    让当前已开着的进程（含本程序）也能立刻拿到。非 Windows 返回 None。
+    """
+    try:
+        import winreg
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as k:
+            value, _ = winreg.QueryValueEx(k, name)
+            return value or None
+    except Exception:  # noqa: BLE001
+        return None

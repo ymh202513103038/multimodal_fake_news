@@ -26,11 +26,12 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 import random
 import re
 from datetime import date, datetime, timedelta, timezone
 
-from common import METADATA_DIR, append_jsonl, existing_ids, setup_logger
+from common import METADATA_DIR, append_jsonl, existing_ids, read_user_env_var, setup_logger
 
 log = setup_logger("step3")
 OUT = METADATA_DIR / "youtube_meta.jsonl"
@@ -196,8 +197,17 @@ def main() -> None:
         OUT.unlink()
         log.info("已清空 %s", OUT)
 
+    api_key = a.api_key or os.environ.get("YT_API_KEY") or read_user_env_var("YT_API_KEY")
+    if not a.mock and not api_key:
+        raise SystemExit(
+            "缺少 YouTube API key。三选一：\n"
+            '  1) 本会话临时： $env:YT_API_KEY=\'你的key\'\n'
+            '  2) 永久（推荐，key 不进代码/仓库）： setx YT_API_KEY "你的key"  然后重开终端\n'
+            "  3) 命令行传参： --api-key 你的key"
+        )
+
     records = (gen_mock_videos(a.query, a.limit) if a.mock else
-               fetch_live(a.query, a.limit, a.api_key or __import__("os").environ.get("YT_API_KEY", ""), a.quota_cap))
+               fetch_live(a.query, a.limit, api_key, a.quota_cap))
     if not records:
         log.warning("没有取到任何记录。")
         return
