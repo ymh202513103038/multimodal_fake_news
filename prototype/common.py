@@ -16,6 +16,14 @@ DATASET_DIR = ROOT / "dataset"
 for _d in (METADATA_DIR, LOGS_DIR):
     _d.mkdir(parents=True, exist_ok=True)
 
+# Windows 控制台默认 GBK，UTF-8 中文日志会显示乱码；导入本模块即统一为 UTF-8 输出
+for _stream in (sys.stdout, sys.stderr):
+    if _stream is not None and hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8")
+        except Exception:  # noqa: BLE001
+            pass
+
 
 def setup_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)
