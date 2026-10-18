@@ -1,4 +1,4 @@
-"""第 5 步预备：从 meta jsonl 抽样生成标注表（CSV），衔接 docs/labeling_rules.md。
+"""第 5 步预备：从 meta jsonl 抽样生成标注表（CSV），衔接 documentation/labeling_rules.md。
 
 用法（默认从 X 的 meta 抽，可复现，重复运行自动去重追加）：
   python make_label_sheet.py --samples 30
@@ -8,7 +8,7 @@
   列 = labeling_rules.md 的 schema：sample_id, source, text, media_local,
        is_fake, modality_type, evidence_url, rationale, annotator, labeled_at
   其中 is_fake / modality_type / evidence_url / rationale / annotator / labeled_at
-  留空给标注人填写；标注前先读 docs/labeling_rules.md（kappa ≥ 0.6 才放量）。
+  留空给标注人填写；标注前先读 documentation/labeling_rules.md（kappa ≥ 0.6 才放量）。
 """
 from __future__ import annotations
 
@@ -92,7 +92,7 @@ def main() -> None:
 
     log.info("新增 %d 条标注任务（池 %d，跳过已存在 %d）-> %s",
              len(picked), len(pool), len(pool) - len(fresh), OUT)
-    log.info("标注前先读 docs/labeling_rules.md：is_fake∈{1,0,-1}，"
+    log.info("标注前先读 documentation/labeling_rules.md：is_fake∈{1,0,-1}，"
              "双人独立标，kappa<0.6 时修订规范再标。")
 
 

@@ -30,7 +30,7 @@ GroundLie360（ACM MM 2025）提出虚假信息 **grounding（定位）** 任务
 python prototype\make_label_sheet.py --samples 20            # 默认从 youtube_meta 抽
 python prototype\make_label_sheet.py --meta metadata\x\deepfake__2026-10-18.jsonl --source x --samples 10
 ```
-列结构 = docs/labeling_rules.md v0.2：L1 is_fake → L2 fake_types →
+列结构 = documentation/labeling_rules.md v0.2：L1 is_fake → L2 fake_types →
 L3 grounding_title/speech/visual → 证据链 → rationale。
 
 ### 2. 标注顺序（省力原则）
@@ -41,7 +41,7 @@ L3 grounding_title/speech/visual → 证据链 → rationale。
 
 ### 3. 质量控制
 - 双人独立盲标 → `sklearn.metrics.cohen_kappa_score` 计算 κ；
-- κ < 0.6 → 逐条讨论分歧 → 修订 docs/labeling_rules.md → 重标；
+- κ < 0.6 → 逐条讨论分歧 → 修订 documentation/labeling_rules.md → 重标；
 - 批次内混 5% 金标题，个人金标准确率 < 95% 该批回炉。
 
 ### 4. 回填数据集
@@ -52,4 +52,4 @@ label/reason 自动写入 dataset/ 案例的 reason/reason.txt 与 index.json。
 - GroundLie360: https://github.com/yangbingjian/GroundLie360
   （data.csv 字段：first_level=二分类，second_level=多标签，
   third_level=title span 定位，false_speech_temporal=口播秒区间，bbox.csv=逐帧视觉定位）
-- 本项目规范：docs/labeling_rules.md（v0.2）
+- 本项目规范：documentation/labeling_rules.md（v0.2）

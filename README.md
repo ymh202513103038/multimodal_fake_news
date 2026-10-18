@@ -2,17 +2,17 @@
 
 「采集 → 数据集制作 → 标注 → 评测」最小闭环。**仅学术研究，不商用。**
 
-## 试点一期范围（详见 docs/requirements.md）
+## 试点一期范围（详见 documentation/requirements.md）
 
 - 数据源：X/Twitter（twscrape）+ YouTube（Data API v3 + yt-dlp）；中文源与新闻网站放二期
 - 模态：文本 + 图片 + 短视频
 - 标注：帖子级人工标注 + 事实核查证据对齐（借 GroundLie360 的 evidence 思想）
-- 合规：只采公开内容、脱敏、小批量，每阶段过 docs/compliance_checklist.md
+- 合规：只采公开内容、脱敏、小批量，每阶段过 documentation/compliance_checklist.md
 
 ## 目录（两层结构：原始采集层 → 案例数据集层）
 
 ```
-docs/            需求、合规清单、标注规范(v0.2 GroundLie360)、路线图、全景采集方案（参考）
+documentation/            需求、合规清单、标注规范(v0.2 GroundLie360)、路线图、全景采集方案（参考）
 skills/          沉淀的操作技能：label-groundlie360（三级标注 SOP）等
 prototype/       采集与组装链路：
                  step1 X元数据(twscrape) → step2 下载媒体 → step3 YouTube元数据
@@ -23,12 +23,12 @@ prototype/       采集与组装链路：
 metadata/        原始层（jsonl/csv，全部入库）：
                  ├── youtube_meta.jsonl / youtube_media.jsonl   YouTube 元数据与媒体清单
                  ├── x/{关键词}__{日期}.jsonl                    X 真浏览器采集（语义化命名）
-                 ├── news/{站点}__{日期}.jsonl                   核查站/新闻站列表（piyao、Snopes）
+                 ├── news/{站点}/{站点}__{日期}.jsonl            核查站列表，每站独立文件夹（piyao、snopes）
                  ├── label_sheet.csv                             标注表（v0.2 schema）
                  ├── case_names.json                             案例语义化命名映射
                  └── quota_ledger.jsonl / harvest_state.json     配额账本 / 收割断点
 media/           原始层：媒体本体（不入库，见 .gitignore）
-dataset/         数据集层：案例制（68 案例 = YT 47 + X 21）；文本入库，媒体本体仅本地
+dataset/         数据集层：案例制（98 案例 = YT 47 + X 21 + 核查源 30）；文本入库，媒体本体仅本地
 fake_news_env/   Python 虚拟环境（不入库）
 ```
 
@@ -69,7 +69,7 @@ python validate_samples.py --sample 5
 ```
 
 真实采集：
-- X：先加 twscrape 账号（见 docs/roadmap.md），去掉 `--mock`；
+- X：先加 twscrape 账号（见 documentation/roadmap.md），去掉 `--mock`；
 - YouTube：先一次性 `setx YT_API_KEY "你的key"`（永久，key 不进代码/仓库，重开终端生效），
   再 `python step3_youtube_probe.py --query "fake news" --limit 10`；
 - YouTube 媒体（字幕/缩略图/音视频，零 API 配额，需代理环境变量）：
@@ -89,7 +89,7 @@ python prototype\harvest_daily.py --dry-run
   cursor 断点存在 `metadata\harvest_state.json`，每天接着上次的位置转；
 - 结果按 video_id 幂等去重进 `metadata\youtube_meta.jsonl`；
 - 配额双保险：账本 `metadata\quota_ledger.jsonl` + 单日上限 `--quota-cap`（默认 8000）；
-- 定时：Windows 计划任务每天调 `run_harvest.bat`（见 docs/roadmap.md 第 3 步）。
+- 定时：Windows 计划任务每天调 `run_harvest.bat`（见 documentation/roadmap.md 第 3 步）。
 
 ## Git / GitHub 约定
 

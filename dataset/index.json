@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-18T11:21:17+00:00",
-  "count": 68,
+  "generated_at": "2026-10-18T11:45:20+00:00",
+  "count": 98,
   "schema": "ex-style case index: id/event/topic/label/reason + modality files",
   "cases": [
     {
@@ -2199,6 +2199,726 @@
         ],
         "web": [
           "x_fake_news__tweet_8161315901/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_001",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20261008/aaca2d907c5146b4833352868be8becd/c.html",
+      "title": "中央网信办开展“清朗·整治短视频虚假人设乱象”行动",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_001",
+      "files": {
+        "text": [
+          "factcheck__piyao_001/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_001/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_001/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_002",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20260920/7043391d64d74a4d9412e8c1a100ac92/c.html",
+      "title": "整治恶意炒作涉企信息，第二批典型案例曝光→",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_002",
+      "files": {
+        "text": [
+          "factcheck__piyao_002/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_002/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_002/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_003",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20260918/b1a4ce4e32344a2a9a5ae7b8d43776ea/c.html",
+      "title": "整治涉企网络侵权 网信办持续优化营商网络环境",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_003",
+      "files": {
+        "text": [
+          "factcheck__piyao_003/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_003/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_003/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_004",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20260901/8a5dfe7787b84dd9a365184d54c65c4f/c.html",
+      "title": "“魔改”《三国演义》《西游记》等，多个账号被查处！",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_004",
+      "files": {
+        "text": [
+          "factcheck__piyao_004/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_004/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_004/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_005",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20261016/501781a288844f449d467f95761983ad/c.html",
+      "title": "今日辟谣（2026·10·16）",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_005",
+      "files": {
+        "text": [
+          "factcheck__piyao_005/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_005/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_005/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_006",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20261008/e3c1fbf31dc7465b8f09b663fbea23f8/c.html",
+      "title": "中国互联网联合辟谣平台9月辟谣榜",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_006",
+      "files": {
+        "text": [
+          "factcheck__piyao_006/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_006/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_006/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_007",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20260703/82596a3dc0174dad919422fbc13ba4fd/c.html",
+      "title": "这份倡议书，值得一起读！",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_007",
+      "files": {
+        "text": [
+          "factcheck__piyao_007/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_007/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_007/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_008",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20261008/ae6d19e773414b889c18298ed7f63cfd/c.html",
+      "title": "今年寒露不一般，为60年一遇冷冬？",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_008",
+      "files": {
+        "text": [
+          "factcheck__piyao_008/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_008/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_008/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_009",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20260611/c7e84ecc05d5422790cf84894e29bf10/c.html",
+      "title": "干货满满！这堂公开课教你“望闻问切”辨谣言",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_009",
+      "files": {
+        "text": [
+          "factcheck__piyao_009/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_009/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_009/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_010",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20260826/cba23ea81c7f4077a271e65771dc8420/c.html",
+      "title": "AI趣味视频｜秋补闯关，国庆解锁3个养生真相",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_010",
+      "files": {
+        "text": [
+          "factcheck__piyao_010/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_010/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_010/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_011",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20260929/c9648f12899d471686e9caaeec385962/c.html",
+      "title": "网络辟谣沙龙接力，下一站陕西",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_011",
+      "files": {
+        "text": [
+          "factcheck__piyao_011/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_011/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_011/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_012",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20261013/ff19d32d6848415db5cfc2b135a07ae9/c.html",
+      "title": "工信微报 | 速自查！这17款APP及SDK存在侵害用户权益行为",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_012",
+      "files": {
+        "text": [
+          "factcheck__piyao_012/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_012/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_012/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_013",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20260611/d08eda3ae5554392b1bd396aefba43ba/c.html",
+      "title": "清朗河南 | 南水北调中线可约票钓鱼？误解！系运河正常维护",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_013",
+      "files": {
+        "text": [
+          "factcheck__piyao_013/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_013/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_013/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_014",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20260611/8aff013c83bc4448a470932d65f9df08/c.html",
+      "title": "@科学辟谣 | 磁极即将倒转？",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_014",
+      "files": {
+        "text": [
+          "factcheck__piyao_014/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_014/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_014/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__piyao_015",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "piyao",
+      "role": "debunk_seed",
+      "url": "https://www.piyao.org.cn20260611/57b0d1d491db48d5901e27b7821f9884/c.html",
+      "title": "“中国石油”微信公众号 | 关于近期柴油的消费提示",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:25:08+00:00",
+      "case_dir": "factcheck__piyao_015",
+      "files": {
+        "text": [
+          "factcheck__piyao_015/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__piyao_015/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__piyao_015/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_001",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/kmart-sell-monkeys-1960s/",
+      "title": "Kmart used to sell pet monkeys in the 1960s. It wasn't alone Written by: Jordan Liles Oct. 17, 2026 We combed through the internet archives in search of vintage advertisements and uncovered a wild ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_001",
+      "files": {
+        "text": [
+          "factcheck__snopes_001/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_001/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_001/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_002",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/ilhan-omar-flee-morocco/",
+      "title": "Ilhan Omar didn't flee to Morocco after federal agents' raid on her home Written by: Nur Ibrahim Oct. 16, 2026 The source for this claim about the Minnesota congresswoman frequently spreads false and unverif ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_002",
+      "files": {
+        "text": [
+          "factcheck__snopes_002/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_002/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_002/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_003",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/ukraine-russia-bot-farms-satire/",
+      "title": "Trump didn't accuse Ukraine of election interference after strikes on Russian 'bot farms,' despite claims Written by: Laerke Christensen Oct. 16, 2026 An article in an Australian satirical publication shared otherwise unreported quotes from U.S. P ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_003",
+      "files": {
+        "text": [
+          "factcheck__snopes_003/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_003/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_003/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_004",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/tesla-flying-roadster-car-real/",
+      "title": "Are videos of Tesla's new 'flying' car performing mid-air stunts real? Written by: Laerke Christensen Oct. 16, 2026 The footage appeared to showcase the launch of the company's new Roadster model. Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_004",
+      "files": {
+        "text": [
+          "factcheck__snopes_004/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_004/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_004/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_005",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/doe-accessibility-requirements/",
+      "title": "Did Department of Energy remove building accessibility requirements for disabled people? Written by: Anna Rascouët-Paz Oct. 16, 2026 The rule change, which has not been implemented, removes regulations for construction projects t ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_005",
+      "files": {
+        "text": [
+          "factcheck__snopes_005/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_005/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_005/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_006",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/trump-cut-down-430-trees/",
+      "title": "Trump admin cut down 430 trees at DC golf course renovation site, court docs confirm Written by: Jordan Liles Oct. 16, 2026 A federal judge wrote that the government only provided notice of its weekend tree-cutting plans ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_006",
+      "files": {
+        "text": [
+          "factcheck__snopes_006/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_006/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_006/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_007",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/katie-zacharia-beauty-pageant-interview/",
+      "title": "Does video show Katie Zacharia struggling to answer beauty pageant question? Written by: Emery Winter Oct. 16, 2026 The White House press secretary was falsely linked to a video of former Miss South Carolina Teen ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_007",
+      "files": {
+        "text": [
+          "factcheck__snopes_007/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_007/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_007/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_008",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/marjorie-taylor-greene-response-trump/",
+      "title": "'You are the snake': Marjorie Taylor Greene post criticizes Trump's 'broken campaign promises' Written by: Joey Esposito Oct. 16, 2026 The former Georgia congresswoman found fault with the president on Gaza, the Epstein files and t ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_008",
+      "files": {
+        "text": [
+          "factcheck__snopes_008/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_008/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_008/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_009",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/maine-data-center-endangered-whales/",
+      "title": "Proposed Maine underwater data center that could harm endangered whales is far from done deal Written by: Rae Deng Oct. 16, 2026 The company behind the idea has faced steep backlash — despite its claims it won't move the proj ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_009",
+      "files": {
+        "text": [
+          "factcheck__snopes_009/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_009/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_009/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_010",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/trump-rally-epstein-protester/",
+      "title": "Fake image depicting real attack on protester at Trump rally spreads online Written by: Rae Deng Oct. 15, 2026 Credible videos of the event show men pushing, hitting and tackling a protester wearing a shirt ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_010",
+      "files": {
+        "text": [
+          "factcheck__snopes_010/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_010/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_010/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_011",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/ilhan-omar-birthdate-records/",
+      "title": "Did Ilhan Omar change her birth year in official records? Written by: Taija PerryCook Oct. 15, 2026 Critics have claimed the change indicates citizenship fraud. Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_011",
+      "files": {
+        "text": [
+          "factcheck__snopes_011/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_011/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_011/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_012",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/nobel-committee-peter-girnus-trump-letter/",
+      "title": "Did Nobel Committee member 'Peter Girnus' write letter about why Trump didn't win Peace Prize? Written by: Laerke Christensen Oct. 15, 2026 The alleged letter said Trump wanted the Nobel Peace Prize \"the way a child wants a thing in a s ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_012",
+      "files": {
+        "text": [
+          "factcheck__snopes_012/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_012/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_012/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_013",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/trump-logging-federal-lands/",
+      "title": "Trump order fast-tracks logging on federal lands, but posts exaggerate scale Written by: Jack Izzo Oct. 15, 2026 The order would allow federal agencies to bypass environmental protection laws in an effort to i ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_013",
+      "files": {
+        "text": [
+          "factcheck__snopes_013/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_013/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_013/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_014",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/george-carlin-public-executions/",
+      "title": "George Carlin joked about televised executions decades before Pentagon announcement Written by: Joey Esposito Oct. 15, 2026 (Updated: Oct. 16, 2026) Some people suggested Carlin “predicted” the Pentagon’s announcement earlier this month with his ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_014",
+      "files": {
+        "text": [
+          "factcheck__snopes_014/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_014/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_014/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "factcheck__snopes_015",
+      "event": null,
+      "topic": "factcheck",
+      "platform": "snopes",
+      "role": "debunk_seed",
+      "url": "https://www.snopes.com/fact-check/maricopa-county-apologize-trump/",
+      "title": "Maricopa County didn't apologize to Trump after uncovering fraud in 2020 election, despite claims Written by: Jordan Liles Oct. 15, 2026 The rumor originated from a social media user who has spread election misinformation on his X ac ... Read More",
+      "label": null,
+      "reason": null,
+      "collected_at": "2026-10-18T11:24:29+00:00",
+      "case_dir": "factcheck__snopes_015",
+      "files": {
+        "text": [
+          "factcheck__snopes_015/text/text.txt"
+        ],
+        "reason": [
+          "factcheck__snopes_015/reason/reason.txt"
+        ],
+        "web": [
+          "factcheck__snopes_015/web/source.txt"
         ]
       }
     }

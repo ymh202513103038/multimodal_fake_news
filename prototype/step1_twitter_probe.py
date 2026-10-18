@@ -3,7 +3,7 @@
 两种模式：
   1) mock 模式（无需账号，立即可跑，验证链路）：
        python step1_twitter_probe.py --mock --keyword "fake news" --limit 20 --fresh
-  2) 真实模式（需先用 twscrape 添加账号，见 ../docs/roadmap.md）：
+  2) 真实模式（需先用 twscrape 添加账号，见 ../documentation/roadmap.md）：
        python step1_twitter_probe.py --keyword "fake news" --limit 20
 
 输出：../metadata/twitter_raw.jsonl（含 tweet_id / 正文 / 图片视频 url）

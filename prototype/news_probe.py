@@ -95,7 +95,10 @@ def main() -> None:
 
     for site in sites:
         cfg = SITES[site]
-        out = OUT_DIR / f"{site}__{today}.jsonl"
+        # 每个来源站点独立文件夹：metadata/news/{site}/{site}__{日期}.jsonl
+        site_dir = OUT_DIR / site
+        site_dir.mkdir(parents=True, exist_ok=True)
+        out = site_dir / f"{site}__{today}.jsonl"
         try:
             items = probe(site, cfg, a.limit)
         except Exception as e:  # noqa: BLE001

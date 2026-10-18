@@ -12,7 +12,7 @@
   - 账本 metadata/quota_ledger.jsonl 每次调用记一行；当日累计 + 本次预估
     超过 --quota-cap（默认 8000，留 2000 余量）时直接拒跑。
 
-代理（本机直连 Google 超时，见 ../docs/roadmap.md）：
+代理（本机直连 Google 超时，见 ../documentation/roadmap.md）：
   $env:HTTPS_PROXY='http://127.0.0.1:7897'; $env:HTTP_PROXY='http://127.0.0.1:7897'
 
 输出：metadata/youtube_meta.jsonl（video_id 为主键，含时长/统计/缩略图 url）

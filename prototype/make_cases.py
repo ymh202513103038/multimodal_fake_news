@@ -298,6 +298,36 @@ def build_case(meta: dict, media: dict, label: dict | None, ff: str | None,
     }
 
 
+def build_factcheck_case(meta: dict, name: str, site: str) -> dict:
+    """核查源案例（debunk 种子）：辟谣/核查文章本体，是标签的来源而非检测对象。"""
+    case_dir = DATASET_DIR / name
+    for sub in SUBDIRS:
+        (case_dir / sub).mkdir(parents=True, exist_ok=True)
+    (case_dir / "text" / "text.txt").write_text(
+        f"# {meta.get('title', '')}\n", encoding="utf-8")
+    files_out = {"text": [f"{name}/text/text.txt"]}
+    (case_dir / "reason" / "reason.txt").write_text(
+        "（核查源种子：文章正文抓取二期实现）\n", encoding="utf-8")
+    files_out["reason"] = [f"{name}/reason/reason.txt"]
+    (case_dir / "web" / "source.txt").write_text(
+        f"source_url: {meta.get('url', '')}\n", encoding="utf-8")
+    files_out["web"] = [f"{name}/web/source.txt"]
+    return {
+        "id": name,
+        "event": None,
+        "topic": "factcheck",
+        "platform": site,
+        "role": "debunk_seed",
+        "url": meta.get("url"),
+        "title": meta.get("title"),
+        "label": None,
+        "reason": None,
+        "collected_at": meta.get("found_at"),
+        "case_dir": name,
+        "files": files_out,
+    }
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="组装案例制数据集（ex 风格）")
     ap.add_argument("--vids", default=None, help="逗号分隔的 video_id；缺省全部 live")
@@ -350,6 +380,23 @@ def main() -> None:
                 used.add(name)
                 cases.append(build_x_case(meta, name, kw_topic, labels.get(tid)))
                 x_added += 1
+
+    # ---- 核查源案例（metadata/news/{site}/*.jsonl，辟谣/核查文章 = debunk 种子）----
+    fc_added = 0
+    news_dir = METADATA_DIR / "news"
+    if news_dir.exists():
+        for site_dir in sorted(p for p in news_dir.iterdir() if p.is_dir()):
+            site = site_dir.name
+            seq = 0
+            for f in sorted(site_dir.glob("*.jsonl")):
+                for meta in read_jsonl(f):
+                    seq += 1
+                    name = f"factcheck__{site}_{seq:03d}"
+                    if name in used:
+                        continue
+                    used.add(name)
+                    cases.append(build_factcheck_case(meta, name, site))
+                    fc_added += 1
 
     index = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),

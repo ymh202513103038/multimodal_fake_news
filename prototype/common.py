@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 METADATA_DIR = ROOT / "metadata"
 MEDIA_DIR = ROOT / "media"
 LOGS_DIR = ROOT / "logs"
-DOCS_DIR = ROOT / "docs"
+DOCS_DIR = ROOT / "documentation"
 DATASET_DIR = ROOT / "dataset"
 
 for _d in (METADATA_DIR, LOGS_DIR):
