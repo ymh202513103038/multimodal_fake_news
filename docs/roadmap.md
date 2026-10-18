@@ -1,18 +1,25 @@
 # 路线图与待办（第 3 步之后）
 
-当前状态：**第 0~2 步已落地**，mock 模式端到端跑通（见 `prototype/`）。
+当前状态：**第 0~2 步已落地；第 3 步脚本已就绪（mock 验证通过，待真实 key 实测）；第 5 步抽样工具已就绪**。
 
 > Windows 控制台若中文日志乱码：运行前执行 `$env:PYTHONIOENCODING='utf-8'`
 > （Git Bash：`export PYTHONIOENCODING=utf-8`）。数据文件本身是 UTF-8，不受影响。
 
-## 第 3 步：YouTube（未开始）
+## 第 3 步：YouTube（脚本已就绪，待真实 key 验证）
+
+`prototype/step3_youtube_probe.py` 已实现，mock 模式可跑：
+`python step3_youtube_probe.py --mock --query "fake news" --limit 10 --fresh`
 
 - `search.list` 每次调用消耗 **100** 配额；默认日配额 10000 → **每天最多 ~100 次搜索**；
 - 先只拿 `video_id + snippet`，**不下载**；单次 `limit=10` 做链路验证；
+- 配额账本已内置：`metadata/quota_ledger.jsonl` 记每次调用；当日累计 + 本次预估
+  超过 `--quota-cap`（默认 8000）直接拒跑；
+- key：`--api-key` 或环境变量 `$env:YT_API_KEY`（不要写进代码/仓库）；
 - 媒体：yt-dlp 按 video_id 下载字幕/缩略图/音频
   （`--write-auto-subs --write-thumbnail --extract-audio`），不走 API 配额；
-- 输出 `metadata/youtube_meta.jsonl`，以 `video_id` 关联；
-- 配额预算写日志：每次调用记 `quota_units`，当日累计接近 8000 时停。
+  完整命令见 step3 脚本头部注释；
+- 输出 `metadata/youtube_meta.jsonl`，以 `video_id` 关联（与 X 的 tweet_id 平行）；
+- 真实模式前置：设置代理环境变量（见下文「网络提示」）。
 
 ## 第 4 步：最小调度 Agent（未开始）
 
@@ -21,9 +28,11 @@
 - 限流：429/超时 → 指数退避（30s/60s/120s）；连续 3 次失败 → `status=paused` 并写日志；
 - 验收：提交 X（20 条）+ YouTube（10 条）两个任务，自动依次跑完。
 
-## 第 5 步：数据集制作（未开始）
+## 第 5 步：数据集制作（抽样工具已就绪）
 
 - 清洗：过滤损坏文件、空文本、纯广告（低文本量 + 高链接比）；
+- 抽样：`prototype/make_label_sheet.py` 从 meta jsonl 抽 N 条生成
+  `metadata/label_sheet.csv`（列即 labeling_rules.md 的 schema，可复现、追加去重）；
 - 标注：按 [labeling_rules.md](labeling_rules.md) 双人标 20~30 条，算 kappa；
 - 划分：mini train/val（例如 16/4），先验证下游流程，不急全量。
 

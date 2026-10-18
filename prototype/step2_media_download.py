@@ -70,7 +70,12 @@ def download_video_ytdlp(post_url: str, base: Path) -> list[Path]:
     """用 yt-dlp 下载视频（推荐：X 视频含 m3u8 变体，requests 拿不到可播放文件）。"""
     import subprocess
     cmd = ["yt-dlp", "--no-playlist", "-o", f"{base}.%(ext)s", post_url]
-    subprocess.run(cmd, check=True, timeout=600, capture_output=True)
+    try:
+        subprocess.run(cmd, check=True, timeout=600, capture_output=True)
+    except subprocess.CalledProcessError as e:
+        # 失败时带出 yt-dlp 的 stderr 末尾，方便定位（网络/代理/风控等原因）
+        tail = (e.stderr or b"")[-800:].decode("utf-8", "ignore").strip()
+        raise RuntimeError(f"yt-dlp 退出码 {e.returncode}：{tail or '（无 stderr 输出）'}") from e
     return sorted(base.parent.glob(base.name + ".*"))
 
 

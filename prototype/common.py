@@ -52,5 +52,6 @@ def read_jsonl(path: Path):
                 yield json.loads(line)
 
 
-def existing_ids(path: Path) -> set:
-    return {r.get("tweet_id") for r in read_jsonl(path) if isinstance(r, dict)}
+def existing_ids(path: Path, field: str = "tweet_id") -> set:
+    """读 jsonl 里已有的主键集合（X 用 tweet_id，YouTube 用 video_id）。"""
+    return {r.get(field) for r in read_jsonl(path) if isinstance(r, dict)}

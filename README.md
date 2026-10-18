@@ -13,23 +13,30 @@
 
 ```
 docs/            需求、合规清单、标注规范、路线图、全景采集方案（参考）
-prototype/       可运行链路：step1 抓元数据 → step2 下载媒体 → validate 抽检
-metadata/        采集产物（jsonl，入库）
+prototype/       可运行链路：step1 X元数据 → step2 下载媒体 → step3 YouTube元数据
+                 → make_label_sheet 生成标注表 → validate 抽检
+metadata/        采集产物与标注表（jsonl/csv，入库；quota_ledger.jsonl 为配额账本）
 media/           媒体文件（不入库，见 .gitignore）
 fake_news_env/   Python 虚拟环境（不入库）
 ```
 
-## 快速开始（mock 模式，无需任何账号）
+## 快速开始（mock 模式，无需任何账号/key）
 
 ```powershell
 fake_news_env\Scripts\activate
 cd prototype
 python step1_twitter_probe.py --mock --keyword "fake news" --limit 20 --fresh
 python step2_media_download.py --fresh
+python step3_youtube_probe.py --mock --query "fake news" --limit 10 --fresh
+python make_label_sheet.py --samples 10
 python validate_samples.py --sample 5
 ```
 
-真实采集：先加 twscrape 账号（见 docs/roadmap.md），再去掉 `--mock`。
+真实采集：
+- X：先加 twscrape 账号（见 docs/roadmap.md），去掉 `--mock`；
+- YouTube：`$env:YT_API_KEY='...'` 后 `python step3_youtube_probe.py --query "fake news" --limit 10`，
+  注意先按 docs/roadmap.md 设置代理环境变量（本机直连 Google 超时）；
+- 视频媒体一律走 yt-dlp（不耗 API 配额），命令见 step3 脚本头部注释。
 
 ## Git / GitHub 约定
 
