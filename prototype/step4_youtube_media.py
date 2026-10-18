@@ -4,8 +4,9 @@ r"""第 4 步：YouTube 媒体下载 —— 把 youtube_meta.jsonl 里的候选�
 
 三种 --what（按需选，成本递增）：
   subs   字幕(vtt) + 缩略图 + info.json，不下载视频（默认，最轻）
-  audio  仅音频轨（优先 m4a，无需 ffmpeg）
-  video  预合并视频(≤720p，无需 ffmpeg) + 缩略图 + info.json
+  audio  仅音频轨（优先 m4a）
+  video  ≤720p 视频+音轨合并 mp4（自动检测 venv 内置 ffmpeg；
+         没有则退回 360p 预合并格式）+ 缩略图 + info.json
 
 用法：
   python step4_youtube_media.py --what subs --limit 5      # 试点建议从小批量开始
@@ -48,8 +49,21 @@ WHAT_OPTIONS = {
     "audio": ["-f", "ba[ext=m4a]/ba", "--write-thumbnail", "--write-info-json"],
     "video": ["-f", "b[height<=720]/b", "--write-thumbnail", "--write-info-json"],
 }
+# 有 ffmpeg 时的 video 高清方案（DASH 分离流 + 合并）
+VIDEO_FFMPEG_EXTRA = ["-f", "bv*[height<=720]+ba/b", "--merge-output-format", "mp4",
+                      "--write-thumbnail", "--write-info-json"]
 SUBS_EXTRA = ["--skip-download", "--write-auto-subs",
               "--sub-langs", "en.*,zh.*", "--sub-format", "vtt"]
+
+
+def find_ffmpeg() -> str | None:
+    """venv 内置的 imageio-ffmpeg 优先，其次系统 PATH。"""
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:  # noqa: BLE001
+        import shutil
+        return shutil.which("ffmpeg")
 
 
 def load_manifest_state() -> tuple[set, set]:
@@ -108,6 +122,17 @@ def main() -> None:
     if len(candidates) > len(todo):
         log.info("剩余 %d 个下次继续。", len(candidates) - len(todo))
 
+    # video 模式：有 ffmpeg 就合并 720p 高清，没有则退回预合并（通常 360p）
+    video_extra = None
+    if a.what == "video":
+        ff = find_ffmpeg()
+        if ff:
+            video_extra = VIDEO_FFMPEG_EXTRA + ["--ffmpeg-location", ff]
+            log.info("检测到 ffmpeg：%s", Path(ff).name)
+        else:
+            log.warning("未找到 ffmpeg，video 模式退回 360p 预合并格式"
+                        "（pip install imageio-ffmpeg 可解锁 720p 合并）")
+
     ok = fail = 0
 
     def run_ytdlp(vid: str, extra: list[str], timeout: int, use_archive: bool):
@@ -128,8 +153,11 @@ def main() -> None:
         subs_ok = None  # 仅 subs 模式有意义：True/False/None(不适用)
 
         # 第一阶段：主体（缩略图/info/音频/视频）—— 失败则整条跳过
+        extra = WHAT_OPTIONS[a.what]
+        if a.what == "video" and video_extra:
+            extra = video_extra
         try:
-            run_ytdlp(vid, WHAT_OPTIONS[a.what], a.timeout, use_archive=True)
+            run_ytdlp(vid, extra, a.timeout, use_archive=True)
         except subprocess.TimeoutExpired:
             fail += 1
             log.error("[%d/%d] %s 主体下载超时（>%ds），跳过", i, len(todo), vid, a.timeout)

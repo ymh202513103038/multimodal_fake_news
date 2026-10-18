@@ -42,14 +42,15 @@
 零 API 配额（yt-dlp 直连视频 CDN）；媒体本体在 media/（不入库），清单 `metadata/youtube_media.jsonl` 入库。
 
 - 三种模式：`--what subs`（字幕 vtt + 缩略图 + info.json，默认最轻）、`audio`（m4a 音轨）、
-  `video`（≤720p 预合并，免 ffmpeg）；
+  `video`（≤720p 视频+音轨合并 mp4——自动检测 venv 内置 imageio-ffmpeg 的 ffmpeg，
+  无则退回 360p 预合并）；已实测 720p 合并成品（AV1 视频 + Opus 音轨）；
 - 幂等：清单按 (video_id, what) upsert；yt-dlp archive 防重下；小批量 + 随机间隔（礼貌下载）；
 - 字幕限流对策：YouTube timedtext 对代理 IP 常 429 → 字幕"尽力而为"，
   以目录内有无 .vtt 判定 subs_ok；失败条目下次运行自动重试；
   已实测：en 字幕可获取，zh-Hans 翻译字幕常被限流；可靠替代 = audio 模式 + Whisper 转写；
 - 用法：`$env:HTTPS_PROXY='http://127.0.0.1:7897'` 后
   `python prototype/step4_youtube_media.py --what subs --limit 5`；
-- 待办：安装 ffmpeg 后加抽帧（fps≈1）与更高清视频档。
+- 待办：抽帧（fps≈1，ffmpeg 已随 imageio-ffmpeg 就绪，写个封装即可）；zh-Hans 翻译字幕被限流时依赖 en 字幕或 ASR。
 
 ## 第 4 步：最小调度 Agent（未开始）
 
