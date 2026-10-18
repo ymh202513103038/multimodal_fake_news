@@ -78,19 +78,97 @@ def case_name(meta: dict, names: dict, used: set) -> tuple[str, str]:
 
 
 def load_labels() -> dict:
-    """label_sheet.csv -> {video_id: {label, modality_type, evidence_url, rationale, annotator}}"""
+    """label_sheet.csv -> {内容id: {label, modality_type, evidence_url, rationale, annotator}}
+    支持 youtube:{video_id} 与 x:{tweet_id} 两种 sample_id。"""
     out = {}
     if not LABEL_SHEET.exists():
         return out
     with open(LABEL_SHEET, encoding="utf-8-sig", newline="") as f:
         for row in csv.DictReader(f):
             sid = row.get("sample_id") or ""
-            if not sid.startswith("youtube:"):
+            if ":" not in sid:
                 continue
-            vid = sid.split(":", 1)[1]
+            platform, _, cid = sid.partition(":")
+            if platform not in ("youtube", "x"):
+                continue
             if row.get("is_fake"):
-                out[vid] = row
+                out[cid] = row
     return out
+
+
+def download_best_effort(url: str, dst: Path) -> bool:
+    """图片等静态资源：先直连后代理，尽力下载（用于 X 推文配图）。"""
+    if dst.exists():
+        return True
+    try:
+        import requests
+    except ImportError:
+        return False
+    for proxies in (None, {"http": "http://127.0.0.1:7897", "https": "http://127.0.0.1:7897"}):
+        try:
+            r = requests.get(url, timeout=20, proxies=proxies,
+                             headers={"User-Agent": "academic-research-probe/0.1"})
+            r.raise_for_status()
+            if r.headers.get("content-type", "").startswith("image/"):
+                dst.write_bytes(r.content)
+                return True
+        except Exception:  # noqa: BLE001
+            continue
+    return False
+
+
+def build_x_case(meta: dict, name: str, topic: str, label: dict | None) -> dict:
+    """X 推文案例：text（推文本体）+ web（来源 URL）+ image（配图尽力下载）。"""
+    vid = meta["tweet_id"]
+    case_dir = DATASET_DIR / name
+    for sub in SUBDIRS:
+        (case_dir / sub).mkdir(parents=True, exist_ok=True)
+    files_out: dict[str, list[str]] = {k: [] for k in SUBDIRS}
+
+    # text/：推文本体（作者/时间/正文）
+    body = (f"@{meta.get('user', {}).get('username', '')}"
+            f"  {meta.get('created_at') or ''}\n\n{meta.get('text', '')}")
+    (case_dir / "text" / "text.txt").write_text(body.strip() + "\n", encoding="utf-8")
+    files_out["text"].append(f"{name}/text/text.txt")
+
+    # image/：配图尽力下载（pbs.twimg.com 需代理，失败则留空）
+    for i, m in enumerate(meta.get("media") or []):
+        if m.get("type") != "photo":
+            continue
+        dst = case_dir / "image" / f"{vid}_{i}.{m.get('ext', 'jpg')}"
+        if download_best_effort(m.get("url", ""), dst):
+            files_out["image"].append(f"{name}/image/{dst.name}")
+
+    # reason/ + label
+    rationale = (label or {}).get("rationale", "").strip() or "（待标注）"
+    (case_dir / "reason" / "reason.txt").write_text(rationale + "\n", encoding="utf-8")
+    files_out["reason"].append(f"{name}/reason/reason.txt")
+
+    # web/
+    ev = (label or {}).get("evidence_url", "").strip()
+    (case_dir / "web" / "source.txt").write_text(
+        f"source_url: {meta.get('post_url', '')}\n"
+        f"evidence_url: {ev or '（待核查对齐）'}\n", encoding="utf-8")
+    files_out["web"].append(f"{name}/web/source.txt")
+
+    is_fake = (label or {}).get("is_fake")
+    return {
+        "id": name,
+        "event": None,
+        "topic": topic,
+        "platform": "twitter",
+        "url": meta.get("post_url"),
+        "tweet_id": vid,
+        "label": LABEL_MAP.get(is_fake) if is_fake else None,
+        "modality_type": (label or {}).get("modality_type") or None,
+        "reason": rationale if rationale != "（待标注）" else None,
+        "annotator": (label or {}).get("annotator") or None,
+        "title": (meta.get("text", "") or "")[:80],
+        "metrics": {},
+        "collected_at": meta.get("collected_at"),
+        "case_dir": name,
+        "files": {k: v for k, v in files_out.items() if v},
+    }
 
 
 def vtt_to_text(vtt_path: Path) -> str:
@@ -256,6 +334,23 @@ def main() -> None:
         name, topic = case_name(meta, names, used)
         cases.append(build_case(meta, media_map[vid], labels.get(vid), ff, name, topic))
 
+    # ---- X 推文案例（metadata/x/*.jsonl，推文本体即文字模态）----
+    x_added = 0
+    x_dir = METADATA_DIR / "x"
+    if x_dir.exists():
+        for f in sorted(x_dir.glob("*.jsonl")):
+            kw_topic = f.name.split("__")[0]  # 关键词 slug 兼作主题
+            for meta in read_jsonl(f):
+                tid = meta.get("tweet_id")
+                if not tid or (targets and tid not in targets):
+                    continue
+                name = f"x_{kw_topic}__tweet_{tid[-10:]}"
+                if name in used:
+                    continue
+                used.add(name)
+                cases.append(build_x_case(meta, name, kw_topic, labels.get(tid)))
+                x_added += 1
+
     index = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "count": len(cases),
@@ -264,8 +359,9 @@ def main() -> None:
     }
     (DATASET_DIR / "index.json").write_text(
         json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
-    log.info("建案 %d 个（跳过未下载媒体 %d 个）-> %s",
-             len(cases), skipped, DATASET_DIR / "index.json")
+    log.info("建案 %d 个（YouTube %d + X %d；跳过未下载媒体 %d 个）-> %s",
+             len(cases), len(cases) - x_added, x_added, skipped,
+             DATASET_DIR / "index.json")
 
 
 if __name__ == "__main__":
