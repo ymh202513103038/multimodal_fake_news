@@ -1,0 +1,331 @@
+# Unmasking Misinformation | Chris Coward | TEDxSnoIsleLibraries
+
+To make sense of the information streaming to and at us through media and social-media, we need to be able to detect and identify misinformation, misleading information, and disinformation. This talk shares key tools and practices we can learn that can help us navigate what can seem like a minefield of misinformation, so we can better sift valuable information from what could be harmful.  Chris Coward studies information at the University of Washington Information School.  As director of the UW's  Technology & Social Change Group  and co-founder of the Center for an Informed Public, Chris focuses on issues of access, digital inclusion, digital literacy, civic engagement, and most recently, misinformation. Fake news, disinformation, misinformation, hype, rumor and distortion can create mine field and labyrinths. He shares clues on how to strengthen constructive interactions and free yourself from the escape room of popular misinformation. This talk was given at a TEDx event using the TED conference format but independently organized by a local community. Learn more at https://www.ted.com/tedx
+
+## 字幕（en，自动）
+Wouldn't it be great if there was such a
+thing as a misinformation mask?
+A mask that would protect us from being
+infected by false information and from
+spreading it to others unknowingly.
+Just like we do to protect ourselves
+from COVID.
+The analogy is not a stretch. The first
+law of misinformation is we're all
+vulnerable. We're all vulnerable to
+believing and spreading false
+information.
+Unfortunately, unlike COVID, there is no
+mask to filter information and nor can
+we expect a vaccine.
+Yes, we need to hold government and tech
+companies accountable and that's another
+story.
+But we can't rely solely on the efforts
+of others to solve this problem.
+And that means that we as individuals
+need to play an active role in reducing
+the spread and impact of misinformation.
+So the mask, we can forget about it.
+I'm a research scientist at the
+University of Washington Information
+School and co-founder of the Center for
+an Informed Public, a university-wide
+effort to study misinformation and
+strengthen democratic discourse.
+Let's start with something currently in
+the news, the killing of George Floyd
+and the anti-racism protests that have
+swept the country.
+This is an issue that hits close to
+home, too. My daughter is black and
+there's been a lot of misinformation
+targeting the black community.
+Now, sometimes people are simply
+misinformed and this happens all the
+time.
+But especially at the outset of an event
+like this
+or COVID, when there's a vacuum of good
+information creating a ripe environment
+for rumors to spread.
+I've had to gently correct family and
+friends who have come to me with false
+information about Seattle, where I live.
+Having these conversations can be a bit
+uncomfortable,
+but it's tolerable, and actually they're
+important. After all, we're all
+vulnerable, and that's how I approach
+these conversations.
+On the other end of the spectrum are
+conspiracies and extreme views.
+There are stories that the killing of
+George Floyd was staged, or that it was
+financed to trigger riots, or that he's
+not even dead.
+I don't have anybody in my network who
+believes these,
+but common sense tells us if you have an
+issue like this,
+and one person's a believer of these
+conspiracies, and then another one
+isn't, that conversation isn't going to
+go well.
+It's between these two ends of the
+spectrum that are the most problematic
+and challenging forms of misinformation,
+the half-truths, the plausible
+narratives, the believable stories that
+can and do change people's minds,
+sometimes leading them down a path to
+extremism.
+The individuals and organized groups
+that are behind these stories, they're
+doing so with the intent to deceive.
+This is what we call a disinformation
+campaign.
+Disinformation is the intentional spread
+of false information motivated by some
+political, social, financial, or other
+agenda.
+Let's take a look at an example.
+This tweet purports to belong to a
+national Antifa organization.
+The logo looks real, the account name
+looks real, the content very plausible.
+If you took this at face value, you'd
+think that this organization was behind
+the protests and working to bring chaos
+to white communities.
+In fact, this account was proven to
+belong to a white nationalist group, and
+using pretty straightforward tactics,
+they were able to get this message
+spread far and wide.
+And who could believe who could blame
+someone
+for believing that this was authentic?
+After all, we're all vulnerable.
+So, what can we do about it?
+By now, nearly everyone knows what
+misinformation is. It's headline news.
+It's in people's social media feeds.
+But few people understand how
+misinformation works.
+And the main point of my talk is we all
+need to learn the basics. We need to
+develop an understanding of how
+individuals and organized groups use
+technology and exploit social media
+platforms to spread misinformation, like
+the tweet I just showed.
+We also need to develop some better
+information behaviors ourselves.
+One I like a lot is slow down.
+Pause before sharing something online.
+We'll talk more about that in a moment.
+Let's look at some examples.
+We're going to start with the eyes. Yes,
+they can deceive.
+Here are two close-ups of faces.
+Guess what?
+Only one of them is real. The other is
+computer-generated.
+These photos are from an online quiz
+called Which Face Is Real created by my
+colleagues Jevin West and Carl Bergstrom
+to build awareness about the power of
+artificial intelligence.
+The technology to create these images is
+now easily accessible. One can generate
+thousands of these images and use them
+to, for instance, fake social media
+accounts.
+In case you were wondering,
+the one on the left is
+Let's look at another more recent
+technology, deep fakes.
+Deep fakes are what you get when you
+combine artificial intelligence with
+machine learning to create audio and
+video of people saying and doing things
+they never did.
+Here's a clip. It's called In Event of
+Moon Disaster.
+It was created by MIT this year as an
+art and educational project.
+Good evening, my fellow Americans.
+Fate has ordained that the men who went
+to the moon to explore in peace
+will stay on the moon to rest in peace.
+For every human being who looks up at
+the moon in the nights to come
+will know that there is some corner of
+another world
+that is forever mankind.
+Good night.
+Obviously, that speech never occurred.
+In case you need a history refresher
+the moon landing was a success.
+Until now, this form of media
+manipulation has mostly targeted
+individuals or have been used for
+entertainment purposes.
+However, we've also seen the emergence
+of deep fakes influencing politics and
+elections in other countries.
+Could deep fakes be a factor in
+America's upcoming presidential
+election?
+It's possible and many experts think so.
+In cooperation with Microsoft, we just
+launched an online quiz called Spot Deep
+Fakes
+to raise awareness about this
+technology. I hope you'll check it out.
+Moving on, people not only say and do
+things they never did
+they may not even be people.
+Enter the world of social media bots.
+Social media bots are accounts that have
+been programmed to generate messages,
+follow other users, retweet their
+messages.
+It's relatively easy, again, to create
+thousands and millions of bots
+and unleash them onto the internet.
+Let's look at some examples. Again,
+we'll stick with the topic of race.
+This is a retweet network graph
+of the Black Lives Matter discourse back
+in 2016.
+It was created by my colleague Kate
+Starbird along with Emma Spiro and their
+students.
+What it shows is two communities, the
+pink
+pro-Black Lives Matter and green
+anti-Black Lives Matter.
+As you can see, the conversation was
+divided into two echo chambers
+with each community retweeting and
+sharing messages of like-minded members.
+Now, let's add the impact of a
+disinformation campaign.
+Here, we have the same graph
+this time with orange dots and lines.
+The orange represents the Internet
+Research Agency, Russia's propaganda
+organization.
+Specifically, the IRA created false
+accounts and false messages and
+successfully had their messages
+retweeted by others in both communities.
+Why did Russia go to the effort to do
+this?
+Remember, disinformation campaigns have
+a motive.
+In this case, it was to get Trump
+elected as a means to polarize our
+society and weaken our democracy.
+No matter what side of the political
+spectrum you are on or what beliefs you
+hold,
+you should be angry that there are those
+out there who are trying to infiltrate
+your communities and manipulate your
+thoughts.
+So, why was Russia's campaign so
+effective?
+Why is any disinformation campaign
+This is where we enter the cognitive
+realm.
+Disinformation is effective because it
+exploits personal beliefs to trigger
+psychological and emotional responses
+such as to make you fearful or angry
+like the Antifa tweet I showed earlier.
+It's effective because it's accomplished
+slowly over time through multiple
+encounters across multiple platforms.
+From Facebook to Twitter and YouTube and
+back.
+It's the weaponization of information
+designed to undermine truth and our
+trust in each other.
+It's a big problem.
+And many people are working on it. Tech
+companies and social media platforms are
+working on detection technologies to
+remove harmful misinformation.
+Policy experts are working on legal
+remedies, mindful of our First Amendment
+rights.
+Journalists are working on how to tell
+these stories without adding fuel to the
+fire.
+And teachers and librarians are
+retooling their approaches to teaching
+information literacy. All of these
+efforts are important. And many
+organizations are working on it,
+including our center.
+But my message has been, this is not
+enough, and we have to play a role as
+well.
+First, we need to develop greater
+situational awareness, or informational
+awareness, if you will, of how
+That's been the topic of this talk.
+But I've only scratched the surface.
+I hope people will continue to educate
+themselves,
+especially as new technologies and the
+tactics emerge, as they will.
+Already, we've witnessed Russia
+deploying some new techniques targeting
+our upcoming election.
+Second, we need to practice better ways
+of navigating information.
+The conventional approaches that most of
+us grew up with, like triangulating
+sources of information,
+they're not sufficient anymore, as I
+hope my examples have made clear.
+One approach that our center is
+promoting is called SIFT, developed by
+our partner Mike Caulfield at Washington
+State University.
+SIFT stands for stop,
+investigate the source,
+find better coverage, and trace claims
+to their original context.
+These moves, as Mike calls them, take 30
+seconds or less to execute, and they can
+make a huge difference.
+Again, I'm very fond of stop. And if
+there's one thing that people can do
+right away, it's to pause.
+Take a look at the claim.
+Does it pass the smell test?
+In closing, misinformation is a
+foundational problem.
+When the World Health Organization made
+one of its early pronouncements about
+the COVID,
+they called it simultaneously a pandemic
+and an infodemic, and they were right.
+In fact, infodemic could be used to
+describe almost every challenge we face
+today.
+Misinformation also tears at our social
+fabric and our relationships with family
+and friends.
+No one I've spoken with, whether they're
+left, right, or center,
+is satisfied with this situation. It
+worries everybody.
+And this, perhaps, is a hopeful sign.
+But only if we all play our parts.
+Thank you for listening.

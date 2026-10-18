@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-18T08:50:02+00:00",
-  "count": 2,
+  "generated_at": "2026-10-18T09:28:34+00:00",
+  "count": 47,
   "schema": "ex-style case index: id/event/topic/label/reason + modality files",
   "cases": [
     {
-      "id": "yt_gdwzqEosLtU",
+      "id": "us_politics__leavitt_blasts_cnn_fake_news",
       "event": null,
-      "topic": null,
+      "topic": "us_politics",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=gdwzqEosLtU",
       "video_id": "gdwzqEosLtU",
@@ -21,33 +21,33 @@
         "comments": 1267
       },
       "collected_at": "2026-10-18T07:26:35+00:00",
-      "case_dir": "yt_gdwzqEosLtU",
+      "case_dir": "us_politics__leavitt_blasts_cnn_fake_news",
       "files": {
         "image": [
-          "yt_gdwzqEosLtU/image/gdwzqEosLtU.png"
+          "us_politics__leavitt_blasts_cnn_fake_news/image/gdwzqEosLtU.png"
         ],
         "video": [
-          "yt_gdwzqEosLtU/video/gdwzqEosLtU.mp4"
+          "us_politics__leavitt_blasts_cnn_fake_news/video/gdwzqEosLtU.mp4"
         ],
         "wav": [
-          "yt_gdwzqEosLtU/wav/gdwzqEosLtU.wav"
+          "us_politics__leavitt_blasts_cnn_fake_news/wav/gdwzqEosLtU.wav"
         ],
         "text": [
-          "yt_gdwzqEosLtU/text/text.txt",
-          "yt_gdwzqEosLtU/text/subs.vtt"
+          "us_politics__leavitt_blasts_cnn_fake_news/text/text.txt",
+          "us_politics__leavitt_blasts_cnn_fake_news/text/subs.vtt"
         ],
         "reason": [
-          "yt_gdwzqEosLtU/reason/reason.txt"
+          "us_politics__leavitt_blasts_cnn_fake_news/reason/reason.txt"
         ],
         "web": [
-          "yt_gdwzqEosLtU/web/source.txt"
+          "us_politics__leavitt_blasts_cnn_fake_news/web/source.txt"
         ]
       }
     },
     {
-      "id": "yt_zCZZkBsIhso",
+      "id": "us_politics__white_house_fake_news_cnn_clip",
       "event": null,
-      "topic": null,
+      "topic": "us_politics",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=zCZZkBsIhso",
       "video_id": "zCZZkBsIhso",
@@ -62,20 +62,1576 @@
         "comments": 0
       },
       "collected_at": "2026-10-18T07:26:35+00:00",
-      "case_dir": "yt_zCZZkBsIhso",
+      "case_dir": "us_politics__white_house_fake_news_cnn_clip",
       "files": {
         "image": [
-          "yt_zCZZkBsIhso/image/zCZZkBsIhso.png"
+          "us_politics__white_house_fake_news_cnn_clip/image/zCZZkBsIhso.png"
         ],
         "text": [
-          "yt_zCZZkBsIhso/text/text.txt",
-          "yt_zCZZkBsIhso/text/subs.vtt"
+          "us_politics__white_house_fake_news_cnn_clip/text/text.txt",
+          "us_politics__white_house_fake_news_cnn_clip/text/subs.vtt"
         ],
         "reason": [
-          "yt_zCZZkBsIhso/reason/reason.txt"
+          "us_politics__white_house_fake_news_cnn_clip/reason/reason.txt"
         ],
         "web": [
-          "yt_zCZZkBsIhso/web/source.txt"
+          "us_politics__white_house_fake_news_cnn_clip/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__trump_fighting_fake_news",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=7BY8Qaj22Jg",
+      "video_id": "7BY8Qaj22Jg",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Trump: We are fighting fake news",
+      "metrics": {
+        "views": 153084,
+        "likes": 1605,
+        "comments": 716
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__trump_fighting_fake_news",
+      "files": {
+        "text": [
+          "us_politics__trump_fighting_fake_news/text/text.txt",
+          "us_politics__trump_fighting_fake_news/text/subs.vtt"
+        ],
+        "reason": [
+          "us_politics__trump_fighting_fake_news/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__trump_fighting_fake_news/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__trump_interrupts_media_cnn_shorts",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=IlnTJVGLwLw",
+      "video_id": "IlnTJVGLwLw",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Trump Interrupts Media, Calls CNN “Fake News… The Worst!” #shorts #trending #trump #viral #ai",
+      "metrics": {
+        "views": 186268,
+        "likes": 1093,
+        "comments": 231
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__trump_interrupts_media_cnn_shorts",
+      "files": {
+        "image": [
+          "us_politics__trump_interrupts_media_cnn_shorts/image/IlnTJVGLwLw.png"
+        ],
+        "text": [
+          "us_politics__trump_interrupts_media_cnn_shorts/text/text.txt",
+          "us_politics__trump_interrupts_media_cnn_shorts/text/subs.vtt"
+        ],
+        "reason": [
+          "us_politics__trump_interrupts_media_cnn_shorts/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__trump_interrupts_media_cnn_shorts/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__bbc_how_to_spot_fake_news",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=Pj4w0J6odJE",
+      "video_id": "Pj4w0J6odJE",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Fake News: How to spot it - BBC My World",
+      "metrics": {
+        "views": 56280,
+        "likes": 270,
+        "comments": 7
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "media_literacy__bbc_how_to_spot_fake_news",
+      "files": {
+        "image": [
+          "media_literacy__bbc_how_to_spot_fake_news/image/Pj4w0J6odJE.png"
+        ],
+        "text": [
+          "media_literacy__bbc_how_to_spot_fake_news/text/text.txt"
+        ],
+        "reason": [
+          "media_literacy__bbc_how_to_spot_fake_news/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__bbc_how_to_spot_fake_news/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__trump_calls_cnn_reporter_fake_news",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=zWzZQ9_0zhI",
+      "video_id": "zWzZQ9_0zhI",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Trump Calls CNN Reporter 'Fake News'",
+      "metrics": {
+        "views": 35250,
+        "likes": 417,
+        "comments": 32
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__trump_calls_cnn_reporter_fake_news",
+      "files": {
+        "image": [
+          "us_politics__trump_calls_cnn_reporter_fake_news/image/zWzZQ9_0zhI.png"
+        ],
+        "text": [
+          "us_politics__trump_calls_cnn_reporter_fake_news/text/text.txt",
+          "us_politics__trump_calls_cnn_reporter_fake_news/text/subs.vtt"
+        ],
+        "reason": [
+          "us_politics__trump_calls_cnn_reporter_fake_news/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__trump_calls_cnn_reporter_fake_news/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__trump_silences_cnn_reporter_shorts",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=sc9uFvYpm7Y",
+      "video_id": "sc9uFvYpm7Y",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Trump tells ‘FAKE NEWS’ CNN reporter to be quiet #shorts #foxnews #news #fox",
+      "metrics": {
+        "views": 184218,
+        "likes": 4976,
+        "comments": 1003
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__trump_silences_cnn_reporter_shorts",
+      "files": {
+        "image": [
+          "us_politics__trump_silences_cnn_reporter_shorts/image/sc9uFvYpm7Y.png"
+        ],
+        "text": [
+          "us_politics__trump_silences_cnn_reporter_shorts/text/text.txt"
+        ],
+        "reason": [
+          "us_politics__trump_silences_cnn_reporter_shorts/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__trump_silences_cnn_reporter_shorts/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "entertainment__ken_carson_fake_news_song",
+      "event": null,
+      "topic": "entertainment",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=_W56jDPdqTY",
+      "video_id": "_W56jDPdqTY",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Ken Carson - fake news (official audio)",
+      "metrics": {
+        "views": 116432,
+        "likes": 2984,
+        "comments": 185
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "entertainment__ken_carson_fake_news_song",
+      "files": {
+        "image": [
+          "entertainment__ken_carson_fake_news_song/image/_W56jDPdqTY.png"
+        ],
+        "text": [
+          "entertainment__ken_carson_fake_news_song/text/text.txt",
+          "entertainment__ken_carson_fake_news_song/text/subs.vtt"
+        ],
+        "reason": [
+          "entertainment__ken_carson_fake_news_song/reason/reason.txt"
+        ],
+        "web": [
+          "entertainment__ken_carson_fake_news_song/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__trump_welcomes_fake_news_media",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=g_rza9DCCi8",
+      "video_id": "g_rza9DCCi8",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "'I'd like to welcome the fake news media'",
+      "metrics": {
+        "views": 1114153,
+        "likes": 30290,
+        "comments": 1801
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__trump_welcomes_fake_news_media",
+      "files": {
+        "image": [
+          "us_politics__trump_welcomes_fake_news_media/image/g_rza9DCCi8.png"
+        ],
+        "text": [
+          "us_politics__trump_welcomes_fake_news_media/text/text.txt",
+          "us_politics__trump_welcomes_fake_news_media/text/subs.vtt"
+        ],
+        "reason": [
+          "us_politics__trump_welcomes_fake_news_media/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__trump_welcomes_fake_news_media/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__ai_slop_fake_news_lastweektonight",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=JSJee1YscYk",
+      "video_id": "JSJee1YscYk",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "AI Slop & Fake News #lastweektonight",
+      "metrics": {
+        "views": 503212,
+        "likes": 16527,
+        "comments": 172
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "media_literacy__ai_slop_fake_news_lastweektonight",
+      "files": {
+        "image": [
+          "media_literacy__ai_slop_fake_news_lastweektonight/image/JSJee1YscYk.png"
+        ],
+        "text": [
+          "media_literacy__ai_slop_fake_news_lastweektonight/text/text.txt",
+          "media_literacy__ai_slop_fake_news_lastweektonight/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__ai_slop_fake_news_lastweektonight/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__ai_slop_fake_news_lastweektonight/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__how_to_identify_fake_news",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=aJwnHV3X6dk",
+      "video_id": "aJwnHV3X6dk",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "How to identify Fake News? | What is Fake News? | Fact Check",
+      "metrics": {
+        "views": 16017,
+        "likes": 180,
+        "comments": 9
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "media_literacy__how_to_identify_fake_news",
+      "files": {
+        "image": [
+          "media_literacy__how_to_identify_fake_news/image/aJwnHV3X6dk.png"
+        ],
+        "text": [
+          "media_literacy__how_to_identify_fake_news/text/text.txt",
+          "media_literacy__how_to_identify_fake_news/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__how_to_identify_fake_news/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__how_to_identify_fake_news/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__anthropic_ceo_reacts_trump_cnn_attack",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=r3EkAHnW__E",
+      "video_id": "r3EkAHnW__E",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Trump Attacks CNN as ‘Fake News’, Watch Anthropic CEO’s Reaction",
+      "metrics": {
+        "views": 96110,
+        "likes": 346,
+        "comments": 167
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__anthropic_ceo_reacts_trump_cnn_attack",
+      "files": {
+        "image": [
+          "us_politics__anthropic_ceo_reacts_trump_cnn_attack/image/r3EkAHnW__E.png"
+        ],
+        "text": [
+          "us_politics__anthropic_ceo_reacts_trump_cnn_attack/text/text.txt"
+        ],
+        "reason": [
+          "us_politics__anthropic_ceo_reacts_trump_cnn_attack/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__anthropic_ceo_reacts_trump_cnn_attack/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "ph_politics__lacson_panelo_fake_news_feud",
+      "event": null,
+      "topic": "ph_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=0K1B7aNQul8",
+      "video_id": "0K1B7aNQul8",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "GRABE! PING LACSON HINAMON SI PAOLO PANELO! HULI ANG FAKE NEWS!",
+      "metrics": {
+        "views": 55325,
+        "likes": 3580,
+        "comments": 175
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "ph_politics__lacson_panelo_fake_news_feud",
+      "files": {
+        "image": [
+          "ph_politics__lacson_panelo_fake_news_feud/image/0K1B7aNQul8.png"
+        ],
+        "text": [
+          "ph_politics__lacson_panelo_fake_news_feud/text/text.txt"
+        ],
+        "reason": [
+          "ph_politics__lacson_panelo_fake_news_feud/reason/reason.txt"
+        ],
+        "web": [
+          "ph_politics__lacson_panelo_fake_news_feud/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__trump_refuses_cnn_question",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=KN7o0NErCiU",
+      "video_id": "KN7o0NErCiU",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "I Don’t Talk To CNN, It's Fake News: Trump Refuses CNN Question | #donaldtrump #cnn #tariffs",
+      "metrics": {
+        "views": 12597,
+        "likes": 69,
+        "comments": 4
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__trump_refuses_cnn_question",
+      "files": {
+        "image": [
+          "us_politics__trump_refuses_cnn_question/image/KN7o0NErCiU.png"
+        ],
+        "text": [
+          "us_politics__trump_refuses_cnn_question/text/text.txt",
+          "us_politics__trump_refuses_cnn_question/text/subs.vtt"
+        ],
+        "reason": [
+          "us_politics__trump_refuses_cnn_question/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__trump_refuses_cnn_question/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "spain_tv__la_semana_tarico_fake_news",
+      "event": null,
+      "topic": "spain_tv",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=KzlWl1qOt8A",
+      "video_id": "KzlWl1qOt8A",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "LA SEMANA DE TARICO FAKE NEWS I Programa Completo 17/10/26",
+      "metrics": {
+        "views": 3499,
+        "likes": 21,
+        "comments": 3
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "spain_tv__la_semana_tarico_fake_news",
+      "files": {
+        "image": [
+          "spain_tv__la_semana_tarico_fake_news/image/KzlWl1qOt8A.png"
+        ],
+        "text": [
+          "spain_tv__la_semana_tarico_fake_news/text/text.txt"
+        ],
+        "reason": [
+          "spain_tv__la_semana_tarico_fake_news/reason/reason.txt"
+        ],
+        "web": [
+          "spain_tv__la_semana_tarico_fake_news/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "brazil_politics__lula_aide_fake_news_probe",
+      "event": null,
+      "topic": "brazil_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=eOBKuVpgs4U",
+      "video_id": "eOBKuVpgs4U",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "BOMBA! Assessora de LULA e JANJA inevstigada pela PF por FAKE NEWS",
+      "metrics": {
+        "views": 281529,
+        "likes": 35652,
+        "comments": 795
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "brazil_politics__lula_aide_fake_news_probe",
+      "files": {
+        "image": [
+          "brazil_politics__lula_aide_fake_news_probe/image/eOBKuVpgs4U.png"
+        ],
+        "text": [
+          "brazil_politics__lula_aide_fake_news_probe/text/text.txt",
+          "brazil_politics__lula_aide_fake_news_probe/text/subs.vtt"
+        ],
+        "reason": [
+          "brazil_politics__lula_aide_fake_news_probe/reason/reason.txt"
+        ],
+        "web": [
+          "brazil_politics__lula_aide_fake_news_probe/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__trump_dodges_acosta_question",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=0cajxAGbZlM",
+      "video_id": "0cajxAGbZlM",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "\"CNN Is Fake News\" President Trump Dodges Jim Acosta Question Attempt",
+      "metrics": {
+        "views": 316940,
+        "likes": 4462,
+        "comments": 664
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__trump_dodges_acosta_question",
+      "files": {
+        "image": [
+          "us_politics__trump_dodges_acosta_question/image/0cajxAGbZlM.png"
+        ],
+        "text": [
+          "us_politics__trump_dodges_acosta_question/text/text.txt",
+          "us_politics__trump_dodges_acosta_question/text/subs.vtt"
+        ],
+        "reason": [
+          "us_politics__trump_dodges_acosta_question/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__trump_dodges_acosta_question/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__trump_calls_cnn_gutless_losers",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=O8a69dh3nwA",
+      "video_id": "O8a69dh3nwA",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Trump calls CNN gutless losers. \"It's all garbage. It's all fake news.\"",
+      "metrics": {
+        "views": 23083,
+        "likes": 439,
+        "comments": 101
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__trump_calls_cnn_gutless_losers",
+      "files": {
+        "image": [
+          "us_politics__trump_calls_cnn_gutless_losers/image/O8a69dh3nwA.png"
+        ],
+        "text": [
+          "us_politics__trump_calls_cnn_gutless_losers/text/text.txt",
+          "us_politics__trump_calls_cnn_gutless_losers/text/subs.vtt"
+        ],
+        "reason": [
+          "us_politics__trump_calls_cnn_gutless_losers/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__trump_calls_cnn_gutless_losers/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__trump_spars_cnn_anchor",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=UzH7eLdimwE",
+      "video_id": "UzH7eLdimwE",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Trump goes after 'fake news,' spars with 'low-rated' CNN anchor",
+      "metrics": {
+        "views": 2070002,
+        "likes": 40444,
+        "comments": 9066
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__trump_spars_cnn_anchor",
+      "files": {
+        "image": [
+          "us_politics__trump_spars_cnn_anchor/image/UzH7eLdimwE.png"
+        ],
+        "text": [
+          "us_politics__trump_spars_cnn_anchor/text/text.txt",
+          "us_politics__trump_spars_cnn_anchor/text/subs.vtt"
+        ],
+        "reason": [
+          "us_politics__trump_spars_cnn_anchor/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__trump_spars_cnn_anchor/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "entertainment__fake_news_pranks_parents",
+      "event": null,
+      "topic": "entertainment",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=5Hd14zAoD_8",
+      "video_id": "5Hd14zAoD_8",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Most hilarious & extreme Fake News Pranks on parents",
+      "metrics": {
+        "views": 55584,
+        "likes": 448,
+        "comments": 10
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "entertainment__fake_news_pranks_parents",
+      "files": {
+        "image": [
+          "entertainment__fake_news_pranks_parents/image/5Hd14zAoD_8.png"
+        ],
+        "text": [
+          "entertainment__fake_news_pranks_parents/text/text.txt",
+          "entertainment__fake_news_pranks_parents/text/subs.vtt"
+        ],
+        "reason": [
+          "entertainment__fake_news_pranks_parents/reason/reason.txt"
+        ],
+        "web": [
+          "entertainment__fake_news_pranks_parents/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__fact_and_fiction_critical_thinking",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=E_2CwOpt0NY",
+      "video_id": "E_2CwOpt0NY",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Fake News: Fact & Fiction - Episode 6: How to be a critical thinker",
+      "metrics": {
+        "views": 146952,
+        "likes": 4943,
+        "comments": 113
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "media_literacy__fact_and_fiction_critical_thinking",
+      "files": {
+        "image": [
+          "media_literacy__fact_and_fiction_critical_thinking/image/E_2CwOpt0NY.png"
+        ],
+        "text": [
+          "media_literacy__fact_and_fiction_critical_thinking/text/text.txt"
+        ],
+        "reason": [
+          "media_literacy__fact_and_fiction_critical_thinking/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__fact_and_fiction_critical_thinking/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "france_media__fake_news_study_politician_panic",
+      "event": null,
+      "topic": "france_media",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=mnT6zhb72qw",
+      "video_id": "mnT6zhb72qw",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "FAKE NEWS : L'étude qui fait paniquer les politiciens",
+      "metrics": {
+        "views": 11924,
+        "likes": 1133,
+        "comments": 301
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "france_media__fake_news_study_politician_panic",
+      "files": {
+        "image": [
+          "france_media__fake_news_study_politician_panic/image/mnT6zhb72qw.png"
+        ],
+        "text": [
+          "france_media__fake_news_study_politician_panic/text/text.txt"
+        ],
+        "reason": [
+          "france_media__fake_news_study_politician_panic/reason/reason.txt"
+        ],
+        "web": [
+          "france_media__fake_news_study_politician_panic/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "us_politics__trump_collins_treasonous_clash",
+      "event": null,
+      "topic": "us_politics",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=gOmGuPZlrQE",
+      "video_id": "gOmGuPZlrQE",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "‘Fake News' Trump Clashes With Kaitlan Collins, Calls 'Treasonous'",
+      "metrics": {
+        "views": 100589,
+        "likes": 926,
+        "comments": 650
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "us_politics__trump_collins_treasonous_clash",
+      "files": {
+        "image": [
+          "us_politics__trump_collins_treasonous_clash/image/gOmGuPZlrQE.png"
+        ],
+        "text": [
+          "us_politics__trump_collins_treasonous_clash/text/text.txt"
+        ],
+        "reason": [
+          "us_politics__trump_collins_treasonous_clash/reason/reason.txt"
+        ],
+        "web": [
+          "us_politics__trump_collins_treasonous_clash/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "india_pakistan__anti_pakistan_fake_news_india",
+      "event": null,
+      "topic": "india_pakistan",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=xpTqt73woYM",
+      "video_id": "xpTqt73woYM",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "More anti-Pakistan fake news churns out of India",
+      "metrics": {
+        "views": 1071491,
+        "likes": 34208,
+        "comments": 5060
+      },
+      "collected_at": "2026-10-18T07:26:35+00:00",
+      "case_dir": "india_pakistan__anti_pakistan_fake_news_india",
+      "files": {
+        "text": [
+          "india_pakistan__anti_pakistan_fake_news_india/text/text.txt"
+        ],
+        "reason": [
+          "india_pakistan__anti_pakistan_fake_news_india/reason/reason.txt"
+        ],
+        "web": [
+          "india_pakistan__anti_pakistan_fake_news_india/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__why_people_fall_for_misinformation",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=hz6GULbowAk",
+      "video_id": "hz6GULbowAk",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Why people fall for misinformation - Joseph Isaac",
+      "metrics": {
+        "views": 772791,
+        "likes": 23264,
+        "comments": 1003
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__why_people_fall_for_misinformation",
+      "files": {
+        "image": [
+          "media_literacy__why_people_fall_for_misinformation/image/hz6GULbowAk.png"
+        ],
+        "text": [
+          "media_literacy__why_people_fall_for_misinformation/text/text.txt",
+          "media_literacy__why_people_fall_for_misinformation/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__why_people_fall_for_misinformation/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__why_people_fall_for_misinformation/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__protect_truth_sinan_aral",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=-7ORAKULel4",
+      "video_id": "-7ORAKULel4",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "How we can protect truth in the age of misinformation | Sinan Aral",
+      "metrics": {
+        "views": 274711,
+        "likes": 5426,
+        "comments": 417
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__protect_truth_sinan_aral",
+      "files": {
+        "image": [
+          "media_literacy__protect_truth_sinan_aral/image/-7ORAKULel4.png"
+        ],
+        "text": [
+          "media_literacy__protect_truth_sinan_aral/text/text.txt",
+          "media_literacy__protect_truth_sinan_aral/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__protect_truth_sinan_aral/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__protect_truth_sinan_aral/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__misinformation_distrust_science_oreskes",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=DbTHJWev0nQ",
+      "video_id": "DbTHJWev0nQ",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Misinformation and distrust in science - with Naomi Oreskes",
+      "metrics": {
+        "views": 24663,
+        "likes": 1739,
+        "comments": 447
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__misinformation_distrust_science_oreskes",
+      "files": {
+        "image": [
+          "media_literacy__misinformation_distrust_science_oreskes/image/DbTHJWev0nQ.png"
+        ],
+        "text": [
+          "media_literacy__misinformation_distrust_science_oreskes/text/text.txt",
+          "media_literacy__misinformation_distrust_science_oreskes/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__misinformation_distrust_science_oreskes/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__misinformation_distrust_science_oreskes/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "entertainment__heard_you_saying_misinformation_meme",
+      "event": null,
+      "topic": "entertainment",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=jDEOrqE3bk0",
+      "video_id": "jDEOrqE3bk0",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "heard you saying misinformation",
+      "metrics": {
+        "views": 7576592,
+        "likes": 419778,
+        "comments": 4320
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "entertainment__heard_you_saying_misinformation_meme",
+      "files": {
+        "image": [
+          "entertainment__heard_you_saying_misinformation_meme/image/jDEOrqE3bk0.png"
+        ],
+        "text": [
+          "entertainment__heard_you_saying_misinformation_meme/text/text.txt",
+          "entertainment__heard_you_saying_misinformation_meme/text/subs.vtt"
+        ],
+        "reason": [
+          "entertainment__heard_you_saying_misinformation_meme/reason/reason.txt"
+        ],
+        "web": [
+          "entertainment__heard_you_saying_misinformation_meme/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__how_false_news_spreads_ted",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=cSKGa_7XJkg",
+      "video_id": "cSKGa_7XJkg",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "How false news can spread - Noah Tavlin",
+      "metrics": {
+        "views": 2635085,
+        "likes": 32634,
+        "comments": 1609
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__how_false_news_spreads_ted",
+      "files": {
+        "image": [
+          "media_literacy__how_false_news_spreads_ted/image/cSKGa_7XJkg.png"
+        ],
+        "text": [
+          "media_literacy__how_false_news_spreads_ted/text/text.txt",
+          "media_literacy__how_false_news_spreads_ted/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__how_false_news_spreads_ted/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__how_false_news_spreads_ted/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__misinformation_age_critical_thinking",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=0z5eJdlj9Tk",
+      "video_id": "0z5eJdlj9Tk",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "The Misinformation Age: How The Internet Killed Critical Thinking",
+      "metrics": {
+        "views": 422261,
+        "likes": 18872,
+        "comments": 1594
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__misinformation_age_critical_thinking",
+      "files": {
+        "image": [
+          "media_literacy__misinformation_age_critical_thinking/image/0z5eJdlj9Tk.png"
+        ],
+        "text": [
+          "media_literacy__misinformation_age_critical_thinking/text/text.txt",
+          "media_literacy__misinformation_age_critical_thinking/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__misinformation_age_critical_thinking/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__misinformation_age_critical_thinking/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__misinformation_john_oliver",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=l5jtFqWq5iU",
+      "video_id": "l5jtFqWq5iU",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Misinformation: Last Week Tonight with John Oliver (HBO)",
+      "metrics": {
+        "views": 7567274,
+        "likes": 166861,
+        "comments": 14078
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__misinformation_john_oliver",
+      "files": {
+        "image": [
+          "media_literacy__misinformation_john_oliver/image/l5jtFqWq5iU.png"
+        ],
+        "text": [
+          "media_literacy__misinformation_john_oliver/text/text.txt",
+          "media_literacy__misinformation_john_oliver/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__misinformation_john_oliver/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__misinformation_john_oliver/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__psychology_of_misinformation",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=_-mgdj7xjj0",
+      "video_id": "_-mgdj7xjj0",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Explained in 60 Seconds: The Psychology of Misinformation",
+      "metrics": {
+        "views": 6290,
+        "likes": 127,
+        "comments": 9
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__psychology_of_misinformation",
+      "files": {
+        "image": [
+          "media_literacy__psychology_of_misinformation/image/_-mgdj7xjj0.png"
+        ],
+        "text": [
+          "media_literacy__psychology_of_misinformation/text/text.txt",
+          "media_literacy__psychology_of_misinformation/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__psychology_of_misinformation/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__psychology_of_misinformation/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__solid_10_minutes_misinformation",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=oJnp3fQ_SQA",
+      "video_id": "oJnp3fQ_SQA",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "A Solid 10 Minutes of Misinformation",
+      "metrics": {
+        "views": 184825,
+        "likes": 21412,
+        "comments": 1540
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__solid_10_minutes_misinformation",
+      "files": {
+        "image": [
+          "media_literacy__solid_10_minutes_misinformation/image/oJnp3fQ_SQA.png"
+        ],
+        "text": [
+          "media_literacy__solid_10_minutes_misinformation/text/text.txt",
+          "media_literacy__solid_10_minutes_misinformation/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__solid_10_minutes_misinformation/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__solid_10_minutes_misinformation/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__the_misinformation_effect",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=iMPIWkFtd88",
+      "video_id": "iMPIWkFtd88",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "The Misinformation Effect",
+      "metrics": {
+        "views": 156828,
+        "likes": 654,
+        "comments": 17
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__the_misinformation_effect",
+      "files": {
+        "text": [
+          "media_literacy__the_misinformation_effect/text/text.txt",
+          "media_literacy__the_misinformation_effect/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__the_misinformation_effect/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__the_misinformation_effect/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__misinfo_spreads_faster_the_stream",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=KL-Js6bq6uU",
+      "video_id": "KL-Js6bq6uU",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Why does misinformation spread faster than truth? | The Stream",
+      "metrics": {
+        "views": 3975,
+        "likes": 102,
+        "comments": 25
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__misinfo_spreads_faster_the_stream",
+      "files": {
+        "image": [
+          "media_literacy__misinfo_spreads_faster_the_stream/image/KL-Js6bq6uU.png"
+        ],
+        "text": [
+          "media_literacy__misinfo_spreads_faster_the_stream/text/text.txt",
+          "media_literacy__misinfo_spreads_faster_the_stream/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__misinfo_spreads_faster_the_stream/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__misinfo_spreads_faster_the_stream/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__real_news_vs_fake_news",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=wPE6CkAW9QY",
+      "video_id": "wPE6CkAW9QY",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Real News vs. Fake News",
+      "metrics": {
+        "views": 141741,
+        "likes": 790,
+        "comments": 0
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__real_news_vs_fake_news",
+      "files": {
+        "image": [
+          "media_literacy__real_news_vs_fake_news/image/wPE6CkAW9QY.png"
+        ],
+        "text": [
+          "media_literacy__real_news_vs_fake_news/text/text.txt"
+        ],
+        "reason": [
+          "media_literacy__real_news_vs_fake_news/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__real_news_vs_fake_news/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__seven_types_of_misinformation",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=6qQV4-6N3oc",
+      "video_id": "6qQV4-6N3oc",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "7 types of misinformation",
+      "metrics": {
+        "views": 2335,
+        "likes": 21,
+        "comments": 2
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__seven_types_of_misinformation",
+      "files": {
+        "image": [
+          "media_literacy__seven_types_of_misinformation/image/6qQV4-6N3oc.png"
+        ],
+        "text": [
+          "media_literacy__seven_types_of_misinformation/text/text.txt",
+          "media_literacy__seven_types_of_misinformation/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__seven_types_of_misinformation/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__seven_types_of_misinformation/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__solid_13_minutes_misinformation",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=naHJUoA5dns",
+      "video_id": "naHJUoA5dns",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "A Solid 13 Minutes of Misinformation",
+      "metrics": {
+        "views": 99398,
+        "likes": 9319,
+        "comments": 928
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__solid_13_minutes_misinformation",
+      "files": {
+        "image": [
+          "media_literacy__solid_13_minutes_misinformation/image/naHJUoA5dns.png"
+        ],
+        "text": [
+          "media_literacy__solid_13_minutes_misinformation/text/text.txt",
+          "media_literacy__solid_13_minutes_misinformation/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__solid_13_minutes_misinformation/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__solid_13_minutes_misinformation/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__fight_misinformation_jorgenson_ted",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=3yGSaeOUHik",
+      "video_id": "3yGSaeOUHik",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "A Surprisingly Effective Way to Fight Misinformation | Dave Jorgenson | TED",
+      "metrics": {
+        "views": 170116,
+        "likes": 7980,
+        "comments": 278
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__fight_misinformation_jorgenson_ted",
+      "files": {
+        "image": [
+          "media_literacy__fight_misinformation_jorgenson_ted/image/3yGSaeOUHik.png"
+        ],
+        "text": [
+          "media_literacy__fight_misinformation_jorgenson_ted/text/text.txt",
+          "media_literacy__fight_misinformation_jorgenson_ted/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__fight_misinformation_jorgenson_ted/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__fight_misinformation_jorgenson_ted/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__fake_news_generator_bbc",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=UAy6PI5UtSU",
+      "video_id": "UAy6PI5UtSU",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Fake News Generator: Who starts viral misinformation?  - BBC News",
+      "metrics": {
+        "views": 171360,
+        "likes": 1279,
+        "comments": 1024
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__fake_news_generator_bbc",
+      "files": {
+        "image": [
+          "media_literacy__fake_news_generator_bbc/image/UAy6PI5UtSU.png"
+        ],
+        "text": [
+          "media_literacy__fake_news_generator_bbc/text/text.txt",
+          "media_literacy__fake_news_generator_bbc/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__fake_news_generator_bbc/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__fake_news_generator_bbc/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__btn_misinfo_disinfo_explainer",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=grnMnNNq8M8",
+      "video_id": "grnMnNNq8M8",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Why is there so much misinformation and disinformation? - BTN High",
+      "metrics": {
+        "views": 10339,
+        "likes": 84,
+        "comments": 14
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__btn_misinfo_disinfo_explainer",
+      "files": {
+        "image": [
+          "media_literacy__btn_misinfo_disinfo_explainer/image/grnMnNNq8M8.png"
+        ],
+        "text": [
+          "media_literacy__btn_misinfo_disinfo_explainer/text/text.txt",
+          "media_literacy__btn_misinfo_disinfo_explainer/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__btn_misinfo_disinfo_explainer/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__btn_misinfo_disinfo_explainer/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__loftus_misinformation_effect_nobel",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=3RKDVB6qizA",
+      "video_id": "3RKDVB6qizA",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "The misinformation effect | Elizabeth Loftus | Nobel Prize Summit 2023",
+      "metrics": {
+        "views": 38777,
+        "likes": 506,
+        "comments": 26
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__loftus_misinformation_effect_nobel",
+      "files": {
+        "image": [
+          "media_literacy__loftus_misinformation_effect_nobel/image/3RKDVB6qizA.png"
+        ],
+        "text": [
+          "media_literacy__loftus_misinformation_effect_nobel/text/text.txt",
+          "media_literacy__loftus_misinformation_effect_nobel/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__loftus_misinformation_effect_nobel/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__loftus_misinformation_effect_nobel/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__disinfo_vs_misinfo_the_quint",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=q_3ULhzvJcs",
+      "video_id": "q_3ULhzvJcs",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "What is The Difference Between Disinformation and Misinformation? | The Quint",
+      "metrics": {
+        "views": 11045,
+        "likes": 170,
+        "comments": 2
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__disinfo_vs_misinfo_the_quint",
+      "files": {
+        "image": [
+          "media_literacy__disinfo_vs_misinfo_the_quint/image/q_3ULhzvJcs.png"
+        ],
+        "text": [
+          "media_literacy__disinfo_vs_misinfo_the_quint/text/text.txt",
+          "media_literacy__disinfo_vs_misinfo_the_quint/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__disinfo_vs_misinfo_the_quint/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__disinfo_vs_misinfo_the_quint/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__unmasking_misinformation_tedx",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=TynQMyr8yzo",
+      "video_id": "TynQMyr8yzo",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Unmasking Misinformation | Chris Coward | TEDxSnoIsleLibraries",
+      "metrics": {
+        "views": 47726,
+        "likes": 1354,
+        "comments": 311
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__unmasking_misinformation_tedx",
+      "files": {
+        "image": [
+          "media_literacy__unmasking_misinformation_tedx/image/TynQMyr8yzo.png"
+        ],
+        "text": [
+          "media_literacy__unmasking_misinformation_tedx/text/text.txt",
+          "media_literacy__unmasking_misinformation_tedx/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__unmasking_misinformation_tedx/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__unmasking_misinformation_tedx/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__solid_11_minutes_misinformation",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=csUa0MfPl2w",
+      "video_id": "csUa0MfPl2w",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "A Solid 11 Minutes of Misinformation",
+      "metrics": {
+        "views": 115652,
+        "likes": 10591,
+        "comments": 928
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__solid_11_minutes_misinformation",
+      "files": {
+        "image": [
+          "media_literacy__solid_11_minutes_misinformation/image/csUa0MfPl2w.png"
+        ],
+        "text": [
+          "media_literacy__solid_11_minutes_misinformation/text/text.txt",
+          "media_literacy__solid_11_minutes_misinformation/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__solid_11_minutes_misinformation/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__solid_11_minutes_misinformation/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__dont_be_fooled_three_types",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=I17KmeKvoKE",
+      "video_id": "I17KmeKvoKE",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Misinformation vs Disinformation vs Malinformation: Don't Be Fooled!",
+      "metrics": {
+        "views": 1854,
+        "likes": 15,
+        "comments": 2
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__dont_be_fooled_three_types",
+      "files": {
+        "image": [
+          "media_literacy__dont_be_fooled_three_types/image/I17KmeKvoKE.png"
+        ],
+        "text": [
+          "media_literacy__dont_be_fooled_three_types/text/text.txt",
+          "media_literacy__dont_be_fooled_three_types/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__dont_be_fooled_three_types/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__dont_be_fooled_three_types/web/source.txt"
+        ]
+      }
+    },
+    {
+      "id": "media_literacy__rogan_destiny_misinformation",
+      "event": null,
+      "topic": "media_literacy",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=uUr3yYG2Hkg",
+      "video_id": "uUr3yYG2Hkg",
+      "label": null,
+      "modality_type": null,
+      "reason": null,
+      "annotator": null,
+      "title": "Joe Rogan, Destiny and Misinformation",
+      "metrics": {
+        "views": 791179,
+        "likes": 50531,
+        "comments": 4520
+      },
+      "collected_at": "2026-10-18T07:26:38+00:00",
+      "case_dir": "media_literacy__rogan_destiny_misinformation",
+      "files": {
+        "image": [
+          "media_literacy__rogan_destiny_misinformation/image/uUr3yYG2Hkg.png"
+        ],
+        "text": [
+          "media_literacy__rogan_destiny_misinformation/text/text.txt",
+          "media_literacy__rogan_destiny_misinformation/text/subs.vtt"
+        ],
+        "reason": [
+          "media_literacy__rogan_destiny_misinformation/reason/reason.txt"
+        ],
+        "web": [
+          "media_literacy__rogan_destiny_misinformation/web/source.txt"
         ]
       }
     }

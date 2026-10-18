@@ -4,7 +4,10 @@ r"""把原始采集层（metadata + media）组装成"案例制"数据集层（�
   metadata/youtube_meta.jsonl + media/youtube/{video_id}/*
 案例层（事件制，研究/发布友好，本脚本生成）：
   dataset/index.json                       总索引（ex.json 风格，入库）
-  dataset/yt_{video_id}/                   一个案例一个文件夹
+  dataset/{topic}__{event_slug}[__verdict]/  一个案例一个文件夹（语义化命名）
+      命名映射表：metadata/case_names.json（video_id -> topic/slug/verdict），
+      无映射的视频自动从标题取词兜底（topic=misc）；
+      __true/__false 后缀仅在 verdict 有核查/标注凭据时添加，凭标题猜测不加。
     ├── image/    缩略图 png（+日后关键帧、证据图）
     ├── video/    mp4（硬链接，不占双份空间）
     ├── wav/      16kHz 单声道 wav（ASR/声学特征友好）
@@ -37,6 +40,41 @@ MEDIA_YT = MEDIA_DIR / "youtube"
 LABEL_SHEET = METADATA_DIR / "label_sheet.csv"
 SUBDIRS = ["image", "video", "wav", "text", "reason", "web"]
 LABEL_MAP = {"1": "fake", "0": "real", "-1": "unverified"}
+NAMES_FILE = METADATA_DIR / "case_names.json"
+_TITLE_STOP = {"the", "a", "an", "and", "or", "of", "to", "in", "for", "on", "is", "are",
+               "was", "were", "you", "your", "we", "it", "its", "with", "how", "what",
+               "why", "who", "vs", "this", "that", "be", "been", "at", "from", "as",
+               "by", "not", "do", "does", "did", "can", "could", "should"}
+
+
+def load_names() -> dict:
+    """语义化命名映射表：video_id -> {topic, slug, verdict?}。"""
+    if NAMES_FILE.exists():
+        return json.loads(NAMES_FILE.read_text(encoding="utf-8"))
+    return {}
+
+
+def auto_name(meta: dict) -> dict:
+    """映射表没有时的兜底：从标题取实词拼 slug，主题记 misc。"""
+    import re
+    words = [w for w in re.findall(r"[a-z]{3,}", (meta.get("title") or "").lower())
+             if w not in _TITLE_STOP][:6]
+    return {"topic": "misc", "slug": "_".join(words) or meta["video_id"]}
+
+
+def case_name(meta: dict, names: dict, used: set) -> tuple[str, str]:
+    """生成案例文件夹名：{topic}__{slug}[__verdict]，撞名追加 video_id 前 8 位。"""
+    info = names.get(meta["video_id"]) or auto_name(meta)
+    topic = info.get("topic", "misc")
+    slug = info.get("slug") or meta["video_id"]
+    name = f"{topic}__{slug}"
+    verdict = info.get("verdict")
+    if verdict in ("true", "false"):
+        name += f"__{verdict}"
+    if name in used:  # 撞名保唯一
+        name += f"_{meta['video_id'][:8]}"
+    used.add(name)
+    return name, topic
 
 
 def load_labels() -> dict:
@@ -94,9 +132,10 @@ def ffmpeg_run(args: list[str]) -> bool:
         return False
 
 
-def build_case(meta: dict, media: dict, label: dict | None, ff: str | None) -> dict:
+def build_case(meta: dict, media: dict, label: dict | None, ff: str | None,
+               name: str, topic: str) -> dict:
     vid = meta["video_id"]
-    case_dir = DATASET_DIR / f"yt_{vid}"
+    case_dir = DATASET_DIR / name
     for sub in SUBDIRS:
         (case_dir / sub).mkdir(parents=True, exist_ok=True)
 
@@ -108,13 +147,13 @@ def build_case(meta: dict, media: dict, label: dict | None, ff: str | None) -> d
     if mp4 and mp4.exists():
         dst = case_dir / "video" / f"{vid}.mp4"
         link_or_copy(mp4, dst)
-        files_out["video"].append(str(dst.relative_to(DATASET_DIR)).replace("\\", "/"))
+        files_out["video"].append(f"{name}/video/{vid}.mp4")
         # wav/：16kHz 单声道，ASR 友好
         wav_dst = case_dir / "wav" / f"{vid}.wav"
         if not wav_dst.exists() and ff:
             ffmpeg_run(["-i", str(mp4), "-vn", "-ac", "1", "-ar", "16000", str(wav_dst)])
         if wav_dst.exists():
-            files_out["wav"].append(str(wav_dst.relative_to(DATASET_DIR)).replace("\\", "/"))
+            files_out["wav"].append(f"{name}/wav/{vid}.wav")
 
     # audio 模式下载的 m4a（没有 mp4 时也能出 wav）
     m4a = media_files.get(f"{vid}.m4a")
@@ -122,7 +161,7 @@ def build_case(meta: dict, media: dict, label: dict | None, ff: str | None) -> d
         wav_dst = case_dir / "wav" / f"{vid}.wav"
         ffmpeg_run(["-i", str(m4a), "-vn", "-ac", "1", "-ar", "16000", str(wav_dst)])
         if wav_dst.exists():
-            files_out["wav"].append(str(wav_dst.relative_to(DATASET_DIR)).replace("\\", "/"))
+            files_out["wav"].append(f"{name}/wav/{vid}.wav")
 
     # image/：缩略图 webp -> png（转换失败则原样复制）
     thumb = media_files.get(f"{vid}.webp")
@@ -131,40 +170,40 @@ def build_case(meta: dict, media: dict, label: dict | None, ff: str | None) -> d
         ok = ff and ffmpeg_run(["-i", str(thumb), str(png_dst)])
         if not (ok and png_dst.exists()):
             link_or_copy(thumb, case_dir / "image" / f"{vid}.webp")
-            files_out["image"].append(f"yt_{vid}/image/{vid}.webp")
+            files_out["image"].append(f"{name}/image/{vid}.webp")
         else:
-            files_out["image"].append(f"yt_{vid}/image/{vid}.png")
+            files_out["image"].append(f"{name}/image/{vid}.png")
 
     # text/：标题+简介 + 字幕
     text_parts = [f"# {meta.get('title', '')}", "", meta.get("description") or ""]
     subs_src = media_files.get(f"{vid}.en.vtt") or media_files.get(f"{vid}.en-orig.vtt")
     if subs_src and subs_src.exists():
         shutil.copy2(subs_src, case_dir / "text" / "subs.vtt")
-        files_out["text"].append(f"yt_{vid}/text/subs.vtt")
+        files_out["text"].append(f"{name}/text/subs.vtt")
         text_parts += ["", "## 字幕（en，自动）", vtt_to_text(subs_src)]
     text_dst = case_dir / "text" / "text.txt"
     text_dst.write_text("\n".join(text_parts).strip() + "\n", encoding="utf-8")
-    files_out["text"].insert(0, f"yt_{vid}/text/text.txt")
+    files_out["text"].insert(0, f"{name}/text/text.txt")
 
     # reason/ + label（来自标注表）
     rationale = (label or {}).get("rationale", "").strip()
     if not rationale:
         rationale = "（待标注）"
     (case_dir / "reason" / "reason.txt").write_text(rationale + "\n", encoding="utf-8")
-    files_out["reason"].append(f"yt_{vid}/reason/reason.txt")
+    files_out["reason"].append(f"{name}/reason/reason.txt")
 
     # web/：来源与证据（现阶段记 URL，二期换网页快照）
     ev = (label or {}).get("evidence_url", "").strip()
     (case_dir / "web" / "source.txt").write_text(
         f"source_url: {meta.get('watch_url', '')}\n"
         f"evidence_url: {ev or '（待核查对齐）'}\n", encoding="utf-8")
-    files_out["web"].append(f"yt_{vid}/web/source.txt")
+    files_out["web"].append(f"{name}/web/source.txt")
 
     is_fake = (label or {}).get("is_fake")
     return {
-        "id": f"yt_{vid}",
+        "id": name,
         "event": None,
-        "topic": None,
+        "topic": topic,
         "platform": "youtube",
         "url": meta.get("watch_url"),
         "video_id": vid,
@@ -176,7 +215,7 @@ def build_case(meta: dict, media: dict, label: dict | None, ff: str | None) -> d
         "metrics": {"views": meta.get("view_count"), "likes": meta.get("like_count"),
                     "comments": meta.get("comment_count")},
         "collected_at": meta.get("collected_at"),
-        "case_dir": f"yt_{vid}",
+        "case_dir": name,
         "files": {k: v for k, v in files_out.items() if v},
     }
 
@@ -202,6 +241,8 @@ def main() -> None:
                 media_map[r.get("video_id")] = r
 
     targets = a.vids.split(",") if a.vids else None
+    names = load_names()
+    used: set = set()
     cases, skipped = [], 0
     for meta in read_jsonl(METADATA_DIR / "youtube_meta.jsonl"):
         if meta.get("mode") == "mock":
@@ -212,7 +253,8 @@ def main() -> None:
         if not media_map.get(vid):
             skipped += 1
             continue  # 没下过任何媒体的暂不建案
-        cases.append(build_case(meta, media_map[vid], labels.get(vid), ff))
+        name, topic = case_name(meta, names, used)
+        cases.append(build_case(meta, media_map[vid], labels.get(vid), ff, name, topic))
 
     index = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),

@@ -1,0 +1,707 @@
+# Why does misinformation spread faster than truth? | The Stream
+
+From bots pushing ready-made talking points, to AI generating information that isn’t always reliable, to pages distorting images and bending facts - online misinformation is everywhere. So how can people tell what’s real? And is it even possible to build immunity against misinformation in today’s digital world?
+
+Presenter: Stefanie Dekker
+
+Guests:
+Runa Engen - Editor-in-chief, Faktisk
+Jon Roozenbeek - Lecturer in psychology, University of Cambridge
+Marc Owen Jones - Professor of media analytics, Northwestern University
+
+Subscribe to our channel: http://bit.ly/AJSubscribe
+Follow us on X : https://twitter.com/AJEnglish
+Find us on Facebook: https://www.facebook.com/aljazeera
+Check our website: http://www.aljazeera.com/
+Check out our Instagram page: https://www.instagram.com/aljazeeraenglish/
+Download AJE Mobile App: https://aje.io/AJEMobile
+ 
+#aljazeera
+#aljazeeraenglish
+#aljazeeranewslive
+
+## 字幕（en，自动）
+Fact or fiction? It's becoming
+increasingly hard to tell in our online
+world. From misleading bots to AI,
+sometimes getting it wrong to
+manipulated messages, online
+misinformation and disinformation is
+spreading. So, how can people uncover
+the actual truth? And is there a way to
+be immune to misinformation in a digital
+world? I'm Stephanie Decker and this is
+the street.
+&gt;&gt; Do not believe everything you see on Tik
+Tok. People will just be like talking
+about things or describing things and I
+look into it and it's just false and
+there's almost never anyone expressing a
+single ounce of skepticism in the
+comments.
+&gt;&gt; I truly cannot believe what just
+happened. The Tik Tok misinformation
+situation is so out of control. No hate
+to that creator, but that is the
+weirdest piece of misinformation I've
+probably ever come across online.
+&gt;&gt; I'm watching like very big time creators
+who have very big followings just say
+blatant misinformation, just pedalling
+blatant misinformation. And it's like
+that's a very dangerous thing to do.
+&gt;&gt; Is that true?
+&gt;&gt; No. No, you idiots. That's just how
+susceptible we all are to
+misinformation. And it doesn't matter
+what app you use. Now, every day people
+around the world are exposed to a
+massive amount of online content. And
+while it is informative, a large part of
+it is unfortunately manipulated and
+misleading. Well, today we're looking
+into the ways that misinformation
+spreads online. How can we tell what's
+correct and what's clickbait? Well, to
+discuss all of this, we are first joined
+by John Rosenbeek. He's a lecturer in
+psychology at the University of
+Cambridge and he joins us from London.
+We also have Runa Enen. is the
+editor-inchief of Factisk, a Norwegian
+fact-checking organization that
+investigates misinformation and verifies
+content often about war and conflict.
+And she joins us from Oslo. And later
+here in the studio, I'll be joined by
+Mark Owen joins. He's from Northwestern
+University and he specializes in
+disinformation.
+Now, before we start our discussion,
+let's take a look at a recent survey on
+what people consider the most
+threatening issues today. Now, this
+might surprise you. This is a poll by
+Pew Research Center and it found that
+adults in 25 countries across different
+continents see the online spread of
+misinformation as the number one threat
+today. Now that's ahead of the state of
+the global economy which comes in second
+and in third place terrorism. Runa, let
+me start with you. You are fact-checking
+and verifying content online. How much
+of a problem would you say
+when it comes to our online world?
+&gt;&gt; Well, first of all, uh it's much more a
+problem that we see uh when you look at
+social media like Tik Tok and it's been
+very apparent because Norway has just
+been in the middle of an election, but
+this I guess is true anywhere. Um you
+see these um participants in the debate
+on Tik Tok spreading misinformation
+unfounded, unsubstantiated
+um claims and nobody's really handling
+it from the traditional media. We're not
+really there to do any factchecking or
+bring any uh substantiated evidence to
+the conversation which is a huge problem
+for us because these um call them lies
+or untruths they get to spread quite
+quickly uh to a massive amount of people
+and we don't really have any ways of
+tracking it knowing what sort of posts
+are going viral at the moment because
+that's not a part of Tik Tok's platform.
+Uh so we see a lot of misinformation
+spreading that way and we also see a lot
+of AI generated posts spreading that
+way.
+Now the challenge with misinformation is
+not new. Researchers have been sounding
+the alarm for years as highlighted by
+Alazer's own documentary called the war
+on truth from Alazer Untangles. Now this
+was the largest ever study of the spread
+of false news online carried out in
+2018.
+A comprehensive study by researchers at
+the Massachusetts Institute of
+Technology analyzed approximately
+126,000 stories tweeted by 3 million
+users over more than a decade. The
+findings: false news stories are about
+70% more likely to be retweeted than
+true ones. Moreover, these falsehoods
+reach 1,500 people six times faster than
+accurate stories. The study found that
+humans, not bots, are primarily
+responsible for the rapid spread of
+false news. People didn't just believe
+the lie. They wanted to believe it.
+Because beyond politics, beyond the
+facts and figures, the lie had something
+the truth often lacks. A story. John,
+you came up with a study called the
+inoculation technique, which is supposed
+to help us identify what is right and
+what is wrong, what is the truth. Can
+you break that down for us in a
+simplified way? How can we protect
+ourselves against what isn't true
+online?
+&gt;&gt; Um, yes. So inoculation theory is a
+theory from psychology and communication
+science where the idea is that u you
+expose yourself to a weakened version of
+the misinformation which then builds
+what you might call cognitive antibodies
+between rackets
+uh against future manipulation and
+misinformation.
+Uh so the idea is that it's analogous to
+a real vaccine right where uh a vaccine
+is a weakened pathogen a weakened virus
+let's say that when you introduce it to
+the body it build the body builds um
+antibodies against future infection and
+you're better protected and the idea
+here is that if you for example role
+play as someone who spreads
+misinformation or if you see like a
+small but harmless piece of
+misinformation you start to think about
+like why it might be misleading and why
+it might uh persuade people and then
+you're less likely to be persuaded by it
+next time round. And you can do that in
+many ways, but one of the ways that
+we've uh done this is through uh games.
+So, we have some games that we've
+published that people can play where you
+play as the the bad guy, if you will.
+You're the one spreading the fake news
+to other people. And in so doing, uh our
+research also shows uh you become better
+at identifying it in.
+&gt;&gt; Is that something that's being applied
+like to people in schools? like is this
+being because misinformation as we we
+said there is so sort of widespread is
+this something that people are actively
+partaking in because it sounds like it's
+something that is needed.
+&gt;&gt; Um yes so the games are online uh you
+can Google them. Bad news for example is
+one of the games that we've made and you
+can play them in a browser. You don't
+need to download anything and some uh
+schools have indeed used these games but
+also other measures. I thought we just
+want to tout kind of the stuff that I've
+worked on myself uh exclusively as uh
+sort of media literacy interventions
+that are used in classrooms and as part
+of educational initiatives and and
+information campaigns and so on. But I
+also think that uh we shouldn't just
+rely on kind of individuals right like
+becoming immune against misinformation
+uh as the kind of primary solution to
+this problem. We also need to look at
+the production side like why is it being
+produced? Who is producing it and what
+can we do um to discourage people from
+from creating misinformation in the
+first place and from uh becoming popular
+online by spreading misinformation,
+right? The example that you just
+mentioned of the Tik Tockers spreading
+misinformation, right? They must get
+something out of it like they get a lot
+of likes or a lot of followers perhaps
+or something else, right? Um, and so it
+would be lovely if we could find ways uh
+to to reduce the attractiveness, if you
+will, uh, of online misinformation, of
+course, without infringing on people's
+right to express themselves freely
+because after all, um, freedom of speech
+in in most countries includes the
+freedom to be wrong about something.
+&gt;&gt; Well, that uh that's interesting because
+what's also spreading misinformation are
+online bots or what we call bad bots.
+Now, a bot, short for robot, is a
+software program that does automated
+repetitive tasks. So, it's not actually
+a person posting an image or writing a
+comment or sending you that message.
+Now, a 2024 study by Imperva, that's a
+US cyber security company, found that
+49%, that's almost half of all internet
+traffic, are bots, not real people. and
+bad bots, the ones spreading
+misinformation, reach their highest
+levels recorded, making up to 34%
+of internet traffic. Now, that's an
+extraordinary number, Runa. If you think
+that almost half of the internet are
+bots, where does this come from? Who is
+creating it? What is behind it?
+&gt;&gt; There are a number of different um
+players on this field. Uh so you have
+governments behind these bot factories.
+They're spamming the uh sort of
+international arena with uh different
+organizations and um campaigns that they
+have and sometimes understanding the why
+is a bit difficult because you don't
+understand the end endgame of what
+they're doing. But they can be planting
+uh individual stories in a country. For
+instance, they planted a story in the
+Norwegian uh election that there is um a
+river that's polluted and it's not
+actually polluted. So, what would be the
+endgame of these Russian operatives in
+this case to plant this misinformation?
+Uh apparently, it's because they use
+this when they talk about um a lack of
+control. This is not uncommon, but you
+have other players as well. It's not
+only uh often talked about Russian
+factories. It could be um players in the
+Middle East. Um you have different
+countries and sometimes commercially um
+exploitative uh operations too. So it's
+not all for uh the sake of a government.
+It can also be for the sake of money. uh
+there is an attention economy in this
+where if you get a lot of people to care
+about something and you get them united
+against something that's something that
+you can capitalize and earn money off
+of. So uh we're interested to see um how
+this economy works and what is the sort
+of global market of our attention that
+seems to be developing right now.
+&gt;&gt; Global market of our attention. That's
+so interesting. And Runa, you know, you
+you have the science behind this because
+you do research online, so everything
+you say has been verified and fact
+checked. Um, John, how hard is it to
+debunk uh, for example, misinformation
+or disinformation, misinformation goes
+viral and then and we've seen so many
+cases of this even in the news and you
+have even presidents and prime
+ministers, you know, spreading
+misinformation and disinformation and
+then someone comes out official and says
+this wasn't true. But the damage has
+been done, hasn't it? I mean, we hear
+things still being repeated now that
+were that were debunked two years ago.
+&gt;&gt; Uh, yeah. Well, first of all, I think if
+someone's lying, then someone should
+correct that. I I don't want to kind of
+uh throw the towel and say like that's a
+fruitless exercise. It definitely
+matters to debunk misinformation I in a
+in a positive way. Uh but you're right
+that very often I like far more people
+uh remember and are exposed to the
+initial misinformation than ever see the
+correction. But this is a a widespread
+and well-known problem not exclusive to
+online spaces. Right? This is also true
+for example in the past when uh uh
+corrections were issued for uh false
+information in a newspaper let's say uh
+they would be issued on page 14 of the
+newspaper right and so far fewer people
+would see the correction than saw the
+original story. those kinds of things.
+Um so it is incredibly difficult right
+to correct uh misinformation
+comprehensively post hawk also because
+of a psychological phenomenon known as
+the continued influence effect which
+basically says that people continue to
+rely somewhat even on uh information
+that has been corrected and
+misinformation that has been corrected
+to them. Right? So they no longer really
+believe it or express belief in it but
+they haven't fully forgotten either. So
+later on they might still sort of use
+some of this information in decision-
+making or informing their beliefs. So
+it's incredibly difficult to kind of
+undo the damage kind of completely uh
+after uh
+someone has seen or has believed
+&gt;&gt; How widespread is this? Uh Runa, you use
+AI, I understand, when it comes to your
+verification systems online. How much
+does I AI work for you? And can it also
+be a problem when it comes to this?
+&gt;&gt; To us, that is the most important
+question. So when we started out doing
+verification, we basically did
+everything ourselves. Uh journalists
+sitting analyzing images and videos
+trying to find out exactly where is this
+uh shot. uh using all these um bits and
+pieces of the background, using all
+these uh technologies that were
+available at the time, like can you look
+at the shadows that the sun casts to uh
+find out when it was shot and all of
+these operations were incredibly time
+consuming. Um but we we did it and we
+had a huge stab just um doing this work
+especially uh with a massive amounts of
+video and um images coming from from
+Ukraine. Um what we often find is that
+the uh the images are not fake. They
+were u real but they were not what they
+seem to be. Um so when you then uh skip
+two years and you're looking into 2024
+that has completely changed. Now we have
+first of all more than 200 different um
+tools that are based on AI and that help
+us reach those conclusions a lot faster.
+We're still sitting there um doing
+individual reports on each piece of
+video or image that we're seeing because
+we believe it's still important to keep
+humans in the loop. Um but we reach the
+conclusion a lot faster. We can find out
+what is necessary to fact check a lot
+faster. Um but also of course AI is
+responsible for creating a lot of the
+things that we're now uh checking and
+investigating. So because you have these
+platforms like Tik Tok with its
+algorithms that tend to favor uh content
+that really like touches us in an
+emotional way and you at the same time
+have artificial intelligence that makes
+it really easy to make these images that
+are heartbreaking in content. um you
+have this massive kind of a mechanism
+for spreading these images really
+quickly and it's um we have to kind of
+sprint not run to keep up.
+&gt;&gt; It's interesting isn't it? So a lot to
+look out for for sure. John and Runa,
+thank you very much for joining us today
+here on the stream.
+&gt;&gt; Think about it. What spreads faster? A
+long, carefully researched article
+explaining complex scientific data or a
+15-second Tik Tok confidently claiming
+scientists are lying to you.
+&gt;&gt; Stop believing what teachers, scientist,
+and the news and the NASA and the
+government tells you.
+&gt;&gt; Yeah, the lie wins every single time.
+So, what's wrong with the truth? Why is
+it so bad at keeping up?
+Maybe it's because sometimes the truth
+sounds just as unbelievable as a lie.
+Take these headlines. One of them is
+completely fake. Can you guess which
+one? Scientists have trained rats to
+drive tiny cars for treats. The Amazon
+rainforest now produces more carbon
+dioxide than it absorbs. Researchers
+discover a new species of snake that can
+survive being frozen for weeks.
+Well, the problem is whether it's real
+or not, it all feels the same. In an
+endless stream of headlines, fact and
+fiction blur together, and the truth,
+slow, careful, deliberate, gets drowned
+out.
+&gt;&gt; Now, that clip was from Alazer's
+documentary, The War on Truth, from
+Alazer Untangled. And joining me today
+here on set is Mark Owen Jones, who is
+in that documentary. Now Mark is an
+associate professor of media analytics
+at Northwestern University inQatar and
+he specializes in disinformation and
+propaganda. Thank you for being here
+Mark. I have a question for you. Truth
+seems to have an image problem doesn't
+it? It's not spicy. It's not salacious.
+It's not a motive.
+&gt;&gt; Right.
+&gt;&gt; I mean it's true.
+&gt;&gt; At least one thing. Exactly. Because you
+know if you if you make a lie and you
+don't have any desire or need to attach
+yourself to the laborious process of
+factchecking um then you can tell a good
+story, you can tell a salacious story
+and you can appeal to people's emotions
+which as one of your guests said is
+really key in getting that to spread.
+Remember the things that often spread
+are things that make you angry or things
+that make you laugh. So basically cat
+videos or salacious disinformation. So
+yes, truth does have an image problem,
+but it's also not helped by the fact
+that we live in an age now where you see
+politicians and influencers lying and
+spreading presidents. I mean, you know,
+um, today we even heard that Tylenol
+causes autism, right? So, you know,
+there's misinformation everywhere and
+disinformation. The trick is which are
+we talking about, misinformation or
+disinformation?
+&gt;&gt; Because there's an active difference.
+&gt;&gt; There is. Misinformation is usually
+conceived of as the accidental spread of
+falsehoods. Uh, whereas disinformation
+is the deliberate spread of falsehoods
+that are harmful, right? Right. And so
+disinformation to me is more sinister
+because it suggests that there's people
+out there and there are people out there
+who are actively spreading lies to
+actually make reality confusing. Right?
+How do we know what to believe when the
+people we trust or the institutions we
+trust are being undermined or people
+actively lying about them? So that's a
+key difference.
+&gt;&gt; Runa made an interesting point. She
+called it, I think, the economy of our
+attention.
+&gt;&gt; Yes. The attention economy. Yes. Well,
+but this is because social media
+companies and many of us now get our
+information from social media. How does
+their business model work? Well, they
+make money from us being on their
+applications longer. So, how do they
+make more money? Well, they get us to
+spend more of our attention looking at
+their content. How do they get our
+attention then? Well, they basically put
+out or privilege information through the
+algorithm that's more likely to catch
+our attention, which is emotional stuff
+and often stuff that's not true.
+&gt;&gt; Do they care about truth?
+&gt;&gt; Uh, I would argue no. And one of the
+things that we see is evidence of this.
+Recently when Trump was elected, we saw
+a lot of the um social media companies
+get rid of their content moderation
+teams. Now these are the teams that are
+meant to make the platform safer. Uh and
+that includes getting rid of harmful
+information, much of which is which is
+false. And so now they've done away with
+that or in many cases done away with a
+lot of those which suggests that they
+don't really care about truth.
+&gt;&gt; So how much of a problem is this? I mean
+we just saw those uh research figures
+that almost 50% of internet traffic
+aren't real people. Um, how can we tell
+what's real and what isn't?
+&gt;&gt; To be honest, it's it's increasingly
+difficult, right? You can have, for
+example, you know, I run an experiment
+with my students where I get them to
+say, which of these accounts is a bot
+and which is not. And it's a sort of
+50/50. So, most of the time they can't
+tell what is real and what is not.
+There's no really solid way to just say,
+"How do you spot this information?" It
+really depends on the narrative. It
+depends on the story. Um, and the
+problem with bots is as this this idea
+that it's the ones that are manipulating
+the algorithm. Say I want to spread
+health information or misinformation. I
+could hire a bot farm and I could get
+them to all promote this false story.
+And that by being promoted, by being
+liked very quickly, that means the
+algorithm then will pick that up and
+then spread that information, right? And
+you don't see a lot of that. A lot of
+that is invisible. So you might just
+&gt;&gt; That's the thing. Even influencer, for
+example, they're paid. There's paid ads,
+but they don't say that. So what they're
+saying, you're thinking is face value,
+but actually that's advertising for
+someone or something.
+&gt;&gt; Yeah. Absolutely. I mean also when you
+look at something that's get served to
+you on your algorithm something with
+loads of likes how do you know if those
+likes are real people unless you go
+through all of them and even then you
+can't tell right so there's so much
+anonymity behind the the the sort of
+infrastructure that shares and promotes
+&gt;&gt; see someone having so many followers we
+immediately trust them right oh they
+have half a million followers
+&gt;&gt; I would say most people do I don't
+&gt;&gt; because of my work but absolutely
+because that's a mark of credibility and
+respect there's a lot of pit which is so
+dangerous these days
+&gt;&gt; yeah and also verification for example I
+mean lots of social media platforms have
+like the blue tick for example an X
+&gt;&gt; but you can pay for that now
+&gt;&gt; you can pay for that now you used to
+actually have to submit identity
+documents like a password now you just
+need a credit card right so literally
+anyone with a credit card can spread uh
+create fake accounts and spread
+disinformation I myself have found
+networks with loads of verificated
+accounts that are bots
+&gt;&gt; right so all these systems that are
+meant to check the truth are failing in
+some case just because these companies
+make money and to go back to your
+question do these companies care well I
+think this verification system is a good
+example of why these companies or how
+these companies don't care about the
+truth.
+&gt;&gt; You uh have just completed a study on
+Israel uh and how its propaganda and PR
+and miss and disinformation campaign
+actually you call it the a war on truth.
+&gt;&gt; Yes. So I use the term althide and it's
+a bit of a provocation. So althia is the
+Greek word for truth and side is the
+Latin word for killing and it's based on
+the word genocide which again means the
+killing of you know a group of people
+and in in in the case of law it means
+the intent to kill or partially destroy
+a group of people and I use this term
+deliberately because when we look at
+this information I could spread a rumor
+about you I don't want to you know I
+know guess it happened
+&gt;&gt; yeah exactly right I could spread a
+horrible rumor about you to try and harm
+your reputation and it's horrible for
+you of course but Let's look in the
+grand scheme of things. That's different
+disinformation from an attempt to spread
+falsehoods that allow people to justify
+genocide, the mass killing of people. So
+the idea with the killing of truth or a
+lethide is to say there's a big
+difference between just spreading say a
+rumor with a militia stent to spreading
+a whole narrative that's designed to
+actually allow people to think it's okay
+to massacre Palestinians.
+&gt;&gt; And is that being bored?
+&gt;&gt; This is being well it is being bored.
+I'm not saying that there aren't
+counternarratives, but we have to bear
+in mind that a lethal side,
+disinformation doesn't something doesn't
+just go viral because for the sake of
+it, right? The point I'm making about a
+lethide is that disinformation is more
+likely to go viral. It's more likely to
+become a truth believed by people if
+there's things that allow that to
+happen. And I I want to give an example
+because I think it's important to
+clarify. Let's say the the narrative
+that circulated after October the 7th
+that Hamas had beheaded babies. This
+turned out to be false.
+&gt;&gt; And they still talk about it today.
+&gt;&gt; They still talk about it today, right?
+But why did that pick up? Well, we saw,
+for example, on the front of newspapers
+this story that Hammers had bought
+beheaded 40 babies. We saw the Biden,
+Joe Biden, the president at the time,
+say that he saw pictures of beheaded
+babies.
+&gt;&gt; Israel's Ministry of Foreign Affairs ran
+adverts on Google saying that Hamas had
+murdered babies. So all those things
+happen and you have to ask yourself,
+well, if Hamas had run ads on Google,
+would would Biden say what Hamas said or
+call it propaganda? So the geopolitics
+America's for example relationship with
+Israel its positive support of Israel
+informs what can and cannot be said and
+to be an explicit do you Google took
+money from the Israel ministry of
+foreign affairs to run disinformation to
+serve that disinformation to more and
+more people. So when we talk about the
+killing of truth, we see this actual
+structures, people getting money to do
+that. If US government wanted to, they
+could have stopped Google from showing
+those false videos. There is an
+ingrained bias. We're running out of
+time. So very briefly, what does this
+mean for the future for all of us?
+&gt;&gt; It means the future that one, yes, we
+have to be more careful of
+disinformation. We have to do media
+literacy as your guests have said but at
+the same time if we want to actually
+counter propaganda the structures of who
+owns social media companies who
+regulates them really needs to change
+because if there is an entity that's
+pushing these narratives paying for them
+and a government's allowing them to
+happen we need more than just media
+literacy right we need a full shift of
+who controls these companies and who's
+allowed to influence them
+&gt;&gt; because this is the era that we're
+living in right
+&gt;&gt; this is the era that we're living in
+because look most of the companies that
+determine what we see on the internet
+are based in one country in the US with
+the exception of Tik Tok which is bas in
+China but now US bought Tik Tok um and
+at least have some control of Tik Tok.
+So we have to be aware that much of what
+we see is actually influenced by one
+country that happens to be the global
+superpower
+&gt;&gt; and that is the world we live in today.
+Mark, thank you very much for joining us
+here on the stream in the studio and
+thank you for being part of the
+conversation and I'll see you soon.
+[Music]

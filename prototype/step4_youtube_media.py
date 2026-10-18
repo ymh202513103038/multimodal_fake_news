@@ -94,6 +94,10 @@ def main() -> None:
     ap.add_argument("--limit-rate", default="2M", help="限速（礼貌下载）")
     ap.add_argument("--proxy", default=None, help="代理；缺省继承环境变量 HTTPS_PROXY")
     ap.add_argument("--timeout", type=int, default=600, help="单个视频下载超时（秒）")
+    ap.add_argument("--cookies-browser", default=None,
+                    help="遭遇 Sign in to confirm you're not a bot 时用浏览器 cookie 绕过，"
+                         "如 chrome / edge / firefox（cookie 仅本机读取，不外传）")
+    ap.add_argument("--vids", default=None, help="逗号分隔的 video_id，只处理这些")
     ap.add_argument("--fresh", action="store_true", help="清空清单后重下（不删已存在文件）")
     a = ap.parse_args()
 
@@ -103,12 +107,13 @@ def main() -> None:
 
     # 候选：live 记录、未完成的 (video_id, what)；字幕失败过的自动进入重试
     done, failed_subs = load_manifest_state()
+    targets = set(a.vids.split(",")) if a.vids else None
     candidates = []
     for r in read_jsonl(Path(a.meta)):
         if r.get("mode") == "mock":
             continue
         vid = r.get("video_id")
-        if not vid:
+        if not vid or (targets and vid not in targets):
             continue
         already = (vid, a.what) in done
         retry_subs = (a.what == "subs" and vid in failed_subs)
@@ -142,6 +147,8 @@ def main() -> None:
                "-o", str(MEDIA_YT / "%(id)s/%(id)s.%(ext)s")]
         if use_archive:
             cmd += ["--download-archive", str(MEDIA_YT / f"archive.{a.what}.txt")]
+        if a.cookies_browser:
+            cmd += ["--cookies-from-browser", a.cookies_browser]
         cmd += extra
         if a.proxy:
             cmd += ["--proxy", a.proxy]

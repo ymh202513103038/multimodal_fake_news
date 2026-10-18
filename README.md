@@ -18,7 +18,7 @@ prototype/       可运行链路：step1 X元数据 → step2 下载媒体 → s
                  → make_label_sheet 标注表 → validate 抽检
 metadata/        原始层：平台制采集产物与标注表（jsonl/csv，入库）
 media/           原始层：媒体本体（不入库，见 .gitignore）
-dataset/         数据集层：案例制（参考 ex 样例），六件套子目录；媒体不入库，仅 index.json 入库
+dataset/         数据集层：案例制（参考 ex 样例），语义化命名；文本入库，媒体本体仅本地
 fake_news_env/   Python 虚拟环境（不入库）
 ```
 
@@ -26,8 +26,8 @@ fake_news_env/   Python 虚拟环境（不入库）
 
 ```
 dataset/
-├── index.json                 总索引：id/event/topic/label/reason + 各模态文件清单
-└── yt_{video_id}/             一个案例（同一事件的真假对用 index 的 event 字段归组）
+├── index.json                        总索引：id/event/topic/label/reason + 各模态文件清单
+└── {topic}__{event_slug}[__verdict]/ 一个案例（同一事件的真假对用 index 的 event 字段归组）
     ├── image/    缩略图 png（+日后关键帧、证据图）
     ├── video/    mp4（硬链接自 media/，不占双份空间）
     ├── wav/      16kHz 单声道 wav（ASR/声学特征）
@@ -36,6 +36,10 @@ dataset/
     └── web/      source.txt（来源 URL + 证据链接；二期换网页快照）
 ```
 
+**命名规则**：`{主题}__{事件短语}[__true|__false]`，全英文小写下划线。映射表
+`metadata/case_names.json`（video_id → topic/slug/verdict），新视频无映射时自动从标题
+取词兜底；`__true/__false` 后缀**只在有核查/标注凭据时添加**，凭标题猜测不加。
+文本类文件（正文/字幕/理由/来源）入库；媒体本体仅本地。
 重建/扩案例：`python prototype\make_cases.py`（--vids 指定、--fresh 重建）。
 
 ## 快速开始（mock 模式，无需任何账号/key）
