@@ -15,9 +15,18 @@ secrets/
 # ---- 媒体与大文件（版权 + 体积：仅本地保留，索引在 metadata/）----
 media/
 
-# ---- 案例制数据集（媒体不入库；只保留总索引 index.json）----
-dataset/*
-!dataset/index.json
+# ---- 案例制数据集：文本类入库（正文/字幕/理由/来源/索引），媒体本体不入库 ----
+dataset/**/*.mp4
+dataset/**/*.mp3
+dataset/**/*.m4a
+dataset/**/*.wav
+dataset/**/*.png
+dataset/**/*.jpg
+dataset/**/*.jpeg
+dataset/**/*.webp
+dataset/**/*.gif
+dataset/**/*.mkv
+dataset/**/*.webm
 
 # ---- 运行产物 ----
 logs/
