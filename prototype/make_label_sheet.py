@@ -23,8 +23,14 @@ log = setup_logger("label_sheet")
 OUT = METADATA_DIR / "label_sheet.csv"
 
 COLUMNS = ["sample_id", "source", "text", "media_local",
-           "is_fake", "modality_type", "evidence_url", "rationale",
-           "annotator", "labeled_at"]
+           # L1 二分类
+           "is_fake",
+           # L2 多标签造假类型（对齐 GroundLie360，分号分隔多选）
+           "fake_types",
+           # L3 定位 grounding（对"假"样本尽量填，试点可留空）
+           "grounding_title", "grounding_speech", "grounding_visual",
+           # 证据链 + 通用
+           "evidence_url", "rationale", "annotator", "labeled_at"]
 
 
 def load_existing_ids() -> set:
@@ -36,7 +42,7 @@ def load_existing_ids() -> set:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="抽样生成标注表 CSV")
-    ap.add_argument("--meta", default=str(METADATA_DIR / "twitter_meta.jsonl"))
+    ap.add_argument("--meta", default=str(METADATA_DIR / "youtube_meta.jsonl"))
     ap.add_argument("--source", default="x", help="来源平台标识，写入 source 列")
     ap.add_argument("--samples", type=int, default=30, help="本次新增条数（试点建议 20~30）")
     ap.add_argument("--seed", type=int, default=7, help="随机种子，保证可复现")
@@ -82,9 +88,7 @@ def main() -> None:
         if new_file:
             w.writeheader()
         for row in picked:
-            w.writerow({**row, **{k: "" for k in
-                          ("is_fake", "modality_type", "evidence_url",
-                           "rationale", "annotator", "labeled_at")}})
+            w.writerow({**row, **{k: "" for k in COLUMNS if k not in row}})
 
     log.info("新增 %d 条标注任务（池 %d，跳过已存在 %d）-> %s",
              len(picked), len(pool), len(pool) - len(fresh), OUT)
