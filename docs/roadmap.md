@@ -36,6 +36,21 @@
 - 注意：googleapis 走 API 也要代理——python 进程需设 `HTTPS_PROXY` 环境变量；
   计划任务场景可在 `run_harvest.bat` 里加一行 `set HTTPS_PROXY=http://127.0.0.1:7897`（实测直连失败时再加）。
 
+## 第 3.5 步：YouTube 媒体落盘（已就绪，实测通过）
+
+`prototype/step4_youtube_media.py`：把 youtube_meta.jsonl 候选变成多模态本体。
+零 API 配额（yt-dlp 直连视频 CDN）；媒体本体在 media/（不入库），清单 `metadata/youtube_media.jsonl` 入库。
+
+- 三种模式：`--what subs`（字幕 vtt + 缩略图 + info.json，默认最轻）、`audio`（m4a 音轨）、
+  `video`（≤720p 预合并，免 ffmpeg）；
+- 幂等：清单按 (video_id, what) upsert；yt-dlp archive 防重下；小批量 + 随机间隔（礼貌下载）；
+- 字幕限流对策：YouTube timedtext 对代理 IP 常 429 → 字幕"尽力而为"，
+  以目录内有无 .vtt 判定 subs_ok；失败条目下次运行自动重试；
+  已实测：en 字幕可获取，zh-Hans 翻译字幕常被限流；可靠替代 = audio 模式 + Whisper 转写；
+- 用法：`$env:HTTPS_PROXY='http://127.0.0.1:7897'` 后
+  `python prototype/step4_youtube_media.py --what subs --limit 5`；
+- 待办：安装 ffmpeg 后加抽帧（fps≈1）与更高清视频档。
+
 ## 第 4 步：最小调度 Agent（未开始）
 
 - 任务队列 `prototype/tasks.json`：`{id, source, keyword, limit, status, retries, created_at}`；

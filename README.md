@@ -14,7 +14,7 @@
 ```
 docs/            需求、合规清单、标注规范、路线图、全景采集方案（参考）
 prototype/       可运行链路：step1 X元数据 → step2 下载媒体 → step3 YouTube元数据
-                 → make_label_sheet 生成标注表 → validate 抽检
+                 → step4 YouTube媒体落盘(字幕/缩略图/音视频) → make_label_sheet 标注表 → validate 抽检
 metadata/        采集产物与标注表（jsonl/csv，入库；quota_ledger.jsonl 为配额账本）
 media/           媒体文件（不入库，见 .gitignore）
 fake_news_env/   Python 虚拟环境（不入库）
@@ -36,7 +36,8 @@ python validate_samples.py --sample 5
 - X：先加 twscrape 账号（见 docs/roadmap.md），去掉 `--mock`；
 - YouTube：先一次性 `setx YT_API_KEY "你的key"`（永久，key 不进代码/仓库，重开终端生效），
   再 `python step3_youtube_probe.py --query "fake news" --limit 10`；
-- 视频媒体一律走 yt-dlp（不耗 API 配额），命令见 step3 脚本头部注释。
+- YouTube 媒体（字幕/缩略图/音视频，零 API 配额，需代理环境变量）：
+  `python prototype\step4_youtube_media.py --what subs --limit 5`。
 
 ## 每日自动扩数据集（YouTube 免费配额）
 
