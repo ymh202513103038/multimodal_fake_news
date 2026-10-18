@@ -16,14 +16,29 @@ import argparse
 import json
 import re
 import time
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from urllib.parse import quote
 
 from chrome_mcp import McpClient
 from common import METADATA_DIR, append_jsonl, existing_ids, setup_logger
 
 log = setup_logger("x_browser")
-OUT = METADATA_DIR / "twitter_raw.jsonl"
+OUT_DIR = METADATA_DIR / "x"   # 语义化命名：{关键词slug}__{日期}.jsonl
+
+
+def keyword_slug(kw: str) -> str:
+    """关键词 -> 文件名安全的 slug（中文等非 ASCII 会退化为 x，建议英文关键词）。"""
+    s = re.sub(r"[^a-z0-9]+", "_", kw.lower()).strip("_")
+    return s or "x"
+
+
+def known_ids_everywhere() -> set:
+    """跨所有历史采集文件去重。"""
+    ids: set = set()
+    if OUT_DIR.exists():
+        for f in OUT_DIR.glob("*.jsonl"):
+            ids |= existing_ids(f)
+    return ids
 
 # 页内抽取：每条推文的文本/时间/链接/作者/图片/视频标记
 # 注意：桥接会拦截含 URL 查询串的结果（隐私过滤），所有 URL 必须先剥掉 ? 后内容
@@ -120,12 +135,15 @@ def main() -> None:
             "collected_at": now,
         })
 
-    known = existing_ids(OUT)
+    # 语义化命名：metadata/x/{关键词slug}__{日期}.jsonl
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    out_file = OUT_DIR / f"{keyword_slug(query)}__{date.today().isoformat()}.jsonl"
+    known = known_ids_everywhere()
     new = [r for r in records if r["tweet_id"] not in known][: a.limit]
-    append_jsonl(OUT, new)
+    append_jsonl(out_file, new)
     with_media = sum(1 for r in new if r["media"])
-    log.info("抽取 %d 条，去重后新增 %d 条（含媒体 %d 条，上限 %d）-> %s",
-             len(records), len(new), with_media, a.limit, OUT)
+    log.info("抽取 %d 条，跨文件去重后新增 %d 条（含媒体 %d 条，上限 %d）-> %s",
+             len(records), len(new), with_media, a.limit, out_file)
 
 
 if __name__ == "__main__":

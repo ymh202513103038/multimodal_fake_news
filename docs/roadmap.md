@@ -91,6 +91,9 @@
   4. 工具返回是信封结构 {success, tabId, result: "<内层JSON>"}，需两层解析；
 - 用法：`python prototype\x_browser_probe.py --keyword "fake news" --rounds 4 --limit 25`
   （要求 Chrome 开机且已登录 x.com；mcp-chrome 扩展 Connected）；
+- 数据命名：`metadata/x/{关键词slug}__{日期}.jsonl`（如 `deepfake__2026-10-18.jsonl`），
+  跨文件按 tweet_id 去重；中文关键词 slug 会退化为 x，建议英文关键词；
+- 已采集：fake_news（10 条）、deepfake（11 条，2026-10-18）；
 - 待办：扩展到中文辟谣平台与新闻站（微博/公众号），先 1 站 1 栏目验证选择器；定时采集需
   Chrome 在线时段配合，或后续引入 headless 方案。
 
