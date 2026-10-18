@@ -22,7 +22,7 @@ dataset/         数据集层：案例制（参考 ex 样例），六件套子�
 fake_news_env/   Python 虚拟环境（不入库）
 ```
 
-### dataset/ 案例结构（对齐 ex 参考样例）
+### dataset/ 案例结构
 
 ```
 dataset/
