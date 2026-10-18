@@ -7,7 +7,7 @@ __pycache__/
 # ---- 凭据与账号（绝不入库）----
 accounts.sqlite
 accounts.sqlite-*
-accounts.txt
+accounts*.txt
 .env
 *.key
 secrets/
