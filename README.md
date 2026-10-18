@@ -12,13 +12,23 @@
 ## 目录（两层结构：原始采集层 → 案例数据集层）
 
 ```
-docs/            需求、合规清单、标注规范、路线图、全景采集方案（参考）
-prototype/       可运行链路：step1 X元数据 → step2 下载媒体 → step3 YouTube元数据
-                 → step4 YouTube媒体落盘(字幕/缩略图/音视频) → make_cases 案例组装
+docs/            需求、合规清单、标注规范(v0.2 GroundLie360)、路线图、全景采集方案（参考）
+skills/          沉淀的操作技能：label-groundlie360（三级标注 SOP）等
+prototype/       采集与组装链路：
+                 step1 X元数据(twscrape) → step2 下载媒体 → step3 YouTube元数据
+                 → step4 YouTube媒体落盘 → x_browser_probe X真浏览器采集(chrome-mcp)
+                 → news_probe 新闻/核查站采集 → make_cases 案例组装
                  → make_label_sheet 标注表 → validate 抽检
-metadata/        原始层：平台制采集产物与标注表（jsonl/csv，入库）
+                 辅助：chrome_mcp 直连客户端 / diag_x、test_x_search、link_diag 诊断
+metadata/        原始层（jsonl/csv，全部入库）：
+                 ├── youtube_meta.jsonl / youtube_media.jsonl   YouTube 元数据与媒体清单
+                 ├── x/{关键词}__{日期}.jsonl                    X 真浏览器采集（语义化命名）
+                 ├── news/{站点}__{日期}.jsonl                   核查站/新闻站列表（piyao、Snopes）
+                 ├── label_sheet.csv                             标注表（v0.2 schema）
+                 ├── case_names.json                             案例语义化命名映射
+                 └── quota_ledger.jsonl / harvest_state.json     配额账本 / 收割断点
 media/           原始层：媒体本体（不入库，见 .gitignore）
-dataset/         数据集层：案例制（参考 ex 样例），语义化命名；文本入库，媒体本体仅本地
+dataset/         数据集层：案例制（68 案例 = YT 47 + X 21）；文本入库，媒体本体仅本地
 fake_news_env/   Python 虚拟环境（不入库）
 ```
 
@@ -41,6 +51,10 @@ dataset/
 取词兜底；`__true/__false` 后缀**只在有核查/标注凭据时添加**，凭标题猜测不加。
 文本类文件（正文/字幕/理由/来源）入库；媒体本体仅本地。
 重建/扩案例：`python prototype\make_cases.py`（--vids 指定、--fresh 重建）。
+
+> 注意：`metadata/news/`（辟谣平台/Snopes）是**核查源种子层**——它们是"标签的来源"
+> 而非检测对象，因此不进 dataset 案例库；后续由主张抽取 Agent 从这里产出 claim，
+> 再去社媒反查谣言样本与证据。
 
 ## 快速开始（mock 模式，无需任何账号/key）
 
