@@ -79,10 +79,20 @@
 - 标注：按 [labeling_rules.md](labeling_rules.md) 双人标 20~30 条，算 kappa；
 - 划分：mini train/val（例如 16/4），先验证下游流程，不急全量。
 
-## 第 6 步（二期）：chrome-mcp 新闻网站
+## 第 6 步：chrome-mcp 真浏览器采集（X 通道已打通，实测 10 条真实推文）
 
-- 真浏览器接管 + 自动滚动，优先中文辟谣平台与新闻站；
-- 先做 1 个站、1 个栏目，手动验证选择器后再自动化。
+- 通道架构：`chrome_mcp.py` 直连客户端（无需 Harness MCP 配置，会话持久复用，
+  服务端为单会话设计——见 logs/chrome_mcp_session.json）+ `x_browser_probe.py` X 采集；
+- 已实测：登录态 Chrome 打开 X 搜索 → 滚动 4 轮 → 页内 JS 抽取 → 10 条真实推文入库；
+- 踩坑记录：
+  1. 桥接有隐私过滤——结果含 URL 查询串会被整体替换为 [BLOCKED]，页内先剥 ? 后内容；
+  2. 服务端单会话——重复 initialize 返回 500 "Already connected"，会话 ID 存盘复用；
+  3. `filter:photos` 等过滤语法在本通道返回空，用纯关键词采集后按 media 字段标记；
+  4. 工具返回是信封结构 {success, tabId, result: "<内层JSON>"}，需两层解析；
+- 用法：`python prototype\x_browser_probe.py --keyword "fake news" --rounds 4 --limit 25`
+  （要求 Chrome 开机且已登录 x.com；mcp-chrome 扩展 Connected）；
+- 待办：扩展到中文辟谣平台与新闻站（微博/公众号），先 1 站 1 栏目验证选择器；定时采集需
+  Chrome 在线时段配合，或后续引入 headless 方案。
 
 ## 采集账号备忘
 
