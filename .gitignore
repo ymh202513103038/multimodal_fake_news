@@ -1,0 +1,23 @@
+# ---- 虚拟环境（重建：python -m venv fake_news_env && pip install -r requirements.txt）----
+fake_news_env/
+.venv/
+__pycache__/
+*.pyc
+
+# ---- 凭据与账号（绝不入库）----
+accounts.sqlite
+accounts.sqlite-*
+accounts.txt
+.env
+*.key
+secrets/
+
+# ---- 媒体与大文件（版权 + 体积：仅本地保留，索引在 metadata/）----
+media/
+
+# ---- 运行产物 ----
+logs/
+
+# ---- 系统文件 ----
+Thumbs.db
+.DS_Store
