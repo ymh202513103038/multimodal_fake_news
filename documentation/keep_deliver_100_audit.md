@@ -21,7 +21,7 @@
 | 48 FB·No Kings | ❌ | **⚠️** | 事件层为真：[CBC 2026-03-27](https://www.cbc.ca/lite/story/9.7144237)证实900万为主办方Indivisible预估、伊朗战争为议题之一；素材层确有错配：[RTL](https://today.rtl.lu/news/fact-check/video-shows-trump-supporters-storming-us-capitol-not-rally-against-middle-east-war-6310016)（国会山视频冒充反战集会）、[希腊核查站](https://www.factchecker.gr/tag/no-kings/)。deliver_why写在事件层（错），核查实际在素材层（对）——两层错位 |
 | 92 早报·使馆 | ⚠️ | **⚠️** | 使馆遇袭为真实战况（早报当日报道）；核查针对旧视频素材；早报未使用该视频，归入名单口径过宽 |
 
-**修订后统计：✅ 3 ｜ ⚠️ 4 ｜ ❌ 0 —— 原表 8 条无硬错。**
+**修订后统计：✅ 4 ｜ ⚠️ 4 ｜ ❌ 0 —— 原表 8 条无硬错。**
 
 ## v1 审计的三个方法错误（沉淀为标注 checklist）
 
