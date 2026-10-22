@@ -17,11 +17,17 @@
 | 6 IG·Xbox激光 | ❌ | **✅** | [澎湃明查 2026-10-04](https://nw.eastday.com/zq/zh/20261004/727875fc28013870cc140d7c0fa91f28.html)："用Xbox手柄控制激光武器摧毁伊朗基础设施？**误导信息，还做不到**"——项目存在（NY Post）≠已在实战拦截；表格判对 |
 | 15 IG·默克莱 | ❌ | **✅** | [AFP](https://factcheck.afp.com/doc.afp.com.C62H9ZQ)：亲政府帖文循环旧战争画面；[AFP Factuel](https://factuel.afp.com/doc.afp.com.D2EE8CR)：该图并非2026年10月默克莱埃塞士兵——事件真（AP）但画面假（AFP） |
 | 18 YT·内塔尼亚胡 | ✅ | **✅** | [RTVE](https://amp.rtve.es/noticias/20260320/video-ultrafalso-bulo-falsa-muerte-netanyahu/16988774.shtml)：Hive/Hiya判定AI生成；内塔尼亚胡3/15喝咖啡、3/19记者会（AP/Reuters在场） |
-| 23 IG·RAF | ⚠️ | **⚠️** | 保存页时间戳31周前（早于战争5个月）；[factcheckcyprus.org](https://factcheckcyprus.org/tag/raf/) 有RAF专项核查；页面本身未传谣，属被误用素材源 |
+| 23 IG·RAF | ⚠️ | **✅** | 保存页完整图注："Cockpit Footage of RAF Eurofighter Typhoon **Destroying Iranian UAV Over Jordan**"+关键词含 interception/missile strike——帖子自身宣称战果，发布于开战第18天左右（v1/v2.0误算为"31周前=战前5个月"且截断了图注）；[factcheckcyprus.org](https://factcheckcyprus.org/tag/raf/) 有RAF专项核查 |
 | 48 FB·No Kings | ❌ | **⚠️** | 事件层为真：[CBC 2026-03-27](https://www.cbc.ca/lite/story/9.7144237)证实900万为主办方Indivisible预估、伊朗战争为议题之一；素材层确有错配：[RTL](https://today.rtl.lu/news/fact-check/video-shows-trump-supporters-storming-us-capitol-not-rally-against-middle-east-war-6310016)（国会山视频冒充反战集会）、[希腊核查站](https://www.factchecker.gr/tag/no-kings/)。deliver_why写在事件层（错），核查实际在素材层（对）——两层错位 |
 | 92 早报·使馆 | ⚠️ | **⚠️** | 使馆遇袭为真实战况（早报当日报道）；核查针对旧视频素材；早报未使用该视频，归入名单口径过宽 |
 
-**修订后统计：✅ 4 ｜ ⚠️ 4 ｜ ❌ 0 —— 原表 8 条无硬错。**
+**修订后统计：✅ 5 ｜ ⚠️ 3 ｜ ❌ 0 —— 原表 8 条无硬错。**
+
+> v2.1 勘误（2026-10-22）：行23 RAF 的 v2 判定依据有两处错误——①"31周前"换算错误
+> （应为2026年3月中旬、开战期间，而非2025年10月）；②图注提取时截断，漏掉了
+> "Destroying Iranian UAV Over Jordan"的关键宣称。修正后该行改判 ✅（页面自身
+> 宣称战果，属传播节点）。此勘误由用户质询触发——**人工复核必须输出完整图注与
+> 准确时间换算，不能依赖截断摘要**。
 
 ## v1 审计的三个方法错误（沉淀为标注 checklist）
 
