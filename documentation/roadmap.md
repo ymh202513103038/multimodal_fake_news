@@ -39,7 +39,7 @@
 ## 第 3.5 步：YouTube 媒体落盘（已就绪，实测通过）
 
 `prototype/step4_youtube_media.py`：把 youtube_meta.jsonl 候选变成多模态本体。
-零 API 配额（yt-dlp 直连视频 CDN）；媒体本体在 media/（不入库），清单 `metadata/youtube_media.jsonl` 入库。
+零 API 配额（yt-dlp 直连视频 CDN）；媒体本体在 media/（随仓库入库），清单 `metadata/youtube_media.jsonl` 入库。
 
 - 三种模式：`--what subs`（字幕 vtt + 缩略图 + info.json，默认最轻）、`audio`（m4a 音轨）、
   `video`（≤720p 视频+音轨合并 mp4——自动检测 venv 内置 imageio-ffmpeg 的 ffmpeg，
@@ -60,7 +60,7 @@
 - 标签与理由自动从 label_sheet.csv 回填（youtube:{video_id} 行）；未标注占位（待标注）；
 - video 用硬链接不占双份空间；wav 由 ffmpeg 转 16kHz；缩略图 webp→png；
 - 总索引 `dataset/index.json` 入库（含 id/event/topic/label/reason/files），
-  案例媒体不入库（.gitignore: dataset/* + !dataset/index.json）；
+  案例媒体同仓库入库（2026-10-26 起媒体政策改为全量入库，见 .gitignore 头注）；
 - index 预留 `event` 字段：同一事件的真假样本对（如参考样例 case1 假/case2 真）在此归组，人工/二期自动配对；
 - 待办：web/ 从"记 URL"升级为存证据网页快照（archive.today/本地 HTML）；评论抓取进 text/comments.txt。
 

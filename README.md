@@ -27,8 +27,8 @@ metadata/        原始层（jsonl/csv，全部入库）：
                  ├── label_sheet.csv                             标注表（v0.2 schema）
                  ├── case_names.json                             案例语义化命名映射
                  └── quota_ledger.jsonl / harvest_state.json     配额账本 / 收割断点
-media/           原始层：媒体本体（不入库，见 .gitignore）
-dataset/         数据集层：案例制（98 案例 = YT 47 + X 21 + 核查源 30）；文本入库，媒体本体仅本地
+media/           原始层：媒体本体（与案例媒体一同入库）
+dataset/         数据集层：案例制（97 案例 = YT 47 + X 20 + 核查源 30）；文本与媒体本体均入库
 fake_news_env/   Python 虚拟环境（不入库）
 ```
 
@@ -49,7 +49,8 @@ dataset/
 **命名规则**：`{主题}__{事件短语}[__true|__false]`，全英文小写下划线。映射表
 `metadata/case_names.json`（video_id → topic/slug/verdict），新视频无映射时自动从标题
 取词兜底；`__true/__false` 后缀**只在有核查/标注凭据时添加**，凭标题猜测不加。
-文本类文件（正文/字幕/理由/来源）入库；媒体本体仅本地。
+文本类文件（正文/字幕/理由/来源）与媒体本体（图/视频/音频）均入库——多模态本体
+是本项目沉淀的核心成果；仅当单文件 >100MB（GitHub 硬限）时才裁剪或走 LFS。
 重建/扩案例：`python prototype\make_cases.py`（--vids 指定、--fresh 重建）。
 
 > 注意：`metadata/news/`（辟谣平台/Snopes）是**核查源种子层**——它们是"标签的来源"
@@ -94,6 +95,7 @@ python prototype\harvest_daily.py --dry-run
 ## Git / GitHub 约定
 
 - 本仓库以本地 git 管理；远端建议 GitHub **私有**仓库（采集脚本与合规敏感，暂不公开）
-- 永不入库：`fake_news_env/`、`media/`、`accounts.sqlite`、`accounts.txt`、`.env`（已配置 .gitignore）
+- 永不入库：`fake_news_env/`、`accounts.sqlite`、`accounts.txt`、`.env`（已配置 .gitignore）；
+  媒体本体（dataset 案例 + media/ 原始层）自 2026-10-26 起随仓库同步入库
 - 环境重建：`python -m venv fake_news_env` → `pip install -r requirements.txt`
 - 推送远端：`git remote add origin <私有仓库地址>` → `git push -u origin main`
