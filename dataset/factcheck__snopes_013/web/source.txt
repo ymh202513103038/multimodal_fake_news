@@ -1,1 +1,2 @@
 source_url: https://www.snopes.com/fact-check/trump-logging-federal-lands/
+retrieved_at: 2026-10-26T12:53:04.702253+00:00

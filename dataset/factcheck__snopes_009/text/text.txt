@@ -1,1 +1,131 @@
-# Proposed Maine underwater data center that could harm endangered whales is far from done deal Written by: Rae Deng Oct. 16, 2026 The company behind the idea has faced steep backlash — despite its claims it won't move the proj ... Read More
+# Proposed Maine underwater data center that could harm endangered whales is far from done deal
+
+Previous Article
+Next Article
+Article 1 of 12 in
+Collection
+Claim:
+There is a proposal to build an underwater data center in the Bay of Fundy off the coast of Maine, which is home to endangered North Atlantic right whales.
+Rating:
+True
+About this rating
+While there is a real proposal to build an underwater data center in the Bay of Fundy near Maine, the company behind the idea, DeepGreen Western Passage SPV, has not yet determined whether the proposal is even feasible.
+The Federal Energy Regulatory Commission has accepted the company's application for a preliminary permit, which gives DeepGreen priority status for any development in the area for the next four years. The permit does not grant the company permission to build the center, nor does it give the company permission to conduct on-water studies within the area.
+If the data center is indeed built, it's possible it will affect endangered whale species, as there is overwhelming evidence that noise and ship activity can harm whales. However, it's not yet known exactly how impactful underwater data centers are to whale habitats, given that the idea is so new.
+DeepGreen's developer on the project, Louis Wolfson, confirmed to Snopes that it has no concrete construction plans as of this writing. To figure out whether the project is possible, DeepGreen must eventually apply for permits at various federal and state agencies to begin extensive environmental and technical studies in the area, which it has not yet done.
+The proposal has already faced steep opposition from environmentalists, the city of Eastport, which is adjacent to the bay, and the
+Passamaquoddy Tribe, whose ancestral territories span the area in question. It's not clear whether any of these parties has the jurisdiction to stop the project entirely, however.
+In fall 2026, social media users circulated rumors about an alleged proposal to build an underwater data center off the coast of Maine.
+According to posts on
+Facebook
+,
+YouTube
+(
+archived
+) and
+Reddit
+, construction of the supposed data center could harm endangered North Atlantic right whales, which are found in the Bay of Fundy, which is off the coast of Maine's city of Eastport.
+A Snopes reader asked us to verify the facts behind this rumor after receiving a link to a
+Change.org petition
+to "Stop the Underwater Data Center Planned in Maine's Right Whale Waters."
+Petition · Stop the Underwater Data Center Planned in Maine's Right Whale Waters
+by
+u/forchewbap
+in
+whales
+A company called
+DeepGreen Western Passage SPV did, in fact, file for a preliminary permit with the Federal Energy Regulatory Commission because it wants to explore the idea of building an underwater data center in the Bay of Fundy. This bay is also home to endangered North Atlantic right whales, which could be affected. FERC approved DeepGreen's permit application in August — despite strong opposition from Eastport's city council and the Passamaquoddy Tribe, whose ancestral territories span the area in question.
+As such, we have rated this claim as
+true
+.
+However, it is worth noting that this preliminary permit does not grant DeepGreen permission to actually build the center, nor does DeepGreen have any immediate concrete plans to do so. Instead, the permit gives the company "priority to pursue development of this project at this location for up to four years."
+Louis Wolfson, DeepGreen's developer on the project, said in an email that the company cannot actually do any on-water testing without detailed study plans and approvals from various federal and state agencies, including FERC, the National Oceanic and Atmospheric Administration and the Army Corps of Engineers. The city of Eastport
+has said
+this project "will require significant additional permitting or licensure from the State and Federal governments" in order to get moving, and there's no evidence that's happening as of this writing.
+We reached out to FERC to ask for more details about the process and will update the story if we hear back.
+What the documents say
+DeepGreen's preliminary permit application documents are all available on
+FERC's eLibrary website
+under docket number "
+P-15424."
+A
+document
+dated Aug. 19 states FERC's approval of the permit:
+Dear Mr. Wolfson:
+Your preliminary permit application for the DeepGreen Western Passage Subsea-Compute & Infrastructure Hub Project has been accepted by the Commission for filing as of February 11, 2026.
+FERC's
+public notice
+about the permit makes it clear that it does not give DeepGreen the right to build the data center or even enter the waters in question (emphasis ours):
+On February 11, 2026, and supplemented and amended on June 8, 2026 and July 30, 2026, DeepGreen Western Passage SPV LLC, filed an application for a preliminary permit, pursuant to section 4(f) of the Federal Power Act (FPA), proposing to study the feasibility of the DeepGreen Western Passage Subsea-Compute & Infrastructure Hub Project No. 15424-000 (project), to be located in the Western Passage of the Bay of Fundy in the North Atlantic Ocean near the Town of Eastport, Washington County, Maine.
+The sole purpose of a preliminary permit, if issued, is to grant the permit holder priority to file a license application during the permit term
+.
+A preliminary permit does not authorize the permit holder to perform any land-disturbing activities or otherwise enter upon lands or waters owned by others without the owners' express permission.
+In other words, the permit "holds your place in line so you can spend private capital" to study whether the project is possible "without a competitor jumping your spot," Wolfson said. He added that "basic research" does not require special permits, however.
+While DeepGreen's application
+does include
+proposed specs — the data center would use up to 50 tidal turbines to generate a maximum of 15 megawatts of power — Wolfson said there are no "concrete construction plans" yet.
+The company also said its activities under the permit "will remain strictly independent, non-invasive, and focused purely on information gathering, data synthesis, and scientific modeling to provide transparent details to the wider local community" (
+Page 2
+).
+An Aug. 3
+notice
+from the city of Eastport to residents is also clear that DeepGreen cannot begin construction without further proceedings:
+In order to proceed to construction, DeepGreen would need to apply for a
+license.
+This would be a much more involved, much more expensive process that the City will need to be prepared for, but which is not yet underway.
+The City has received no applications for building permits, earthmoving permits or anything else that would be required to start any sort of construction. The City Council has already expressed its dislike of the project to DeepGreen by a unanimous vote.
+Wolfson said whether DeepGreen actually does apply for the license to build "comes down to whether the tech proves technically viable, environmentally safe, and economically feasible."
+Potential impact on endangered whales unclear
+On Sept. 24, the Center for Biological Diversity, an environmentalist group,
+filed a motion
+to intervene in opposition to the permit proceedings. The center has argued that even preliminary studies and monitoring "
+may increase vessel traffic and noise pollution," which could affect prey, increase pollution and cause other issues for right whales, fin whales and other wildlife.
+Both North Atlantic right whales and fin whales are protected under the Endangered Species Act. There were about 6,800 North Atlantic fin whales
+in 2023
+, according to the most recent NOAA count as of this writing. Per a 2026
+NOAA report
+, there are only approximately 380 North Atlantic right whales remaining.
+It is, of course, impossible to know the actual effects on whales until further studies for this specific data center are underway,. There's also
+little to no data
+on the general impact of underwater data centers because the concept is so new, although it's
+widely accepted
+that ship noise and vibrations harm whales.
+Wolfson said concerns from the communities and environmentalists involved are "completely valid."
+Proponents
+of underwater data centers
+argue
+that the idea is more environmentally friendly than the average data center, i
+n part because the ocean is a natural heat sink and can possibly neutralize the centers' warming effects.
+Microsoft
+, for example, said in 2020 that its pilot projects show the idea is "
+feasible, as well as logistically, environmentally and economically practical."
+"Marine sound, fisheries, and local ecology are the bottom line. We're currently vetting hardware partners and looking at their raw performance data. If the equipment can't run safely within federal acoustic and environmental limits, it will never get licensed or deployed," he said.
+Jurisdiction questions are complicated
+While opposition from the communities in the area is steep, it's unclear whether any of them can halt the project alone — although efforts are already underway.
+The project area itself is within U.S. boundaries. However, Passamaquoddy tribal members on both sides of the U.S.-Canada border have
+reportedly expressed concerns
+that potential environmental and community effects would not arbitrarily stop at the border, making it a potential point of contention for Canada and Indigenous people who live there, as well.
+The proposed project area for the DeepGreen underwater data center in the Bay of Fundy, per DeepGreen's FERC filings. (DeepGreen Western Passage SPV/FERC)
+The Passamaquoddy Tribe — a federally recognized tribe in the United States — has already "explicitly expressed that it is not interested" in any kind of collaboration with DeepGreen.
+Wolfson
+told CBC
+that his "commitment to respecting tribal sovereignty is non-negotiable," but Aaron Dana, a Passamaquoddy tribal representative in the Maine Legislature, is skeptical that's the case.
+"What they're doing is that they're only checking a box, saying that they consulted with the tribal nations here in the state of Maine," he said to CBC. In an August
+statement
+in front of Eastport's City Council, Dana said the long-term effects of such a project have not been proven and that the city "should not entertain gambling with an ecosystem that cannot be replaced" (
+at 2:28
+).
+DeepGreen
+states in the filings
+that there are at least four other tribes, aside from Passamaquoddy, that have "historical, cultural, or geographic ties to the project boundary and surrounding waters."
+The city of Eastport also filed a Sept. 29
+motion to intervene
+in opposition to the FERC preliminary permit. The city's motion states that the data center "would connect to and be located adjacent to the City." The filing notes that Eastport's City Council unanimously passed a citizen initiative to prohibit large-scale data centers, including underwater data centers, and it hopes to "undertake additional work to strengthen and clarify the City's protections."
+However, a second citizen initiative aimed at opposing the data center was rejected after
+a
+legal analysis
+found it likely to be unenforceable. That initiative would have required voter approval for certain commercial and industrial development over a certain size, including underwater development.
+Previous Article
+Next Article
+Article 1 of 12 in
+Collection

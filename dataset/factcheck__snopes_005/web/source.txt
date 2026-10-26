@@ -1,1 +1,2 @@
 source_url: https://www.snopes.com/fact-check/doe-accessibility-requirements/
+retrieved_at: 2026-10-26T12:52:29.427933+00:00

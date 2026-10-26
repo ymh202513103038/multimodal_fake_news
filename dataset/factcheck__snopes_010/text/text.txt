@@ -1,1 +1,53 @@
-# Fake image depicting real attack on protester at Trump rally spreads online Written by: Rae Deng Oct. 15, 2026 Credible videos of the event show men pushing, hitting and tackling a protester wearing a shirt ... Read More
+# Fake image depicting real attack on protester at Trump rally spreads online
+
+Claim:
+An image authentically shows attendees at one of U.S. President Donald Trump's rallies punching the face of a protester wearing a shirt that says "RELEASE THE EPSTEIN FILES."
+Rating:
+Fake
+About this rating
+In October 2026, social media users spread an image that claimed to show a woman being punched in the face at one of U.S. President Donald Trump's rallies.
+The person in the picture was wearing a shirt that said "RELEASE THE EPSTEIN FILES." (The Justice Department has
+released millions of files
+related to its investigation of the late sex offender Jeffrey Epstein, but
+critics allege
+the agency made redactions to obscure information.)
+The image circulated on platforms
+such as X
+and
+Facebook
+. Many users sharing the image appeared to believe it was authentic.
+"
+If there's one photo to sum up the Trump era, this is it," one
+X post
+said.
+While a protester wearing a similar shirt
+was, in fact, attacked
+at an Oct. 12 Trump rally in Youngstown, Ohio, the image above was created using generative artificial intelligence, according to OpenAI's detection software. As such, we have rated this image as fake.
+OpenAI's verification tool
+detected an invisible watermark on the image called SynthID, which the company's AI tools, like ChatGPT, embed in generated images. (As such, the service can only detect images generated with OpenAI's software and does not detect AI generation via other large-language models, such as Google's Gemini.)
+(OpenAI)
+SynthID detectors are largely accurate but can still be fallible. However, a review of credible
+footage
+taken from the Trump rally indicated that the actual protester was wearing slightly different clothing, including an open flannel layered on top of the T-shirt. The T-shirt the real person wore also had variations in the lettering style and coloring, unlike the more uniform version in the AI-generated image.
+A reverse-image search could not determine the original creator behind the AI-generated picture.
+Numerous reputable news organizations, including
+NBC News
+and an ABC
+affiliate
+, have published legitimate footage of the event.
+NBC News'
+video
+shows rally attendees chanting, "USA, USA, USA" as a man in a gray shirt and a baseball cap appears to push down the protester. Another man in a dark blue or black shirt appears to tackle the protester, hit her and put
+her
+in a headlock. Security officials then escort the protester away.
+Another clip posted by WKBN, a Youngstown television news station, shows that the same man pulled on the protester's hair:
+Images of the incident are also available via credible photo repositories, including
+Getty Images
+and
+Reuters
+.
+NBC News reported that there were no arrests "because deputies didn't see the beating and the woman elected not to file a report, Sheriff Jerry Greene said."
+Trump, meanwhile, mocked the protester's weight while watching the attack unfold. "You know they're paid protesters,"
+Trump said
+, without evidence. "That's a very low-class protester."
+The protester has not publicly shared their identity with the media as of this writing.

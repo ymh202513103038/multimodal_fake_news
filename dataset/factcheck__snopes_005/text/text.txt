@@ -1,1 +1,62 @@
-# Did Department of Energy remove building accessibility requirements for disabled people? Written by: Anna Rascouët-Paz Oct. 16, 2026 The rule change, which has not been implemented, removes regulations for construction projects t ... Read More
+# Did Department of Energy remove building accessibility requirements for disabled people?
+
+Claim:
+The U.S. Department of Energy changed federal law to rescind a requirement that buildings should be accessible for people with disabilities.
+Rating:
+Mixture
+About this rating
+What's True
+In 2025, the DOE finalizetd a rule change saying that it will no longer require new building or renovation projects to meet the standards of accessibility that comply with the Rehabilitation Act of 1973, which requires new buildings and renovations to remove "architectural and transportation barriers."
+What's False
+The final rule has not yet been implemented. On July 1, 2026, the DOE delayed its effective date to Dec. 28, 2026. The rule change would also not affect other federal or local accessibility requirements, only the DOE's rules for funding.
+What's Undetermined
+Advocacy organizations that oppose the change have sent the DOE adverse comments, and it's unclear how these will affect the rule's implementation.
+In October 2026, a rumor spread that the U.S. Department of Energy was changing federal law to rescind a requirement that buildings should be accessible for people with disabilities.
+Posts sharing the claim multiplied on social media, including on
+Facebook
+and
+Instagram
+. "The Trump administration's Department of Energy has moved to eliminate federal regulations requiring accessibility in certain newly constructed and renovated facilities receiving federal financial assistance," an Oct. 15 Facebook post read (
+archived
+):
+The rumor was not new. The claim began to circulate in 2025, as one
+Reddit post
+indicates.
+In 2025, the DOE finalized a rule change saying that it will no longer require new building or renovation projects to meet the standards of accessibility that comply with the Rehabilitation Act of 1973, which requires new buildings and renovations to remove "architectural and transportation barriers." However the final rule had not yet been implemented. On July 1, 2026, the DOE delayed its effective date to Dec. 28, 2026. The rule change would also not affect other federal or local accessibility requirements, only the DOE's rules for funding.
+For this reason, we rated the claim a mixture of true and false information.
+We have reached out to the DOE seeking more information about its delayed implementation. We will update this story should we receive a reply.
+In May 2025, the DOE published a
+direct final rule
+"rescinding" a
+rule
+that new construction projects that sought funding support from the DOE needed to comply with the
+Uniform Federal Accessibility Standards
+for accessibility for people with disabilities. The UFAS, in turn, follows requirements from the
+1973 Rehabilitation Act
+.
+"Upon further evaluation, and for the reasons explained subsequently, DOE has determined this provision to be unnecessary and unduly burdensome," the
+May 2025 proposed rule read
+.
+However, in
+July 2025
+, the DOE delayed its implementation because it "subsequently received significant adverse comments on that direct final rule." The implementation of that rule was then delayed several more times,
+most recently in July 2026
+, and as of this writing it was slated to take effect on Dec. 28, 2026.
+In other words, the rule has yet to take effect, and it's unclear how the adverse comments the DOE has received will affect its implementation.
+Opposition to the rule change
+After the DOE first published the rule change, several organizations representing the rights of people with disability sent adverse comments.
+If the requirements are rescinded, "covered entities will be misled into believing they need not make their facilities accessible when, in fact, there is no other way to avoid discriminating against people with disabilities.  As a result, they will violate the law and be forced to remediate accessibility barriers after construction is completed, likely at significant cost,"
+said the National Federation of the Blind
+in a June 6, 2025, letter.
+New York Lawyers for the Public Interest also
+filed an adverse comment
+that said the rule was "unlawful":
+The proposed rules are unlawful. "Direct final rules" must be routine or noncontroversial. Here, the proposed changes are neither. Instead, the proposals would delete foundational provisions implementing Section 504 [of the Rehabilitation Act of 1973] in contradiction of Congress's clear understanding of the law.
+The Leadership Conference on Civil and Human Rights said in
+a June 16, 2025, adverse comment
+that the direct final rule process was not designed for such changes:
+The direct final rule process is intended for noncontroversial rules that are unlikely to raise objections. Erecting new barriers to accessibility, as the direct final rule would do, is clearly controversial.
+Snopes found no evidence that this rule change would prevent other agencies, federal, state or local, from imposing such requirements on new constructions or renovations.
+For further reading, Snopes confirmed the
+U.S. Department of Housing and Urban Development updated its policy
+to effectively remove untrained "emotional support animals."

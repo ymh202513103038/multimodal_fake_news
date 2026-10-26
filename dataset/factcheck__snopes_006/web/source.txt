@@ -1,1 +1,2 @@
 source_url: https://www.snopes.com/fact-check/trump-cut-down-430-trees/
+retrieved_at: 2026-10-26T12:52:34.207408+00:00

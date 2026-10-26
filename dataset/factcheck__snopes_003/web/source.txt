@@ -1,1 +1,2 @@
 source_url: https://www.snopes.com/fact-check/ukraine-russia-bot-farms-satire/
+retrieved_at: 2026-10-26T12:52:21.786328+00:00

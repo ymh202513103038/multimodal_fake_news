@@ -1,1 +1,2 @@
 source_url: https://www.snopes.com/fact-check/george-carlin-public-executions/
+retrieved_at: 2026-10-26T12:53:08.531124+00:00

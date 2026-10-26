@@ -1,1 +1,2 @@
 source_url: https://www.snopes.com/fact-check/maine-data-center-endangered-whales/
+retrieved_at: 2026-10-26T12:52:48.869085+00:00

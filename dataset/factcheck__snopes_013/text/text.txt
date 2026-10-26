@@ -1,1 +1,107 @@
-# Trump order fast-tracks logging on federal lands, but posts exaggerate scale Written by: Jack Izzo Oct. 15, 2026 The order would allow federal agencies to bypass environmental protection laws in an effort to i ... Read More
+# Trump order fast-tracks logging on federal lands, but posts exaggerate scale
+
+Previous Article
+Next Article
+Article 4 of 4 in
+Collection
+Claim:
+U.S. President Donald Trump signed an executive order that would open up 59% of national forestland to logging.
+Rating:
+Mixture
+About this rating
+What's True
+Trump signed an executive order allowing federal permitting agencies to ignore environmental protection laws in an effort to increase domestic timber and lumber production. The executive order also calls for expanding domestic logging production on federal lands. Following that executive order, Agriculture Secretary Brooke Rollins announced that the USDA would attempt to roll back the Roadless Rule, which, at its height, prohibited logging on approximately 59 million acres of land.
+What's False
+The order and proposed repeal of the Roadless Rule would not open 59% of national forests to logging. Rather, by Snopes' calculations, it would allow logging on an additional 24% of national forestland.
+In October,
+posts
+on social
+media
+suggested that U.S. President Donald Trump signed an "emergency order" opening up 59% of U.S. national forests for logging. Snopes readers wrote in asking whether the rumor was accurate.
+The claim resembled one we
+fact-checked in March 2025
+. Then, we investigated a Trump executive order that social media posters claimed would result in 280 million acres of forest being clear-cut. We found the claim to be a mixture of true and exaggerated information.
+We came to the same conclusion on this new variant. While the claim is based partly in truth (the referenced "emergency order" is the same executive order we investigated in 2025), it also exaggerates the facts. We therefore rate it a mixture of true and false.
+Here's a breakdown:
+The order is real
+On March 1, 2025, Trump signed an executive order aimed at fast-tracking logging on federal lands. The order, titled "
+Immediate Expansion of American Timber Production
+," directed the Forest Service and the Bureau of Land Management, two of the largest caretakers of federal lands, to update guidelines in order to "
+facilitate increased timber production," among other things.
+Trump's executive order specifically asked those agencies to investigate and implement ways to increase both the speed and quantity of timber produced by cutting environmental regulations.
+It asked the Fish and Wildlife Service to streamline approvals for forestry projects that could potentially be halted by the Endangered Species Act within 60 days of the order. It also asked the Agriculture and Interior departments (which control the Forest Service and BLM, respectively) to
+exempt
+"timber thinning" and "timber salvage activities" from the
+National Environmental Policy Act
+. That act, signed into law by President Richard Nixon in 1970, requires the federal government to consider the environmental effects of its proposed actions through environmental impact statements.
+The executive order also encouraged the Agriculture and Interior departments to use the
+emergency regulations
+of the
+Endangered Species Act
+"to the maximum extent permissible under applicable law." Those regulations allow the act to be bypassed in situations where time is of the essence, such as "acts of God, disasters, casualties, national defense or security emergencies." (Trump's executive order was issued alongside
+another order
+declaring that importing timber and lumber poses a risk to national security.) Under the emergency regulations, the Fish and Wildlife Service provides "strictly advisory" recommendations for how to protect endangered species that can be "implemented at the discretion of the emergency response personnel."
+In other words, the executive order would allow the logging industry to bypass environmental restrictions found in the Endangered Species Act and National Environmental Policy Act.
+The acreage
+The Forest Service manages
+193 million acres of land across the country
+(about
+188 million acres of national forest
+)
+. Unlike national parks, national forests were established with the purpose of
+permitting logging and resource exploitation
+as well as wildlife conservation and recreation.
+If the 59% claim were accurate, then using the 188 million total acres figure from the Forest Service we would expect to find that the order opened up about 110 million acres for logging.
+But this wasn't the case.
+The Forest Service
+deems just 49 million acres of its land "suitable for timber management," far less than the 110 million acres suggested by the claim.
+Social media posts said NPR was the source of that figure, yet when we searched NPR's archive for stories suggesting that either 110 million acres or 59% of national forests would be opened up to logging, we found no results.
+The Roadless Rule
+Instead, we found that the posts appeared to misinterpret or misrepresent
+NPR's reporting
+regarding a real
+policy change implemented by Agriculture Secretary Brooke Rollins, who was tasked with carrying out the 2025 executive order.
+According to an August 2026 news release,
+Rollins announced that the USDA would roll back the 2001 Roadless Rule
+, a policy that prohibits the construction of new roads on national forestland. Because roads are required to transport the raw materials, the Roadless Rule effectively places a limit on the number of timber and mining operations on national forestland. The news release noted the USDA would take public comment on the proposed change until Sept. 21, just before the claim began spreading.
+When the Roadless Rule was first implemented, it applied to "
+nearly 60 million acres
+" of land, according to the Forest Service. We suspect this was the origin of social media users' claim that Trump's executive order would open up 59% of national forests to logging.
+Various sources
+,
+including
+NPR
+, reported 58 million to 59 million acres would be opened up. People may have mistaken the acreage for a percentage.
+Even then, the social media posts dwelled on the wrong acreage figure, because the Roadless Rule no longer covers the original acreage.
+Colorado
+and
+Idaho
+enacted state-level Roadless Rules offering higher levels of protection for some land, and those stricter protections effectively supersede the federal rule. According to the Forest Service, taking those restrictions into account means the federal Roadless Rule now applies to only around 45 million acres of forest.
+Using the correct, up-to-date acreage, Snopes calculated the rule's recision would open up approximately 24% of Forest Service land for logging. (We were unable to determine how much of that land is actually suitable for the purpose, however.)
+Rollins' repeal is supported by the logging industry and
+several Republican governors
+, who claim it will prevent wildfires by allowing humans to more directly access and manage remote forestland.
+The repeal is opposed by several groups, according to reports from
+Pew
+,
+NPR
+and
+Cal Matters
+. Environmental groups
+cite scientific research
+showing 80% of wildfires are caused by human activity, and therefore more human access would increase, not decrease, fire risk. This is backed up by the Forest Service's own environmental analysis on the repeal, according to Pew. Meanwhile,
+tribal nations claim
+the repeal undermines tribal sovereignty, and
+a spending watchdog notes
+that the Forest Service already has a $6 billion backlog in road maintenance. Repealing the Roadless Rule would only make that worse.
+(In fact, during an phone interview for a
+different story on the Forest Service
+, Associate Chief Chris French told Snopes the maintenance backlog has been around for decades, and was part of why the rule was implemented in 2001. That detail didn't make it into the final story.)
+A bipartisan group of 164 senators and representatives
+wrote a letter to Rollins and Forest Service Chief Tom Schultz
+in September pointing out all of those factors and noting that the Roadless Rule has immense public support.
+The USDA is expected to make its final decision on the repeal in early 2027.
+Previous Article
+Next Article
+Article 4 of 4 in
+Collection
