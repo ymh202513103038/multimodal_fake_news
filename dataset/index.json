@@ -1647,7 +1647,10 @@
       "reason": null,
       "annotator": null,
       "title": "Deepfake Makin Sulit Dikenali, Kemkomdigi Kaji Aturan Label Konten AI \nhttps://\n",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:11:12+00:00",
       "case_dir": "x_deepfake__tweet_2111774012066189735",
       "files": {
@@ -1674,7 +1677,10 @@
       "reason": null,
       "annotator": null,
       "title": "If you saw them over there, you’d be shocked. they’re more obsessed with Lisa th",
-      "metrics": {},
+      "metrics": {
+        "likes": 29,
+        "retweets": 1
+      },
       "collected_at": "2026-10-18T11:11:12+00:00",
       "case_dir": "x_deepfake__tweet_2111770742681387433",
       "files": {
@@ -1701,7 +1707,10 @@
       "reason": null,
       "annotator": null,
       "title": "AI is becoming a powerful shield against online threats.  From detecting deepfak",
-      "metrics": {},
+      "metrics": {
+        "likes": 3,
+        "retweets": 3
+      },
       "collected_at": "2026-10-18T11:11:12+00:00",
       "case_dir": "x_deepfake__tweet_2111764588970602788",
       "files": {
@@ -1731,7 +1740,10 @@
       "reason": null,
       "annotator": null,
       "title": "I am not comfortable but it’s the future. Agents have my social security number ",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:11:12+00:00",
       "case_dir": "x_deepfake__tweet_2111755533757690189",
       "files": {
@@ -1758,7 +1770,10 @@
       "reason": null,
       "annotator": null,
       "title": "ಜಾಹ್ನವಿ ಕಪೂರ್​, ನೇಹಾ ಶರ್ಮಾ ಆಯ್ತು ಈ ಕಿಡಿಗೇಡಿಗಳ ಮುಂದಿನ ಟಾರ್ಗೆಟ್​ ಯಾರು? ತಲ್ಲಣ ಸೃಷ್ಟ",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:11:12+00:00",
       "case_dir": "x_deepfake__tweet_2111752424260350399",
       "files": {
@@ -1785,7 +1800,10 @@
       "reason": null,
       "annotator": null,
       "title": "SynthID Detector: Google ouvre la traçabilité des contenus IA au grand public \nh",
-      "metrics": {},
+      "metrics": {
+        "likes": 1,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:11:12+00:00",
       "case_dir": "x_deepfake__tweet_2111744449931780251",
       "files": {
@@ -1812,7 +1830,10 @@
       "reason": null,
       "annotator": null,
       "title": "The Form Five student, believed to be the suspect, was suspended for five days i",
-      "metrics": {},
+      "metrics": {
+        "likes": 8,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:11:12+00:00",
       "case_dir": "x_deepfake__tweet_2111744160726479068",
       "files": {
@@ -1839,7 +1860,10 @@
       "reason": null,
       "annotator": null,
       "title": "#FMTNews Law firm says the Seremban schoolgirls are fearful of possible retaliat",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:11:12+00:00",
       "case_dir": "x_deepfake__tweet_2111739552323035348",
       "files": {
@@ -1866,7 +1890,10 @@
       "reason": null,
       "annotator": null,
       "title": "Student victims in deepfake case shouldn’t have faced suspect, police told\n\n",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 1
+      },
       "collected_at": "2026-10-18T11:11:12+00:00",
       "case_dir": "x_deepfake__tweet_2111739550473314726",
       "files": {
@@ -1893,7 +1920,10 @@
       "reason": null,
       "annotator": null,
       "title": "risk of ai deepfake music by mr_farman_ai",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:11:12+00:00",
       "case_dir": "x_deepfake__tweet_2111732649337532852",
       "files": {
@@ -1906,7 +1936,8 @@
         "web": [
           "x_deepfake__tweet_2111732649337532852/web/source.txt"
         ]
-      }
+      },
+      "role": "reply_lowvalue"
     },
     {
       "id": "x_fake_news__tweet_2111774519379493327",
@@ -1920,7 +1951,10 @@
       "reason": null,
       "annotator": null,
       "title": "Não é fake News",
-      "metrics": {},
+      "metrics": {
+        "likes": 4,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:03:07+00:00",
       "case_dir": "x_fake_news__tweet_2111774519379493327",
       "files": {
@@ -1933,7 +1967,8 @@
         "web": [
           "x_fake_news__tweet_2111774519379493327/web/source.txt"
         ]
-      }
+      },
+      "role": "reply_lowvalue"
     },
     {
       "id": "x_fake_news__tweet_2111774398600695895",
@@ -1947,7 +1982,10 @@
       "reason": null,
       "annotator": null,
       "title": "Right from the PM to the rest of the party, you guys are really jokers.\n\nEven a ",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:03:07+00:00",
       "case_dir": "x_fake_news__tweet_2111774398600695895",
       "files": {
@@ -1974,7 +2012,10 @@
       "reason": null,
       "annotator": null,
       "title": "BBC who faked a video claming Trump telling people to storm the congress and the",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:03:07+00:00",
       "case_dir": "x_fake_news__tweet_2111774391705211029",
       "files": {
@@ -2001,7 +2042,10 @@
       "reason": null,
       "annotator": null,
       "title": "FAKE NEWS!!!",
-      "metrics": {},
+      "metrics": {
+        "likes": 1,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:03:07+00:00",
       "case_dir": "x_fake_news__tweet_2111774360310792534",
       "files": {
@@ -2014,7 +2058,8 @@
         "web": [
           "x_fake_news__tweet_2111774360310792534/web/source.txt"
         ]
-      }
+      },
+      "role": "reply_lowvalue"
     },
     {
       "id": "x_fake_news__tweet_2111774262625210453",
@@ -2028,7 +2073,10 @@
       "reason": null,
       "annotator": null,
       "title": "Fake News never been a site during midterms",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:03:07+00:00",
       "case_dir": "x_fake_news__tweet_2111774262625210453",
       "files": {
@@ -2058,7 +2106,10 @@
       "reason": null,
       "annotator": null,
       "title": "That you’re a sheep and fake news",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:03:07+00:00",
       "case_dir": "x_fake_news__tweet_2111774179070767274",
       "files": {
@@ -2071,7 +2122,8 @@
         "web": [
           "x_fake_news__tweet_2111774179070767274/web/source.txt"
         ]
-      }
+      },
+      "role": "reply_lowvalue"
     },
     {
       "id": "x_fake_news__tweet_2111774001324585331",
@@ -2085,7 +2137,10 @@
       "reason": null,
       "annotator": null,
       "title": "gente ????? queria saber o q essas contas ganham propagando fake news",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:03:07+00:00",
       "case_dir": "x_fake_news__tweet_2111774001324585331",
       "files": {
@@ -2098,7 +2153,8 @@
         "web": [
           "x_fake_news__tweet_2111774001324585331/web/source.txt"
         ]
-      }
+      },
+      "role": "reply_lowvalue"
     },
     {
       "id": "x_fake_news__tweet_2111773837348024600",
@@ -2112,7 +2168,10 @@
       "reason": null,
       "annotator": null,
       "title": "Fake news non ? Je la vois pas.",
-      "metrics": {},
+      "metrics": {
+        "likes": 1,
+        "retweets": 1
+      },
       "collected_at": "2026-10-18T11:03:07+00:00",
       "case_dir": "x_fake_news__tweet_2111773837348024600",
       "files": {
@@ -2125,7 +2184,8 @@
         "web": [
           "x_fake_news__tweet_2111773837348024600/web/source.txt"
         ]
-      }
+      },
+      "role": "reply_lowvalue"
     },
     {
       "id": "x_fake_news__tweet_2111773764354748487",
@@ -2139,7 +2199,10 @@
       "reason": null,
       "annotator": null,
       "title": "would i ever share fake news? ",
-      "metrics": {},
+      "metrics": {
+        "likes": 1,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:03:07+00:00",
       "case_dir": "x_fake_news__tweet_2111773764354748487",
       "files": {
@@ -2152,7 +2215,8 @@
         "web": [
           "x_fake_news__tweet_2111773764354748487/web/source.txt"
         ]
-      }
+      },
+      "role": "reply_lowvalue"
     },
     {
       "id": "x_fake_news__tweet_2111773738161315901",
@@ -2166,7 +2230,10 @@
       "reason": null,
       "annotator": null,
       "title": "สื่อส้ม fake news รีกันหลายหมื่น แถลงการณ์ขอโทษที่บิดเบือน ติ่งปิดหูปิดตาปิดปาก ",
-      "metrics": {},
+      "metrics": {
+        "likes": 0,
+        "retweets": 0
+      },
       "collected_at": "2026-10-18T11:03:07+00:00",
       "case_dir": "x_fake_news__tweet_2111773738161315901",
       "files": {
