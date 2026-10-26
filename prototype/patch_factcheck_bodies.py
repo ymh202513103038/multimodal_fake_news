@@ -47,6 +47,10 @@ def read_source_url(case_dir: Path):
 def fetch_piyao(url: str):
     r = requests.get(url, timeout=20, headers=UA)
     r.raise_for_status()
+    # piyao 页面响应头不带 charset，requests 会按 HTTP 规范默认 ISO-8859-1，
+    # 直接读 r.text 会产生双重编码乱码 -> 必须从 HTML meta 或内容嗅探真实编码
+    if not (r.encoding or "").lower().startswith("utf"):
+        r.encoding = r.apparent_encoding
     soup = BeautifulSoup(r.text, "html.parser")
     el = soup.select_one(".content") or soup.select_one("article")
     if not el:
