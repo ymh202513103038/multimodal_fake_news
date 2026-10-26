@@ -92,6 +92,23 @@ python prototype\harvest_daily.py --dry-run
 - 配额双保险：账本 `metadata\quota_ledger.jsonl` + 单日上限 `--quota-cap`（默认 8000）；
 - 定时：Windows 计划任务每天调 `run_harvest.bat`（见 documentation/roadmap.md 第 3 步）。
 
+## 全状态 JSON 接口（为调度 Agent 预留，只读）
+
+```powershell
+python prototype\state_api.py          # http://127.0.0.1:8765
+```
+
+- `GET /api/state` —— 全状态总览：案例数（按平台/主题/语言/标签覆盖）、媒体体量、
+  配额账本、收割游标。Agent 决策先看这个，小载荷；
+- `GET /api/cases?platform=&topic=&lang=&label=&thin=1&q=&limit=&offset=`
+  —— 案例列表（过滤+分页，避免大payload塞爆 Agent 上下文）；
+- `GET /api/cases/{id}` —— 单案例详情（含 files 磁盘实况）；
+- `GET /api/harvest` —— 收割游标 + 每日配额聚合；
+- `GET /api/health` —— 存活探针。
+
+所有响应带 `schema_version` 与 `generated_at`。**严格只读**：写操作仍走
+prototype 各 CLI；默认只绑 127.0.0.1，含采集原文，勿直接暴露公网。
+
 ## Git / GitHub 约定
 
 - 本仓库以本地 git 管理；远端建议 GitHub **私有**仓库（采集脚本与合规敏感，暂不公开）
