@@ -1663,7 +1663,8 @@
         "web": [
           "x_deepfake__tweet_2111774012066189735/web/source.txt"
         ]
-      }
+      },
+      "lang": "id-ms"
     },
     {
       "id": "x_deepfake__tweet_2111770742681387433",
@@ -1693,7 +1694,8 @@
         "web": [
           "x_deepfake__tweet_2111770742681387433/web/source.txt"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "x_deepfake__tweet_2111764588970602788",
@@ -1726,7 +1728,8 @@
         "image": [
           "x_deepfake__tweet_2111764588970602788/image/photo_1.jpg"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "x_deepfake__tweet_2111755533757690189",
@@ -1756,7 +1759,8 @@
         "web": [
           "x_deepfake__tweet_2111755533757690189/web/source.txt"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "x_deepfake__tweet_2111752424260350399",
@@ -1786,7 +1790,8 @@
         "web": [
           "x_deepfake__tweet_2111752424260350399/web/source.txt"
         ]
-      }
+      },
+      "lang": "kn"
     },
     {
       "id": "x_deepfake__tweet_2111744449931780251",
@@ -1816,7 +1821,8 @@
         "web": [
           "x_deepfake__tweet_2111744449931780251/web/source.txt"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "x_deepfake__tweet_2111744160726479068",
@@ -1846,7 +1852,8 @@
         "web": [
           "x_deepfake__tweet_2111744160726479068/web/source.txt"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "x_deepfake__tweet_2111739552323035348",
@@ -1876,7 +1883,8 @@
         "web": [
           "x_deepfake__tweet_2111739552323035348/web/source.txt"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "x_deepfake__tweet_2111739550473314726",
@@ -1906,7 +1914,8 @@
         "web": [
           "x_deepfake__tweet_2111739550473314726/web/source.txt"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "x_deepfake__tweet_2111732649337532852",
@@ -1937,7 +1946,8 @@
           "x_deepfake__tweet_2111732649337532852/web/source.txt"
         ]
       },
-      "role": "reply_lowvalue"
+      "role": "reply_lowvalue",
+      "lang": "en"
     },
     {
       "id": "x_fake_news__tweet_2111774519379493327",
@@ -1968,7 +1978,8 @@
           "x_fake_news__tweet_2111774519379493327/web/source.txt"
         ]
       },
-      "role": "reply_lowvalue"
+      "role": "reply_lowvalue",
+      "lang": "pt"
     },
     {
       "id": "x_fake_news__tweet_2111774398600695895",
@@ -1998,7 +2009,8 @@
         "web": [
           "x_fake_news__tweet_2111774398600695895/web/source.txt"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "x_fake_news__tweet_2111774391705211029",
@@ -2028,7 +2040,8 @@
         "web": [
           "x_fake_news__tweet_2111774391705211029/web/source.txt"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "x_fake_news__tweet_2111774360310792534",
@@ -2059,7 +2072,8 @@
           "x_fake_news__tweet_2111774360310792534/web/source.txt"
         ]
       },
-      "role": "reply_lowvalue"
+      "role": "reply_lowvalue",
+      "lang": "en"
     },
     {
       "id": "x_fake_news__tweet_2111774262625210453",
@@ -2092,7 +2106,8 @@
         "image": [
           "x_fake_news__tweet_2111774262625210453/image/photo_1.jpg"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "x_fake_news__tweet_2111774179070767274",
@@ -2123,7 +2138,8 @@
           "x_fake_news__tweet_2111774179070767274/web/source.txt"
         ]
       },
-      "role": "reply_lowvalue"
+      "role": "reply_lowvalue",
+      "lang": "en"
     },
     {
       "id": "x_fake_news__tweet_2111774001324585331",
@@ -2154,7 +2170,8 @@
           "x_fake_news__tweet_2111774001324585331/web/source.txt"
         ]
       },
-      "role": "reply_lowvalue"
+      "role": "reply_lowvalue",
+      "lang": "pt"
     },
     {
       "id": "x_fake_news__tweet_2111773837348024600",
@@ -2185,7 +2202,8 @@
           "x_fake_news__tweet_2111773837348024600/web/source.txt"
         ]
       },
-      "role": "reply_lowvalue"
+      "role": "reply_lowvalue",
+      "lang": "en"
     },
     {
       "id": "x_fake_news__tweet_2111773764354748487",
@@ -2216,7 +2234,8 @@
           "x_fake_news__tweet_2111773764354748487/web/source.txt"
         ]
       },
-      "role": "reply_lowvalue"
+      "role": "reply_lowvalue",
+      "lang": "en"
     },
     {
       "id": "x_fake_news__tweet_2111773738161315901",
@@ -2246,7 +2265,8 @@
         "web": [
           "x_fake_news__tweet_2111773738161315901/web/source.txt"
         ]
-      }
+      },
+      "lang": "en"
     },
     {
       "id": "factcheck__piyao_001",
