@@ -15,6 +15,7 @@ import json
 import re
 from datetime import date, datetime, timezone
 from pathlib import Path
+from urllib.parse import urljoin
 
 import requests
 
@@ -46,9 +47,14 @@ def strip_tags(s: str) -> str:
 
 
 def absolute(base: str, href: str) -> str:
-    if href.startswith("http"):
-        return href
-    return base.rstrip("/") + href
+    """相对链转绝对链。
+
+    这里踩过坑：原来用 `base.rstrip("/") + href`，而 piyao 的正则允许 href 不带前导斜杠
+    （`20261008/xxx/c.html`），拼出来就是 `https://www.piyao.org.cn20261008/...`——
+    域名和日期粘在一起，15 条案例的 url 全部点不开。
+    改用 urljoin：href 带不带斜杠、带不带协议都能正确处理。
+    """
+    return urljoin(base + "/", href)
 
 
 def probe(site: str, cfg: dict, limit: int) -> list[dict]:
