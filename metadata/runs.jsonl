@@ -16,3 +16,6 @@
 {"at": "2026-11-03T11:19:05+00:00", "task_id": "cluster-20261103191904-3b4c", "agent": "cluster", "action": "cluster_cases", "status": "ok", "metrics": {"cases": 98, "events": 96, "largest": 2}, "error": null, "elapsed_s": 0.087, "dry": false}
 {"at": "2026-11-03T11:19:05+00:00", "task_id": "verify-20261103191904-353f", "agent": "verify", "action": "build_packets", "status": "ok", "metrics": {"events": 96, "high_gaps": 177}, "error": null, "elapsed_s": 0.068, "dry": false}
 {"at": "2026-11-03T11:19:06+00:00", "task_id": "card-20261103191904-758b", "agent": "card", "action": "make_card", "status": "ok", "metrics": {"cards": 10}, "error": null, "elapsed_s": 0.038, "dry": false}
+{"at": "2026-11-03T11:57:57+00:00", "task_id": "cluster-20261103195756-85c0", "agent": "cluster", "action": "cluster_cases", "status": "ok", "metrics": {"cases": 98, "events": 96, "largest": 2}, "error": null, "elapsed_s": 0.1, "dry": false}
+{"at": "2026-11-03T11:57:58+00:00", "task_id": "verify-20261103195756-0462", "agent": "verify", "action": "build_packets", "status": "ok", "metrics": {"events": 96, "source_grounded": 23}, "error": null, "elapsed_s": 0.089, "dry": false}
+{"at": "2026-11-03T11:57:59+00:00", "task_id": "card-20261103195756-2307", "agent": "card", "action": "make_card", "status": "ok", "metrics": {"cards": 96}, "error": null, "elapsed_s": 0.189, "dry": false}

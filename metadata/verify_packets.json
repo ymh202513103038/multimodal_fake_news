@@ -1,14 +1,31 @@
 {
- "schema_version": "verify.v1",
- "generated_at": "2026-11-03T11:19:49+00:00",
+ "schema_version": "verify.v2",
+ "generated_at": "2026-11-03T11:57:58+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
-  "high": 177,
+  "high": 250,
   "medium": 98,
   "low": 53
  },
  "clean": 0,
+ "source_grounded": 23,
+ "layer_coverage": {
+  "event_layer": {
+   "insufficient": 74,
+   "source_mentions": 8,
+   "source_says_true": 9,
+   "source_says_false": 5
+  },
+  "media_layer": {
+   "insufficient": 93,
+   "source_says_media_mismatch": 3
+  },
+  "claim_layer": {
+   "insufficient": 88,
+   "source_says_false": 8
+  }
+ },
  "packets": [
   {
    "event_id": "E01",
@@ -38,17 +55,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -69,12 +102,17 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     },
     {
      "code": "single_domain",
      "severity": "medium",
      "hint": "簇内全部来自同一域名 x.com，是同一源头被搬运转述"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -121,17 +159,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -153,6 +207,11 @@
      "code": "single_domain",
      "severity": "medium",
      "hint": "簇内全部来自同一域名 youtube.com，是同一源头被搬运转述"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -191,17 +250,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -218,6 +293,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -256,17 +336,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -283,6 +379,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -319,17 +420,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -350,7 +467,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -389,17 +511,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -416,6 +554,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -454,17 +597,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -481,6 +640,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -519,17 +683,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -546,6 +726,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -584,17 +769,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -611,6 +812,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -649,17 +855,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -676,6 +898,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -714,17 +941,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -741,6 +984,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -779,17 +1027,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -806,6 +1070,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -844,17 +1113,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -871,6 +1156,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -909,17 +1199,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -936,6 +1242,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -974,17 +1285,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1001,6 +1328,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1039,17 +1371,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1066,6 +1414,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1104,17 +1457,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1131,6 +1500,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1169,17 +1543,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1196,6 +1586,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1234,17 +1629,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1261,6 +1672,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1299,17 +1715,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1326,6 +1758,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1364,17 +1801,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1391,6 +1844,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1429,17 +1887,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1456,6 +1930,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1494,17 +1973,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1521,6 +2016,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1557,17 +2057,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1588,7 +2104,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1627,17 +2148,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1654,6 +2191,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1692,17 +2234,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1719,6 +2277,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1757,17 +2320,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1784,6 +2363,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1822,17 +2406,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1849,6 +2449,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1887,17 +2492,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1914,6 +2535,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -1952,17 +2578,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -1979,6 +2621,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2017,17 +2664,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2044,6 +2707,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2082,17 +2750,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2109,6 +2793,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2147,17 +2836,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2174,6 +2879,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2210,17 +2920,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2241,7 +2967,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2280,17 +3011,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2307,6 +3054,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2345,17 +3097,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2372,6 +3140,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2410,17 +3183,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2437,6 +3226,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2475,17 +3269,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2502,6 +3312,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2540,17 +3355,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2567,6 +3398,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2605,17 +3441,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2632,6 +3484,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2670,17 +3527,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2697,6 +3570,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2735,17 +3613,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2762,6 +3656,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2801,17 +3700,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2828,6 +3743,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2866,17 +3786,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2893,6 +3829,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2931,17 +3872,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -2958,6 +3915,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -2996,17 +3958,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3023,6 +4001,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3061,17 +4044,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3088,6 +4087,11 @@
      "code": "no_label",
      "severity": "high",
      "hint": "簇内没有任何标签，需先完成 L1 二分类"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3124,17 +4128,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3155,7 +4175,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3192,17 +4217,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3223,7 +4264,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3260,17 +4306,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3291,7 +4353,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3328,17 +4395,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3359,7 +4442,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3396,17 +4484,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3427,7 +4531,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3464,17 +4573,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3495,7 +4620,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3532,17 +4662,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3563,7 +4709,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3600,17 +4751,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3631,7 +4798,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3668,17 +4840,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3699,7 +4887,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3737,17 +4930,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3768,7 +4977,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3806,17 +5020,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3837,7 +5067,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3874,17 +5109,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3905,7 +5156,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -3942,17 +5198,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -3973,7 +5245,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -4011,17 +5288,48 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [
+      {
+       "case_id": "x_fake_news__tweet_2625210453",
+       "source": "claim_text",
+       "field": "title",
+       "quote": "Fake News never been a site during midterms"
+      }
+     ],
+     "rationale": "主张含强断言词（never），但无核查源原文支撑，表述层需人工/外部检索判定。",
+     "strong_terms": [
+      "never"
+     ],
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [
+     {
+      "label": "unsupported_content",
+      "why": "强断言词：never"
+     }
+    ],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4042,7 +5350,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -4080,17 +5393,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4111,7 +5440,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -4149,17 +5483,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4180,7 +5530,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -4217,17 +5572,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4248,7 +5619,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -4286,17 +5662,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4317,7 +5709,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -4355,17 +5752,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4386,7 +5799,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -4424,17 +5842,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_mentions",
+     "evidence": [
+      {
+       "case_id": "factcheck__piyao_001",
+       "source": "piyao",
+       "field": "body",
+       "quote": "二是使用与专业领域相关的模糊关键词，绕过平台对专业资质认证的要求，变相发布相关专业领域内容，传播不实信息误导公众。"
+      }
+     ],
+     "rationale": "中文辟谣站出现点名该主张的表述，但站点未给结构化评级。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源提及（无评级）"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4455,7 +5896,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -4463,7 +5904,7 @@
     "中央网信办开展 清朗·整治短视频虚假人设乱象 行动 辟谣",
     "中央网信办开展 清朗·整治短视频虚假人设乱象 行动 debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E68",
@@ -4492,17 +5933,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_mentions",
+     "evidence": [
+      {
+       "case_id": "factcheck__piyao_002",
+       "source": "piyao",
+       "field": "body",
+       "quote": "小红书账号“观澜FinResearch”、今日头条账号“康子”、微博账号“天天观C”、搜狐号“天下G查”发布涉企负面不实信息。"
+      }
+     ],
+     "rationale": "中文辟谣站出现点名该主张的表述，但站点未给结构化评级。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源提及（无评级）"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4523,7 +5987,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -4531,7 +5995,7 @@
     "E68 辟谣",
     "E68 debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E69",
@@ -4560,17 +6024,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_mentions",
+     "evidence": [
+      {
+       "case_id": "factcheck__piyao_003",
+       "source": "piyao",
+       "field": "body",
+       "quote": "包括断章取义、歪曲解读企业家过往言论，呈现与事实不符的搜索关键词联想、搜索落地页结果，已经权威辟谣、澄清的不实信息，与企业、企业家在超大平台上的官方账号发布的公开声明不符信息。"
+      }
+     ],
+     "rationale": "中文辟谣站出现点名该主张的表述，但站点未给结构化评级。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源提及（无评级）"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4591,7 +6078,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -4599,7 +6086,7 @@
     "E69 辟谣",
     "E69 debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E70",
@@ -4628,17 +6115,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_mentions",
+     "evidence": [
+      {
+       "case_id": "factcheck__piyao_004",
+       "source": "piyao",
+       "field": "body",
+       "quote": "AI制作发布虚假不实信息。"
+      }
+     ],
+     "rationale": "中文辟谣站出现点名该主张的表述，但站点未给结构化评级。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源提及（无评级）"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4659,7 +6169,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -4667,7 +6177,7 @@
     "E70 辟谣",
     "E70 debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E71",
@@ -4696,17 +6206,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_mentions",
+     "evidence": [
+      {
+       "case_id": "factcheck__piyao_005",
+       "source": "piyao",
+       "field": "body",
+       "quote": "网传视频系信息发布者为吸粉引流恶意编造的网络谣言 。"
+      }
+     ],
+     "rationale": "中文辟谣站出现点名该主张的表述，但站点未给结构化评级。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源提及（无评级）"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4727,7 +6260,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -4735,7 +6268,7 @@
     "E71 辟谣",
     "E71 debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E72",
@@ -4764,17 +6297,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_mentions",
+     "evidence": [
+      {
+       "case_id": "factcheck__piyao_006",
+       "source": "piyao",
+       "field": "body",
+       "quote": "网传“新疆2027年中考科目及分值重大调整”即典型的涉教育谣言，易引发家长焦虑、扰乱正常教育秩序。"
+      }
+     ],
+     "rationale": "中文辟谣站出现点名该主张的表述，但站点未给结构化评级。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源提及（无评级）"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4795,7 +6351,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -4803,7 +6359,7 @@
     "E72 辟谣",
     "E72 debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E73",
@@ -4832,17 +6388,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4863,7 +6435,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -4900,17 +6477,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4931,7 +6524,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -4968,17 +6566,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -4999,7 +6613,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -5036,17 +6655,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5067,7 +6702,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -5104,17 +6744,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5135,7 +6791,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -5172,17 +6833,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5203,7 +6880,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -5240,17 +6922,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_mentions",
+     "evidence": [
+      {
+       "case_id": "factcheck__piyao_013",
+       "source": "piyao",
+       "field": "body",
+       "quote": "视频中的建筑是对运河的正常维护施工项目，网传视频系信息发布者为吸粉引流恶意编造的网络谣言。"
+      }
+     ],
+     "rationale": "中文辟谣站出现点名该主张的表述，但站点未给结构化评级。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源提及（无评级）"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5271,7 +6976,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -5279,7 +6984,7 @@
     "E79 辟谣",
     "E79 debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E80",
@@ -5308,17 +7013,33 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5339,7 +7060,12 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
+    },
+    {
+     "code": "no_source_evidence",
+     "severity": "high",
+     "hint": "三层都抽不到来源证据：需外部检索（见 search_suggestions）"
     }
    ],
    "search_suggestions": [
@@ -5376,17 +7102,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_mentions",
+     "evidence": [
+      {
+       "case_id": "factcheck__piyao_015",
+       "source": "piyao",
+       "field": "body",
+       "quote": "此外，网传“加油站柴油普遍掺水，是行业潜规则”的说法纯属谣言。"
+      }
+     ],
+     "rationale": "中文辟谣站出现点名该主张的表述，但站点未给结构化评级。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源提及（无评级）"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": null,
+    "is_fake_source_why": "",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5407,7 +7156,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -5415,7 +7164,7 @@
     "中国石油 微信公众号 关于近期柴油的消费提示 辟谣",
     "中国石油 微信公众号 关于近期柴油的消费提示 debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E82",
@@ -5446,17 +7195,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_001",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: True"
+      }
+     ],
+     "rationale": "Snopes 评级「True」，主张整体成立。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：成立"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 0,
+    "is_fake_source_why": "snopes Rating=True（factcheck__snopes_001）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5472,7 +7244,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -5481,7 +7253,7 @@
     "Kmart used to sell pet monkeys in the 1960s It debunk",
     "Kmart used to sell pet monkeys in the 1960s It 1960"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E83",
@@ -5512,17 +7284,60 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_002",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: False"
+      }
+     ],
+     "rationale": "Snopes 评级「False」，主张与事实不符。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：不实"
+    },
+    "media_layer": {
+     "verdict": "source_says_media_mismatch",
+     "kind": "ai_or_synthetic",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_002",
+       "source": "snopes",
+       "field": "body",
+       "quote": "The same account posted an AI generated image claiming to show Omar appearing to hide in a tunnel claiming she \"has gone underground\": We're haring more reports that Ilhan Omar fled her home 30 minutes before the raid an"
+      }
+     ],
+     "rationale": "核查原文点名画面/素材问题（ai_or_synthetic）。",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "来源称：画面不符"
+    },
+    "claim_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_002",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: False"
+      }
+     ],
+     "rationale": "Snopes 评级「False」，整条主张不成立。",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "来源称：不实"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 1,
+    "is_fake_source_why": "snopes Rating=False（factcheck__snopes_002）",
+    "labels_suggested": [
+     {
+      "label": "cgi",
+      "why": "The same account posted an AI generated image claiming to show Omar appearing to hide in a tunnel claiming she \"has gone"
+     }
+    ],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5538,7 +7353,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -5546,7 +7361,7 @@
     "Ilhan Omar didn flee to Morocco after federal agents raid 辟谣",
     "Ilhan Omar didn flee to Morocco after federal agents raid debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E84",
@@ -5577,17 +7392,47 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_003",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: Originated as Satire"
+      }
+     ],
+     "rationale": "Snopes 评级「Originated as Satire」，主张与事实不符。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：不实"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_003",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: Originated as Satire"
+      }
+     ],
+     "rationale": "Snopes 评级「Originated as Satire」，整条主张不成立。",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "来源称：不实"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 1,
+    "is_fake_source_why": "snopes Rating=Originated as Satire（factcheck__snopes_003）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5603,7 +7448,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -5611,7 +7456,7 @@
     "Trump didn accuse Ukraine of election interference after strikes on 辟谣",
     "Trump didn accuse Ukraine of election interference after strikes on debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E85",
@@ -5642,17 +7487,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_004",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: True"
+      }
+     ],
+     "rationale": "Snopes 评级「True」，主张整体成立。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：成立"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 0,
+    "is_fake_source_why": "snopes Rating=True（factcheck__snopes_004）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5668,7 +7536,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -5676,7 +7544,7 @@
     "Are videos of Tesla new flying car performing mid air 辟谣",
     "Are videos of Tesla new flying car performing mid air debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E86",
@@ -5707,17 +7575,47 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_005",
+       "source": "snopes",
+       "field": "What's True",
+       "quote": "In 2025, the DOE finalizetd a rule change saying that it will no longer require new building or renovation projects to meet the standards of accessibility that comply with the Rehabilitation Act of 1973, which requires new buildings and renovations to remove \"architectural and transportation barrier"
+      }
+     ],
+     "rationale": "Snopes 评级「Mixture」；其 What's True 段落给出了事件成立的部分。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：成立"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_005",
+       "source": "snopes",
+       "field": "What's False",
+       "quote": "The final rule has not yet been implemented. On July 1, 2026, the DOE delayed its effective date to Dec. 28, 2026. The rule change would also not affect other federal or local accessibility requirements, only the DOE's rules for funding."
+      }
+     ],
+     "rationale": "Snopes 明确指出哪一部分为假（评级「Mixture」）。",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "来源称：不实"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": -1,
+    "is_fake_source_why": "snopes Rating=Mixture（factcheck__snopes_005）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5733,7 +7631,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -5741,7 +7639,7 @@
     "Did Department of Energy remove building accessibility requirements for disabled 辟谣",
     "Did Department of Energy remove building accessibility requirements for disabled debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E87",
@@ -5772,17 +7670,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_006",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: True"
+      }
+     ],
+     "rationale": "Snopes 评级「True」，主张整体成立。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：成立"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 0,
+    "is_fake_source_why": "snopes Rating=True（factcheck__snopes_006）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5798,7 +7719,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -5807,7 +7728,7 @@
     "Trump admin cut down 430 trees at DC golf course debunk",
     "Trump admin cut down 430 trees at DC golf course 430"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E88",
@@ -5838,17 +7759,53 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "证据不足"
+    },
+    "media_layer": {
+     "verdict": "source_says_media_mismatch",
+     "kind": "mismatch",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_007",
+       "source": "snopes",
+       "field": "body",
+       "quote": "Rating: Miscaptioned About this rating During her Oct. 13 debut , White House press secretary Katie Zacharia answered three questions from outlets typically friendly to U.S."
+      }
+     ],
+     "rationale": "核查原文点名画面/素材问题（mismatch）。",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "来源称：画面不符"
+    },
+    "claim_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_007",
+       "source": "snopes",
+       "field": "About this rating",
+       "quote": "During her Oct. 13 debut , White House press secretary Katie Zacharia answered three questions from outlets typically friendly to U.S. President Donald Trump, stumbling over parts of those answers, and ended the press conference after just 14 minutes. Many social media users mocked Zacharia's perfor"
+      }
+     ],
+     "rationale": "核查源判为「Miscaptioned」：素材/标注与所述不符，属表述层问题。",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "来源称：不实"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 1,
+    "is_fake_source_why": "snopes Rating=Miscaptioned（factcheck__snopes_007）",
+    "labels_suggested": [
+     {
+      "label": "contradictory_content",
+      "why": "Rating: Miscaptioned About this rating During her Oct. 13 debut , White House press secretary Katie Zacharia answered th"
+     }
+    ],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5864,7 +7821,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -5872,7 +7829,7 @@
     "Does video show Katie Zacharia struggling to answer beauty pageant 辟谣",
     "Does video show Katie Zacharia struggling to answer beauty pageant debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E89",
@@ -5903,17 +7860,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_008",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: True"
+      }
+     ],
+     "rationale": "Snopes 评级「True」，主张整体成立。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：成立"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 0,
+    "is_fake_source_why": "snopes Rating=True（factcheck__snopes_008）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5929,7 +7909,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -5937,7 +7917,7 @@
     "You are the snake Marjorie Taylor Greene post criticizes Trump 辟谣",
     "You are the snake Marjorie Taylor Greene post criticizes Trump debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E90",
@@ -5968,17 +7948,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_009",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: True"
+      }
+     ],
+     "rationale": "Snopes 评级「True」，主张整体成立。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：成立"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 0,
+    "is_fake_source_why": "snopes Rating=True（factcheck__snopes_009）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -5994,7 +7997,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -6002,7 +8005,7 @@
     "Proposed Maine underwater data center that could harm endangered whales 辟谣",
     "Proposed Maine underwater data center that could harm endangered whales debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E91",
@@ -6033,17 +8036,60 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_010",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: Fake"
+      }
+     ],
+     "rationale": "Snopes 评级「Fake」，主张与事实不符。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：不实"
+    },
+    "media_layer": {
+     "verdict": "source_says_media_mismatch",
+     "kind": "ai_or_synthetic",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_010",
+       "source": "snopes",
+       "field": "body",
+       "quote": "The T-shirt the real person wore also had variations in the lettering style and coloring, unlike the more uniform version in the AI-generated image."
+      }
+     ],
+     "rationale": "核查原文点名画面/素材问题（ai_or_synthetic）。",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "来源称：画面不符"
+    },
+    "claim_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_010",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: Fake"
+      }
+     ],
+     "rationale": "Snopes 评级「Fake」，整条主张不成立。",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "来源称：不实"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 1,
+    "is_fake_source_why": "snopes Rating=Fake（factcheck__snopes_010）",
+    "labels_suggested": [
+     {
+      "label": "cgi",
+      "why": "The T-shirt the real person wore also had variations in the lettering style and coloring, unlike the more uniform versio"
+     }
+    ],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -6059,7 +8105,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -6067,7 +8113,7 @@
     "Fake image depicting real attack on protester at Trump rally 辟谣",
     "Fake image depicting real attack on protester at Trump rally debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E92",
@@ -6098,17 +8144,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_011",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: True"
+      }
+     ],
+     "rationale": "Snopes 评级「True」，主张整体成立。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：成立"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 0,
+    "is_fake_source_why": "snopes Rating=True（factcheck__snopes_011）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -6124,7 +8193,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -6132,7 +8201,7 @@
     "Did Ilhan Omar change her birth year in official records 辟谣",
     "Did Ilhan Omar change her birth year in official records debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E93",
@@ -6163,17 +8232,47 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_012",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: Originated as Satire"
+      }
+     ],
+     "rationale": "Snopes 评级「Originated as Satire」，主张与事实不符。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：不实"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_012",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: Originated as Satire"
+      }
+     ],
+     "rationale": "Snopes 评级「Originated as Satire」，整条主张不成立。",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "来源称：不实"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 1,
+    "is_fake_source_why": "snopes Rating=Originated as Satire（factcheck__snopes_012）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -6189,7 +8288,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -6197,7 +8296,7 @@
     "Did Nobel Committee member Peter Girnus write letter about why 辟谣",
     "Did Nobel Committee member Peter Girnus write letter about why debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E94",
@@ -6228,17 +8327,47 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_013",
+       "source": "snopes",
+       "field": "What's True",
+       "quote": "Trump signed an executive order allowing federal permitting agencies to ignore environmental protection laws in an effort to increase domestic timber and lumber production. The executive order also calls for expanding domestic logging production on federal lands. Following that executive order, Agri"
+      }
+     ],
+     "rationale": "Snopes 评级「Mixture」；其 What's True 段落给出了事件成立的部分。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：成立"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_013",
+       "source": "snopes",
+       "field": "What's False",
+       "quote": "The order and proposed repeal of the Roadless Rule would not open 59% of national forests to logging. Rather, by Snopes' calculations, it would allow logging on an additional 24% of national forestland. In October, posts on social media suggested that U.S. President Donald Trump signed an \"emergency"
+      }
+     ],
+     "rationale": "Snopes 明确指出哪一部分为假（评级「Mixture」）。",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "来源称：不实"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": -1,
+    "is_fake_source_why": "snopes Rating=Mixture（factcheck__snopes_013）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -6254,7 +8383,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -6262,7 +8391,7 @@
     "Trump order fast tracks logging on federal lands but posts 辟谣",
     "Trump order fast tracks logging on federal lands but posts debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E95",
@@ -6293,17 +8422,40 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_014",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: True"
+      }
+     ],
+     "rationale": "Snopes 评级「True」，主张整体成立。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：成立"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "证据不足"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 0,
+    "is_fake_source_why": "snopes Rating=True（factcheck__snopes_014）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -6319,7 +8471,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -6327,7 +8479,7 @@
     "George Carlin joked about televised executions decades before Pentagon announcement 辟谣",
     "George Carlin joked about televised executions decades before Pentagon announcement debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E96",
@@ -6358,17 +8510,47 @@
     "domain_count": 1
    },
    "layers": {
-    "event_layer": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-    "media_layer": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
-    "claim_layer": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？"
+    "event_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_015",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: False"
+      }
+     ],
+     "rationale": "Snopes 评级「False」，主张与事实不符。",
+     "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
+     "label_cn": "来源称：不实"
+    },
+    "media_layer": {
+     "verdict": "insufficient",
+     "evidence": [],
+     "rationale": "",
+     "question": "配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。",
+     "label_cn": "证据不足"
+    },
+    "claim_layer": {
+     "verdict": "source_says_false",
+     "evidence": [
+      {
+       "case_id": "factcheck__snopes_015",
+       "source": "snopes",
+       "field": "Rating",
+       "quote": "Rating: False"
+      }
+     ],
+     "rationale": "Snopes 评级「False」，整条主张不成立。",
+     "question": "说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？",
+     "label_cn": "来源称：不实"
+    }
    },
    "verdict": {
-    "event_layer": null,
-    "media_layer": null,
-    "claim_layer": null,
-    "is_fake": null,
-    "labels": [],
-    "note": "留空由外部检索/人工填；本 Agent 不产出判定"
+    "is_fake_source_suggested": 1,
+    "is_fake_source_why": "snopes Rating=False（factcheck__snopes_015）",
+    "labels_suggested": [],
+    "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
     {
@@ -6384,7 +8566,7 @@
     {
      "code": "no_media",
      "severity": "low",
-     "hint": "簇内案例没有落地媒体文件，素材层无法判（多模态样本要用带媒体的案例）"
+     "hint": "簇内案例没有落地媒体文件，素材层无法判"
     }
    ],
    "search_suggestions": [
@@ -6393,7 +8575,7 @@
     "Maricopa County didn apologize to Trump after uncovering fraud in debunk",
     "Maricopa County didn apologize to Trump after uncovering fraud in 2020"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   }
  ]
 }

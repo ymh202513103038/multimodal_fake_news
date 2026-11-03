@@ -1,17 +1,17 @@
 {
  "schema_version": "tasks.v1",
- "updated_at": "2026-11-03T11:19:06+00:00",
+ "updated_at": "2026-11-03T11:57:59+00:00",
  "tasks": [
   {
    "schema_version": "agent.v1",
-   "task_id": "cluster-20261103191904-3b4c",
+   "task_id": "cluster-20261103195756-85c0",
    "agent": "cluster",
    "action": "cluster_cases",
    "params": {
     "threshold": 0.45
    },
    "timeout_s": 900,
-   "created_at": "2026-11-03T11:19:04+00:00",
+   "created_at": "2026-11-03T11:57:56+00:00",
    "status": "done",
    "retries": 0,
    "depends_on": [],
@@ -19,13 +19,13 @@
    "note": "归簇：一事一簇，抑制一谣多计",
    "history": [
     {
-     "at": "2026-11-03T11:19:05+00:00",
+     "at": "2026-11-03T11:57:57+00:00",
      "status": "ok",
      "error": null
     }
    ],
-   "started_at": "2026-11-03T11:19:04+00:00",
-   "finished_at": "2026-11-03T11:19:05+00:00",
+   "started_at": "2026-11-03T11:57:57+00:00",
+   "finished_at": "2026-11-03T11:57:57+00:00",
    "result": {
     "outputs": {
      "path": "metadata/events.json",
@@ -51,46 +51,62 @@
   },
   {
    "schema_version": "agent.v1",
-   "task_id": "verify-20261103191904-353f",
+   "task_id": "verify-20261103195756-0462",
    "agent": "verify",
    "action": "build_packets",
    "params": {},
    "timeout_s": 900,
-   "created_at": "2026-11-03T11:19:04+00:00",
+   "created_at": "2026-11-03T11:57:56+00:00",
    "status": "done",
    "retries": 0,
    "depends_on": [
-    "cluster-20261103191904-3b4c"
+    "cluster-20261103195756-85c0"
    ],
    "next_attempt_at": null,
    "note": "三层判定工作表 + 缺口预检（不判真假）",
    "history": [
     {
-     "at": "2026-11-03T11:19:05+00:00",
+     "at": "2026-11-03T11:57:58+00:00",
      "status": "ok",
      "error": null
     }
    ],
-   "started_at": "2026-11-03T11:19:05+00:00",
-   "finished_at": "2026-11-03T11:19:05+00:00",
+   "started_at": "2026-11-03T11:57:57+00:00",
+   "finished_at": "2026-11-03T11:57:58+00:00",
    "result": {
     "outputs": {
      "path": "metadata/verify_packets.json",
      "count": 96,
-     "clean": 0,
+     "source_grounded": 23,
+     "layer_coverage": {
+      "event_layer": {
+       "insufficient": 74,
+       "source_mentions": 8,
+       "source_says_true": 9,
+       "source_says_false": 5
+      },
+      "media_layer": {
+       "insufficient": 93,
+       "source_says_media_mismatch": 3
+      },
+      "claim_layer": {
+       "insufficient": 88,
+       "source_says_false": 8
+      }
+     },
      "by_severity": {
-      "high": 177,
+      "high": 250,
       "medium": 98,
       "low": 53
      },
-     "note": "verdict 全为 null：本 Agent 只给缺口，不判真假"
+     "note": "三层判定均归属来源原文；抽不到即 insufficient"
     },
     "artifacts": [
      "metadata/verify_packets.json"
     ],
     "metrics": {
      "events": 96,
-     "high_gaps": 177
+     "source_grounded": 23
     }
    },
    "next": [
@@ -99,34 +115,34 @@
   },
   {
    "schema_version": "agent.v1",
-   "task_id": "card-20261103191904-758b",
+   "task_id": "card-20261103195756-2307",
    "agent": "card",
    "action": "make_card",
    "params": {
     "event_id": "all",
-    "limit": 10
+    "limit": 96
    },
    "timeout_s": 900,
-   "created_at": "2026-11-03T11:19:04+00:00",
+   "created_at": "2026-11-03T11:57:56+00:00",
    "status": "done",
    "retries": 0,
    "depends_on": [
-    "verify-20261103191904-353f"
+    "verify-20261103195756-0462"
    ],
    "next_attempt_at": null,
    "note": "渲染案例卡",
    "history": [
     {
-     "at": "2026-11-03T11:19:06+00:00",
+     "at": "2026-11-03T11:57:59+00:00",
      "status": "ok",
      "error": null
     }
    ],
-   "started_at": "2026-11-03T11:19:05+00:00",
-   "finished_at": "2026-11-03T11:19:06+00:00",
+   "started_at": "2026-11-03T11:57:58+00:00",
+   "finished_at": "2026-11-03T11:57:59+00:00",
    "result": {
     "outputs": {
-     "cards": 10,
+     "cards": 96,
      "package_missing": false,
      "files": [
       "reports/card_E01.md",
@@ -147,10 +163,96 @@
      "reports/card_E08.md",
      "reports/card_E09.md",
      "reports/card_E10.md",
+     "reports/card_E11.md",
+     "reports/card_E12.md",
+     "reports/card_E13.md",
+     "reports/card_E14.md",
+     "reports/card_E15.md",
+     "reports/card_E16.md",
+     "reports/card_E17.md",
+     "reports/card_E18.md",
+     "reports/card_E19.md",
+     "reports/card_E20.md",
+     "reports/card_E21.md",
+     "reports/card_E22.md",
+     "reports/card_E23.md",
+     "reports/card_E24.md",
+     "reports/card_E25.md",
+     "reports/card_E26.md",
+     "reports/card_E27.md",
+     "reports/card_E28.md",
+     "reports/card_E29.md",
+     "reports/card_E30.md",
+     "reports/card_E31.md",
+     "reports/card_E32.md",
+     "reports/card_E33.md",
+     "reports/card_E34.md",
+     "reports/card_E35.md",
+     "reports/card_E36.md",
+     "reports/card_E37.md",
+     "reports/card_E38.md",
+     "reports/card_E39.md",
+     "reports/card_E40.md",
+     "reports/card_E41.md",
+     "reports/card_E42.md",
+     "reports/card_E43.md",
+     "reports/card_E44.md",
+     "reports/card_E45.md",
+     "reports/card_E46.md",
+     "reports/card_E47.md",
+     "reports/card_E48.md",
+     "reports/card_E49.md",
+     "reports/card_E50.md",
+     "reports/card_E51.md",
+     "reports/card_E52.md",
+     "reports/card_E53.md",
+     "reports/card_E54.md",
+     "reports/card_E55.md",
+     "reports/card_E56.md",
+     "reports/card_E57.md",
+     "reports/card_E58.md",
+     "reports/card_E59.md",
+     "reports/card_E60.md",
+     "reports/card_E61.md",
+     "reports/card_E62.md",
+     "reports/card_E63.md",
+     "reports/card_E64.md",
+     "reports/card_E65.md",
+     "reports/card_E66.md",
+     "reports/card_E67.md",
+     "reports/card_E68.md",
+     "reports/card_E69.md",
+     "reports/card_E70.md",
+     "reports/card_E71.md",
+     "reports/card_E72.md",
+     "reports/card_E73.md",
+     "reports/card_E74.md",
+     "reports/card_E75.md",
+     "reports/card_E76.md",
+     "reports/card_E77.md",
+     "reports/card_E78.md",
+     "reports/card_E79.md",
+     "reports/card_E80.md",
+     "reports/card_E81.md",
+     "reports/card_E82.md",
+     "reports/card_E83.md",
+     "reports/card_E84.md",
+     "reports/card_E85.md",
+     "reports/card_E86.md",
+     "reports/card_E87.md",
+     "reports/card_E88.md",
+     "reports/card_E89.md",
+     "reports/card_E90.md",
+     "reports/card_E91.md",
+     "reports/card_E92.md",
+     "reports/card_E93.md",
+     "reports/card_E94.md",
+     "reports/card_E95.md",
+     "reports/card_E96.md",
      "reports/index.md"
     ],
     "metrics": {
-     "cards": 10
+     "cards": 96
     }
    },
    "next": []

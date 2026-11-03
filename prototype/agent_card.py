@@ -12,9 +12,11 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+import evidence_rules as rules
 from common import METADATA_DIR, ROOT
 
 EVENTS = METADATA_DIR / "events.json"
@@ -23,6 +25,7 @@ REPORTS = ROOT / "reports"
 
 SEV_ICON = {"high": "🔴", "medium": "🟠", "low": "🟡"}
 LAYER_CN = {"event_layer": "事件层", "media_layer": "素材层", "claim_layer": "表述层"}
+_clean_title = rules.clean_title   # 署名/投稿尾巴清理（与核查 Agent 共用一份规则）
 
 
 def _case_urls(case_ids: list[str]) -> dict[str, dict]:
@@ -48,7 +51,7 @@ def render(ev: dict, packet: dict | None) -> str:
     cases = _case_urls(ev["case_ids"])
     L = []
     a = L.append
-    head = _clip(ev["claims"][0]["title"] if ev["claims"] else "", 46)
+    head = _clip(_clean_title(ev["claims"][0]["title"] if ev["claims"] else ""), 46)
     a(f"# 事件卡 {ev['event_id']}｜{head}")
     a("")
     a(f"> 由真途（Zhentu）多智能体流水线自动生成 · "
@@ -62,7 +65,7 @@ def render(ev: dict, packet: dict | None) -> str:
     for i, c in enumerate(ev["claims"], 1):
         url = (cases.get(c["case_id"]) or {}).get("url") or ""
         link = f"[打开]({url})" if url else "—"
-        title = (c["title"] or "").replace("|", "／")
+        title = _clean_title(c["title"] or "").replace("|", "／")
         a(f"| {i} | {c['platform']} | {title} | `{c['case_id']}` | {link} |")
     a("")
     a(f"- 平台分布：`{json.dumps(ev['platforms'], ensure_ascii=False)}`")
@@ -72,22 +75,53 @@ def render(ev: dict, packet: dict | None) -> str:
     a("## 2. 三层判定（事件 / 素材 / 表述）")
     a("")
     a("> 三层必须分开判。混层是这个领域最常见的误判来源：事件真 ≠ 画面真 ≠ 表述不夸大。")
+    a("> 下表的判定**全部归属核查源原文**：「来源称」= 引用核查站的说法，不是本卡自己的结论；"
+      "「证据不足」= 抽不到可引用原文，需外部检索。")
     a("")
-    a("| 层 | 要回答的问题 | 判定 | 依据 |")
-    a("|----|--------------|------|------|")
-    v = (packet or {}).get("verdict") or {}
+    a("| 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |")
+    a("|----|--------------|----------|--------------------------|")
+    layers = (packet or {}).get("layers") or {}
     for key, cn in LAYER_CN.items():
-        plain = v.get(key)
-        cell = plain if plain else "**待外部检索**"
-        a(f"| {cn} | {(packet or {}).get('layers', {}).get(key, '')} | {cell} | — |")
+        ld = layers.get(key) or {}
+        label = ld.get("label_cn") or "证据不足"
+        q = ld.get("question") or ""
+        evs = ld.get("evidence") or []
+        basis = "—"
+        if evs:
+            e = evs[0]
+            basis = f"{_clip(e.get('quote', ''), 110)} `{e.get('case_id', '')}`"
+        a(f"| {cn} | {q} | **{label}** | {basis} |")
     a("")
-    if v.get("is_fake") is not None:
-        a(f"- L1 二分类：**{v['is_fake']}**（1 假 / 0 真 / -1 未定）")
+
+    v = (packet or {}).get("verdict") or {}
+    l1 = v.get("is_fake_source_suggested")
+    if l1 is not None:
+        a(f"- L1 二分类（来源建议）：**{l1}**（1 假 / 0 真 / -1 未定）· {v.get('is_fake_source_why', '')}")
     else:
-        a("- L1 二分类：**未定**（本卡不做判定，留待核查后回填）")
-    if v.get("labels"):
-        a(f"- L2 多标签：{', '.join(v['labels'])}")
+        a("- L1 二分类：**未定**（无核查源评级可映射，需外部检索或人工标注）")
+    labs = v.get("labels_suggested") or []
+    if labs:
+        a("- L2 多标签（来源建议）：" + "；".join(f"`{x['label']}`（{x['why'][:60]}）" for x in labs))
     a("")
+
+    # 三层各自的完整引文：卡片最硬的部分就是这几句，全放出来
+    quotes = []
+    for key, cn in LAYER_CN.items():
+        ld = layers.get(key) or {}
+        for e in ld.get("evidence") or []:
+            quotes.append((cn, e))
+    if quotes:
+        a("### 来源原文摘录（可逐句复核）")
+        a("")
+        for cn, e in quotes:
+            src = e.get("source", "")
+            fld = e.get("field", "")
+            cid = e.get("case_id", "")
+            url = (cases.get(cid) or {}).get("url") or ""
+            link = f" · [原文]({url})" if url else ""
+            a(f"- **{cn}**（{src} / {fld} · `{cid}`{link}）：")
+            a(f"  > {e.get('quote', '')}")
+        a("")
     a("## 3. 证据缺口（这张卡的边界所在）")
     a("")
     closes = (packet or {}).get("gaps") or []
@@ -121,8 +155,9 @@ def render(ev: dict, packet: dict | None) -> str:
         a("")
     a("---")
     a("")
-    a("*本卡由流水线生成，判定字段为空即代表未经核查。引用前请自行复核来源链接；"
-      "如需判定，请按 `documentation/labeling_rules.md` 补三层结论并回填。*")
+    a("*本卡由流水线生成。判定口径为「来源归属」：每条判定都能回到上方引用的原文；"
+      "「证据不足」代表抽不到可引用原文，**不代表主张为真**，需按 "
+      "`documentation/three_layer_judgment.md` 做外部检索后回填。*")
     return "\n".join(L) + "\n"
 
 

@@ -64,20 +64,26 @@ orchestrator.py            调度主控（规则状态机；可换成 LLM，契�
 |---|---|---|---|
 | collect | `youtube_search` / `youtube_harvest` / `youtube_media` / `x_browser` / `news` / `rebuild_cases` | `metadata/*.jsonl`、`dataset/` | 是**适配器**不是重写：命令原样转给实测过的四个通道脚本，不复制采集逻辑（复制就会有两套行为） |
 | cluster | `cluster_cases` | `metadata/events.json` | 只抓**词面近乎同文**的重复；抓不了"同一事件的不同说法"（需实体/时间归一）。合并结果可当**保守下界** |
-| verify | `build_packets` | `metadata/verify_packets.json` | **不判真假**。三层判定字段一律 `null`，只给"要回答什么 + 缺什么证据" |
+| verify | `build_packets` | `metadata/verify_packets.json` | **只做证据抽取，不下判断**。三层判定一律"来源归属"（引用核查源原文）；抽不到即 `insufficient`。规则见 [three_layer_judgment.md](three_layer_judgment.md) |
 | card | `make_card` | `reports/card_<事件>.md` | 不润色成结论、不补没有的来源；缺口原样印在卡上 |
 
-### verify 为什么不判真假（重要）
+### verify 为什么不"自己判真假"（重要）
 
 三层判定（事件层／素材层／表述层）是项目里被实战检验的核心方法，它的价值
-**恰恰在于不混层**。让脚本自动产出 verdict，等于把三层糊回一层，自毁方法。
-所以 verify 只做脚本擅长且不会撒谎的部分：
+**恰恰在于不混层**。让脚本直接产出 verdict，等于把三层糊回一层，自毁方法。
+所以 verify 只做两件脚本擅长且不会撒谎的事：
 
-- 确定性事实：平台数、表述变体数、独立域名数、权威来源域名数、有无媒体文件；
-- 结构性缺口：`no_authority_source` / `single_platform` / `no_label` /
-  `label_conflict` / `many_variants` / `no_media` / `single_domain`；
-- 检索建议：从**主张标题**（不是簇内高频词）剥离话题标签后生成，避免产出
-  `fox brand fnc foxnews fact check` 这种没人会去搜的串。
+- **证据抽取（v2）**：从已落盘的核查源原文里抽评级与关键句，落进三层。
+  判定词表是"来源归属"（`source_says_true/false/media_mismatch/mentions/insufficient`），
+  每条判定都带 `{case_id, source, field, quote}`，可逐句复核；
+- **缺口预检**：`no_authority_source` / `single_platform` / `no_label` /
+  `label_conflict` / `many_variants` / `no_media` / `single_domain` /
+  `no_source_evidence`；再给检索建议（从**主张标题**剥离话题标签生成，避免
+  `fox brand fnc foxnews fact check` 这种没人会去搜的串）。
+
+实测（96 个事件）：**23 个拿到来源证据**（事件层 22、素材层 3、表述层 8），
+其余 73 个写 `insufficient` —— 因为语料里只有 30 条核查源案例，
+其余是社媒主张本身，没有核查结论可抽。这个数字本身就是"数据不瞄准"的证据。
 
 ## 5. 主控职责
 
@@ -124,8 +130,8 @@ $py = "fake_news_env\Scripts\python.exe"
 | collect `youtube_search`（真实 API，query=deepfake news，limit=5） | `added=5`（535→540 条，配额 100 units） | 5.5s |
 | collect `rebuild_cases`（make_cases + 补抓链 + 回归守卫） | 97 → 98 案例；`regressions_restored=0` | ~100s（联网补抓） |
 | cluster `cluster_cases`（threshold=0.45） | 98 案例 → **96 事件**，2 次合并 | 0.10s |
-| verify `build_packets` | 96 个核查包；缺口 high/medium/low = **177 / 98 / 53**；`clean=0` | 0.08s |
-| card `make_card`（limit=10） | 10 张事件卡 + 索引 | 0.05s |
+| verify `build_packets` | 96 个核查包；**23 个 source_grounded**（事件层 22 / 素材层 3 / 表述层 8）；缺口 high/medium/low = **250 / 98 / 53**；`clean=0` | 0.10s |
+| card `make_card`（limit=96） | 96 张事件卡 + 索引；有证据的层带原文引文与原文链接 | 0.1s |
 
 队列终态：`{"done": 3, "paused": 0, "blocked": 0, "total": 3}`。
 
@@ -165,16 +171,20 @@ $py = "fake_news_env\Scripts\python.exe"
    改版会失效。这些 Agent 只看退出码与落盘增量，判不了"采到的东西质量如何"。
 3. **cluster 是词面级**。同事件不同措辞（中英混述、换标题不换画面）会漏。
    要提升必须加实体/时间/地点信号，那是下一版的事，不是调参能解决的。
-4. **verify 的 `clean=0`** 是真实状态而非 bug：98 个案例里没有一条完成了 L1 标注，
-   每个事件都缺标签、缺权威来源。这一层做对了——它把项目的真实欠账摆了出来。
+4. **verify 的证据抽取只在"有核查源"时有效**：96 个事件里 23 个拿到来源证据，
+   其余 73 个是社媒主张，没有核查结论可抽，只能给 `insufficient` + 检索建议。
+   这不是 bug——社媒一侧是否造假，必须靠外部检索或人工，脚本无权替它定。
+   `clean=0` 同理：98 个案例没有任何 L1 标注，每个事件都缺标签。
 5. **出卡只到 markdown**。要发 xlsx/docx 还需一步渲染（`office` 技能可接）。
 
 ## 9. 下一步（按优先级）
 
 1. **LLM 主控**：`manifest` → 模型决策 → `orchestrator submit`。规则主控保留作兜底
    与回归对照（同一个队列，看两者跑出的产物是否一致）。
-2. **verify 接外部检索**：把 `search_suggestions` 喂给检索工具，回填三层判定；
-   这是把"工作表"变成"核查结论"的唯一合法路径。
+2. **verify 接外部检索**：证据抽取（v2）已完成；下一步是把 `search_suggestions`
+   喂给检索工具，对 73 个 `insufficient` 事件做外部查证后回填——这是把
+   "工作表"变成"核查结论"的唯一合法路径（规则见
+   [three_layer_judgment.md](three_layer_judgment.md)）。
 3. **cluster 加实体信号**：正则抽人名/地名/日期/数字 → 归一 → 与词面相似度加权，
    专治"同一事件不同说法"。
 4. **标注闭环**：verify 的 `no_label` 缺口正是 20 条双人标注试点的入口。

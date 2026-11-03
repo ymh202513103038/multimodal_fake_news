@@ -13,7 +13,8 @@
 
 ```
 documentation/            需求、合规清单、标注规范(v0.2 GroundLie360)、路线图、
-                         多智能体调度层说明(orchestration.md)、全景采集方案（参考）
+                         多智能体调度层说明(orchestration.md)、
+                         三层判定方法与实现(three_layer_judgment.md)、全景采集方案（参考）
 skills/          沉淀的操作技能：label-groundlie360（三级标注 SOP）等
 prototype/       采集与组装链路 + 调度层：
                  step1 X元数据(twscrape) → step2 下载媒体 → step3 YouTube元数据
@@ -140,8 +141,9 @@ $py = "fake_news_env\Scripts\python.exe"
 - **collect** 只是适配器——命令原样转给实测过的通道脚本，不复制采集逻辑；
 - **cluster** 只抓词面近乎同文的重复（跨平台搬运、同视频多号上传），
   合并结果是**保守下界**，默认阈值 0.45 精度优先，阈值曲线写在 `metadata/events.json`；
-- **verify** **不判真假**：三层判定（事件/素材/表述）字段一律留空，
-  只输出确定性统计 + 证据缺口 + 检索建议，判定必须由外部检索或人工回填；
+- **verify** 只做**证据抽取**、不自己判真假：从已落盘的核查源原文里抽评级与关键句，
+  三层判定一律"来源归属"（「来源称：不实」+ 原文引文 + 原帖链接），抽不到就写
+  「证据不足」。规则与词表见 [documentation/three_layer_judgment.md](documentation/three_layer_judgment.md)；
 - **card** 把缺口原样印在卡上——卡的可信度来自"边界可见"，不是"看上去像结论"。
 
 ## Git / GitHub 约定

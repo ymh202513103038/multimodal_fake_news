@@ -1,0 +1,61 @@
+# 事件卡 E88｜Does video show Katie Zacharia struggling to…
+
+> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-03T11:57:59+00:00 · 簇内 1 条案例 / 1 个平台
+
+## 1. 事实基座（簇内成员，全部可点开复核）
+
+| # | 平台 | 主张（标题） | 案例 ID | 来源 |
+|---|------|--------------|---------|------|
+| 1 | snopes | Does video show Katie Zacharia struggling to answer beauty pageant question? | `factcheck__snopes_007` | [打开](https://www.snopes.com/fact-check/katie-zacharia-beauty-pageant-interview/) |
+
+- 平台分布：`{"snopes": 1}`
+- 表述变体：1 种（同一事件的不同说法，需逐变体判表述层）
+- 簇内高频词（聚类依据，非结论）：zacharia、beauty、pageant、katie、struggling、teen、answer、miss
+
+## 2. 三层判定（事件 / 素材 / 表述）
+
+> 三层必须分开判。混层是这个领域最常见的误判来源：事件真 ≠ 画面真 ≠ 表述不夸大。
+> 下表的判定**全部归属核查源原文**：「来源称」= 引用核查站的说法，不是本卡自己的结论；「证据不足」= 抽不到可引用原文，需外部检索。
+
+| 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |
+|----|--------------|----------|--------------------------|
+| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **证据不足** | — |
+| 素材层 | 配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。 | **来源称：画面不符** | Rating: Miscaptioned About this rating During her Oct. 13 debut , White House press secretary Katie Zacharia… `factcheck__snopes_007` |
+| 表述层 | 说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？ | **来源称：不实** | During her Oct. 13 debut , White House press secretary Katie Zacharia answered three questions from outlets… `factcheck__snopes_007` |
+
+- L1 二分类（来源建议）：**1**（1 假 / 0 真 / -1 未定）· snopes Rating=Miscaptioned（factcheck__snopes_007）
+- L2 多标签（来源建议）：`contradictory_content`（Rating: Miscaptioned About this rating During her Oct. 13 de）
+
+### 来源原文摘录（可逐句复核）
+
+- **素材层**（snopes / body · `factcheck__snopes_007` · [原文](https://www.snopes.com/fact-check/katie-zacharia-beauty-pageant-interview/)）：
+  > Rating: Miscaptioned About this rating During her Oct. 13 debut , White House press secretary Katie Zacharia answered three questions from outlets typically friendly to U.S.
+- **表述层**（snopes / About this rating · `factcheck__snopes_007` · [原文](https://www.snopes.com/fact-check/katie-zacharia-beauty-pageant-interview/)）：
+  > During her Oct. 13 debut , White House press secretary Katie Zacharia answered three questions from outlets typically friendly to U.S. President Donald Trump, stumbling over parts of those answers, and ended the press conference after just 14 minutes. Many social media users mocked Zacharia's perfor
+
+## 3. 证据缺口（这张卡的边界所在）
+
+- 🟠 **single_platform**（medium）：只在一个平台出现，跨阵营互证不成立
+- 🔴 **no_label**（high）：簇内没有任何标签，需先完成 L1 二分类
+- 🟡 **no_media**（low）：簇内案例没有落地媒体文件，素材层无法判
+
+## 4. 下一步核查建议
+
+建议检索式（按主张原始语言圈检索——中文主张去中文核查站，英文主张去英文核查站）：
+
+- `Does video show Katie Zacharia struggling to answer beauty pageant fact check`
+- `Does video show Katie Zacharia struggling to answer beauty pageant 辟谣`
+- `Does video show Katie Zacharia struggling to answer beauty pageant debunk`
+
+预检事实（确定性统计，可直接引用）：
+
+| 指标 | 值 |
+|------|-----|
+| 平台数 | 1 |
+| 表述变体数 | 1 |
+| 权威来源域名数 | 1 |
+| 独立域名数 | 1 |
+
+---
+
+*本卡由流水线生成。判定口径为「来源归属」：每条判定都能回到上方引用的原文；「证据不足」代表抽不到可引用原文，**不代表主张为真**，需按 `documentation/three_layer_judgment.md` 做外部检索后回填。*
