@@ -1,5 +1,5 @@
 {
-  "cursor": 10,
+  "cursor": 0,
   "history": [
     {
       "date": "2026-10-18",
@@ -32,6 +32,14 @@
       "quota_used": 1010,
       "stopped": null,
       "at": "2026-10-26T01:41:31+00:00"
+    },
+    {
+      "date": "2026-11-02",
+      "queries": 5,
+      "new_videos": 63,
+      "quota_used": 505,
+      "stopped": null,
+      "at": "2026-11-02T01:30:27+00:00"
     }
   ]
 }

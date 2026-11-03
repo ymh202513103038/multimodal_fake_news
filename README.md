@@ -12,13 +12,16 @@
 ## 目录（两层结构：原始采集层 → 案例数据集层）
 
 ```
-documentation/            需求、合规清单、标注规范(v0.2 GroundLie360)、路线图、全景采集方案（参考）
+documentation/            需求、合规清单、标注规范(v0.2 GroundLie360)、路线图、
+                         多智能体调度层说明(orchestration.md)、全景采集方案（参考）
 skills/          沉淀的操作技能：label-groundlie360（三级标注 SOP）等
-prototype/       采集与组装链路：
+prototype/       采集与组装链路 + 调度层：
                  step1 X元数据(twscrape) → step2 下载媒体 → step3 YouTube元数据
                  → step4 YouTube媒体落盘 → x_browser_probe X真浏览器采集(chrome-mcp)
                  → news_probe 新闻/核查站采集 → make_cases 案例组装
                  → make_label_sheet 标注表 → validate 抽检
+                 调度层：orchestrator 主控 → agents 四 Agent 进程入口
+                 → agent_protocol 契约/动作清单 → agent_collect/cluster/verify/card
                  辅助：chrome_mcp 直连客户端 / diag_x、test_x_search、link_diag 诊断
 metadata/        原始层（jsonl/csv，全部入库）：
                  ├── youtube_meta.jsonl / youtube_media.jsonl   YouTube 元数据与媒体清单
@@ -26,9 +29,12 @@ metadata/        原始层（jsonl/csv，全部入库）：
                  ├── news/{站点}/{站点}__{日期}.jsonl            核查站列表，每站独立文件夹（piyao、snopes）
                  ├── label_sheet.csv                             标注表（v0.2 schema）
                  ├── case_names.json                             案例语义化命名映射
+                 ├── events.json / verify_packets.json           归簇事件簇 / 核查工作表（流水线产物）
+                 ├── tasks.json / runs.jsonl                     调度队列 / 运行审计
                  └── quota_ledger.jsonl / harvest_state.json     配额账本 / 收割断点
 media/           原始层：媒体本体（与案例媒体一同入库）
-dataset/         数据集层：案例制（97 案例 = YT 47 + X 20 + 核查源 30）；文本与媒体本体均入库
+dataset/         数据集层：案例制（98 案例 = YT 47 + X 21 + 核查源 30）；文本与媒体本体均入库
+reports/         出卡产物：事件卡 markdown（每卡含成员来源、三层判定空表、证据缺口）
 fake_news_env/   Python 虚拟环境（不入库）
 ```
 
@@ -92,7 +98,7 @@ python prototype\harvest_daily.py --dry-run
 - 配额双保险：账本 `metadata\quota_ledger.jsonl` + 单日上限 `--quota-cap`（默认 8000）；
 - 定时：Windows 计划任务每天调 `run_harvest.bat`（见 documentation/roadmap.md 第 3 步）。
 
-## 全状态 JSON 接口（为调度 Agent 预留，只读）
+## 全状态 JSON 接口（只读，供 Agent 决策）
 
 ```powershell
 python prototype\state_api.py          # http://127.0.0.1:8765
@@ -108,6 +114,35 @@ python prototype\state_api.py          # http://127.0.0.1:8765
 
 所有响应带 `schema_version` 与 `generated_at`。**严格只读**：写操作仍走
 prototype 各 CLI；默认只绑 127.0.0.1，含采集原文，勿直接暴露公网。
+
+## 多智能体调度层（采集 → 归簇 → 核查 → 出卡）
+
+四个 Agent 用统一 JSON 契约（`agent.v1`）执行，主控负责队列、路由、退避、依赖。
+详见 [documentation/orchestration.md](documentation/orchestration.md)。
+
+```powershell
+$env:PYTHONIOENCODING='utf-8'
+$py = "fake_news_env\Scripts\python.exe"
+
+& $py prototype\orchestrator.py manifest                     # 动作清单（可当 LLM tool schema）
+& $py prototype\orchestrator.py plan --channels youtube,x --pipeline --reset
+& $py prototype\orchestrator.py run --dry                    # 演练整条链，不真跑
+& $py prototype\orchestrator.py run                          # 真跑（失败自动退避重试）
+& $py prototype\orchestrator.py status                       # 队列状态
+
+# 只重跑流水线（不采集）
+& $py prototype\orchestrator.py plan --channels none --pipeline --reset --cards 10
+& $py prototype\orchestrator.py run
+```
+
+四个 Agent 的边界（刻意划死，关系到项目可信度）：
+
+- **collect** 只是适配器——命令原样转给实测过的通道脚本，不复制采集逻辑；
+- **cluster** 只抓词面近乎同文的重复（跨平台搬运、同视频多号上传），
+  合并结果是**保守下界**，默认阈值 0.45 精度优先，阈值曲线写在 `metadata/events.json`；
+- **verify** **不判真假**：三层判定（事件/素材/表述）字段一律留空，
+  只输出确定性统计 + 证据缺口 + 检索建议，判定必须由外部检索或人工回填；
+- **card** 把缺口原样印在卡上——卡的可信度来自"边界可见"，不是"看上去像结论"。
 
 ## Git / GitHub 约定
 

@@ -1,6 +1,7 @@
 # 路线图与待办（第 3 步之后）
 
-当前状态：**第 0~2 步已落地；第 3 步脚本已就绪（mock 验证通过，待真实 key 实测）；第 5 步抽样工具已就绪**。
+当前状态：**第 0~4 步已落地**（第 4 步多智能体调度层 2026-11-03 实测通过，见
+[orchestration.md](orchestration.md)）；第 5 步抽样工具已就绪，双人标注未开始。
 
 > Windows 控制台若中文日志乱码：运行前执行 `$env:PYTHONIOENCODING='utf-8'`
 > （Git Bash：`export PYTHONIOENCODING=utf-8`）。数据文件本身是 UTF-8，不受影响。
@@ -64,12 +65,29 @@
 - index 预留 `event` 字段：同一事件的真假样本对（如参考样例 case1 假/case2 真）在此归组，人工/二期自动配对；
 - 待办：web/ 从"记 URL"升级为存证据网页快照（archive.today/本地 HTML）；评论抓取进 text/comments.txt。
 
-## 第 4 步：最小调度 Agent（未开始）
+## 第 4 步：多智能体调度层（已完成，2026-11-03 实测）
 
-- 任务队列 `prototype/tasks.json`：`{id, source, keyword, limit, status, retries, created_at}`；
-- 路由：`source == "x"` → step1+step2；`source == "youtube"` → 第 3 步脚本；
-- 限流：429/超时 → 指数退避（30s/60s/120s）；连续 3 次失败 → `status=paused` 并写日志；
-- 验收：提交 X（20 条）+ YouTube（10 条）两个任务，自动依次跑完。
+详见 [orchestration.md](orchestration.md)。四个 Agent（collect / cluster / verify / card）
+统一 `agent.v1` JSON 契约，主控 `prototype/orchestrator.py` 负责队列、路由、退避、依赖。
+
+- 队列：`metadata/tasks.json`（原子写，断点续跑）；审计 `metadata/runs.jsonl`；
+- 路由：`agent_protocol.ACTION_MANIFEST` 是唯一真源，入队即校验；`orchestrator manifest`
+  的输出可直接当 LLM 的 tool schema（LLM 主控升级路径已铺好）；
+- 失败：30/60/120 秒指数退避；连续 3 次失败 → `paused`；上游 paused → 下游 `blocked`；
+- 实测：真实 YouTube 搜索（limit=5，消耗 100 units）→ 案例层重建（97→98）→
+  归簇（98→96 事件）→ 核查包（96 个，缺口 high/medium/low=177/98/53）→ 出卡 10 张，
+  队列终态 `{"done": 3, "paused": 0, "blocked": 0}`；
+- 验收（原计划"X 20 条 + YouTube 10 条两个任务依次跑完"）：
+  YouTube 侧已真跑通过；X 侧需 Chrome 在线且已登录 x.com，属环境依赖，
+  dry-run 已验证路由与命令构造正确。
+
+命令：
+```powershell
+& $py prototype\orchestrator.py plan --channels youtube,x --pipeline --reset
+& $py prototype\orchestrator.py run --dry    # 演练整条链
+& $py prototype\orchestrator.py run
+& $py prototype\orchestrator.py status
+```
 
 ## 第 5 步：数据集制作（抽样工具已就绪）
 

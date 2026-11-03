@@ -1,2 +1,2 @@
 source_url: https://www.snopes.com/fact-check/tesla-flying-roadster-car-real/
-retrieved_at: 2026-10-26T12:52:25.741654+00:00
+retrieved_at: 2026-11-03T11:16:27.573529+00:00

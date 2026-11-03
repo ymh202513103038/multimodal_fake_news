@@ -1,0 +1,159 @@
+{
+ "schema_version": "tasks.v1",
+ "updated_at": "2026-11-03T11:19:06+00:00",
+ "tasks": [
+  {
+   "schema_version": "agent.v1",
+   "task_id": "cluster-20261103191904-3b4c",
+   "agent": "cluster",
+   "action": "cluster_cases",
+   "params": {
+    "threshold": 0.45
+   },
+   "timeout_s": 900,
+   "created_at": "2026-11-03T11:19:04+00:00",
+   "status": "done",
+   "retries": 0,
+   "depends_on": [],
+   "next_attempt_at": null,
+   "note": "归簇：一事一簇，抑制一谣多计",
+   "history": [
+    {
+     "at": "2026-11-03T11:19:05+00:00",
+     "status": "ok",
+     "error": null
+    }
+   ],
+   "started_at": "2026-11-03T11:19:04+00:00",
+   "finished_at": "2026-11-03T11:19:05+00:00",
+   "result": {
+    "outputs": {
+     "path": "metadata/events.json",
+     "case_count": 98,
+     "event_count": 96,
+     "reduction": 0.02,
+     "singletons": 94,
+     "merges": 2,
+     "note": "词面相似度只抓近乎同文的重复，合并结果可当保守下界"
+    },
+    "artifacts": [
+     "metadata/events.json"
+    ],
+    "metrics": {
+     "cases": 98,
+     "events": 96,
+     "largest": 2
+    }
+   },
+   "next": [
+    "verify"
+   ]
+  },
+  {
+   "schema_version": "agent.v1",
+   "task_id": "verify-20261103191904-353f",
+   "agent": "verify",
+   "action": "build_packets",
+   "params": {},
+   "timeout_s": 900,
+   "created_at": "2026-11-03T11:19:04+00:00",
+   "status": "done",
+   "retries": 0,
+   "depends_on": [
+    "cluster-20261103191904-3b4c"
+   ],
+   "next_attempt_at": null,
+   "note": "三层判定工作表 + 缺口预检（不判真假）",
+   "history": [
+    {
+     "at": "2026-11-03T11:19:05+00:00",
+     "status": "ok",
+     "error": null
+    }
+   ],
+   "started_at": "2026-11-03T11:19:05+00:00",
+   "finished_at": "2026-11-03T11:19:05+00:00",
+   "result": {
+    "outputs": {
+     "path": "metadata/verify_packets.json",
+     "count": 96,
+     "clean": 0,
+     "by_severity": {
+      "high": 177,
+      "medium": 98,
+      "low": 53
+     },
+     "note": "verdict 全为 null：本 Agent 只给缺口，不判真假"
+    },
+    "artifacts": [
+     "metadata/verify_packets.json"
+    ],
+    "metrics": {
+     "events": 96,
+     "high_gaps": 177
+    }
+   },
+   "next": [
+    "card"
+   ]
+  },
+  {
+   "schema_version": "agent.v1",
+   "task_id": "card-20261103191904-758b",
+   "agent": "card",
+   "action": "make_card",
+   "params": {
+    "event_id": "all",
+    "limit": 10
+   },
+   "timeout_s": 900,
+   "created_at": "2026-11-03T11:19:04+00:00",
+   "status": "done",
+   "retries": 0,
+   "depends_on": [
+    "verify-20261103191904-353f"
+   ],
+   "next_attempt_at": null,
+   "note": "渲染案例卡",
+   "history": [
+    {
+     "at": "2026-11-03T11:19:06+00:00",
+     "status": "ok",
+     "error": null
+    }
+   ],
+   "started_at": "2026-11-03T11:19:05+00:00",
+   "finished_at": "2026-11-03T11:19:06+00:00",
+   "result": {
+    "outputs": {
+     "cards": 10,
+     "package_missing": false,
+     "files": [
+      "reports/card_E01.md",
+      "reports/card_E02.md",
+      "reports/card_E03.md",
+      "reports/card_E04.md",
+      "reports/card_E05.md"
+     ]
+    },
+    "artifacts": [
+     "reports/card_E01.md",
+     "reports/card_E02.md",
+     "reports/card_E03.md",
+     "reports/card_E04.md",
+     "reports/card_E05.md",
+     "reports/card_E06.md",
+     "reports/card_E07.md",
+     "reports/card_E08.md",
+     "reports/card_E09.md",
+     "reports/card_E10.md",
+     "reports/index.md"
+    ],
+    "metrics": {
+     "cards": 10
+    }
+   },
+   "next": []
+  }
+ ]
+}

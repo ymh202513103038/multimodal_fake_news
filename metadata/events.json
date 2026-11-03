@@ -1,0 +1,3600 @@
+{
+ "schema_version": "events.v1",
+ "generated_at": "2026-11-03T11:19:41+00:00",
+ "source": "index",
+ "params": {
+  "threshold": 0.45,
+  "max_size": 60,
+  "alpha": 0.6,
+  "title_boost": 3
+ },
+ "case_count": 98,
+ "count": 96,
+ "singletons": 94,
+ "reduction": 0.02,
+ "pairs_above_threshold": 2,
+ "pair_curve": {
+  "0.20": 13,
+  "0.25": 5,
+  "0.30": 4,
+  "0.35": 3,
+  "0.40": 2,
+  "0.45": 2,
+  "0.50": 1
+ },
+ "merges": [
+  {
+   "avg_sim": 0.994,
+   "strongest": 0.994,
+   "pair": [
+    "x_deepfake__tweet_7975021817",
+    "x_deepfake__tweet_2066189735"
+   ],
+   "sizes": [
+    1,
+    1
+   ]
+  },
+  {
+   "avg_sim": 0.495,
+   "strongest": 0.495,
+   "pair": [
+    "us_politics__trump_silences_cnn_reporter_shorts",
+    "us_politics__trump_spars_cnn_anchor"
+   ],
+   "sizes": [
+    1,
+    1
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event_id": "E01",
+   "size": 2,
+   "platforms": {
+    "twitter": 2
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 2
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_deepfake__tweet_7975021817",
+     "title": "Deepfake Makin Sulit Dikenali, Kemkomdigi Kaji Aturan Label Konten AI \nhttps://",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "makin",
+    "sulit",
+    "dikenali",
+    "kemkomdigi",
+    "kaji",
+    "aturan",
+    "label",
+    "konten"
+   ],
+   "case_ids": [
+    "x_deepfake__tweet_7975021817",
+    "x_deepfake__tweet_2066189735"
+   ],
+   "topics": [
+    "deepfake"
+   ]
+  },
+  {
+   "event_id": "E02",
+   "size": 2,
+   "platforms": {
+    "youtube": 2
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 2
+   },
+   "label_present": 0,
+   "claim_variants": 2,
+   "claims": [
+    {
+     "case_id": "us_politics__trump_silences_cnn_reporter_shorts",
+     "title": "Trump tells ‘FAKE NEWS’ CNN reporter to be quiet #shorts #foxnews #news #fox",
+     "platform": "youtube",
+     "label": null
+    },
+    {
+     "case_id": "us_politics__trump_spars_cnn_anchor",
+     "title": "Trump goes after 'fake news,' spars with 'low-rated' CNN anchor",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "fox",
+    "brand",
+    "fnc",
+    "foxnews",
+    "cnn",
+    "cable",
+    "trump",
+    "channel"
+   ],
+   "case_ids": [
+    "us_politics__trump_silences_cnn_reporter_shorts",
+    "us_politics__trump_spars_cnn_anchor"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E03",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__leavitt_blasts_cnn_fake_news",
+     "title": "Karoline Leavitt blasts CNN for their fake news coverage in another blow to the struggling network",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "leavitt",
+    "karoline",
+    "blasts",
+    "blow",
+    "another",
+    "struggling",
+    "unverified",
+    "cnn"
+   ],
+   "case_ids": [
+    "us_politics__leavitt_blasts_cnn_fake_news"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E04",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__white_house_fake_news_cnn_clip",
+     "title": "Fake News CNN",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "corrupt",
+    "cnn",
+    "rated",
+    "right",
+    "smiles",
+    "either",
+    "incompetent",
+    "question"
+   ],
+   "case_ids": [
+    "us_politics__white_house_fake_news_cnn_clip"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E05",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__trump_fighting_fake_news",
+     "title": "Trump: We are fighting fake news",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "nine",
+    "enemy",
+    "fighting",
+    "dishonest",
+    "people",
+    "sources",
+    "reads",
+    "called"
+   ],
+   "case_ids": [
+    "us_politics__trump_fighting_fake_news"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E06",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__trump_interrupts_media_cnn_shorts",
+     "title": "Trump Interrupts Media, Calls CNN “Fake News… The Worst!” #shorts #trending #trump #viral #ai",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "interrupts",
+    "worst",
+    "times",
+    "trending",
+    "shorts",
+    "viral",
+    "hold",
+    "cnn"
+   ],
+   "case_ids": [
+    "us_politics__trump_interrupts_media_cnn_shorts"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E07",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__bbc_how_to_spot_fake_news",
+     "title": "Fake News: How to spot it - BBC My World",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "spot",
+    "bbc",
+    "world",
+    "share",
+    "show",
+    "stories",
+    "check",
+    "flooding"
+   ],
+   "case_ids": [
+    "media_literacy__bbc_how_to_spot_fake_news"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E08",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__trump_calls_cnn_reporter_fake_news",
+     "title": "Trump Calls CNN Reporter 'Fake News'",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "amish",
+    "cnn",
+    "news'",
+    "reporter",
+    "yeah",
+    "medical",
+    "professionals",
+    "wor"
+   ],
+   "case_ids": [
+    "us_politics__trump_calls_cnn_reporter_fake_news"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E09",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "entertainment__ken_carson_fake_news_song",
+     "title": "Ken Carson - fake news (official audio)",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "nbsp",
+    "ken",
+    "carson",
+    "audio",
+    "pop",
+    "pull",
+    "music",
+    "lady"
+   ],
+   "case_ids": [
+    "entertainment__ken_carson_fake_news_song"
+   ],
+   "topics": [
+    "entertainment"
+   ]
+  },
+  {
+   "event_id": "E10",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__trump_welcomes_fake_news_media",
+     "title": "'I'd like to welcome the fake news media'",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "sky",
+    "i'd",
+    "media'",
+    "welcome",
+    "content",
+    "available",
+    "former",
+    "videos"
+   ],
+   "case_ids": [
+    "us_politics__trump_welcomes_fake_news_media"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E11",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__ai_slop_fake_news_lastweektonight",
+     "title": "AI Slop & Fake News #lastweektonight",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "slop",
+    "hollywood",
+    "fires",
+    "lastweektonight",
+    "sign",
+    "hike",
+    "faking",
+    "lot"
+   ],
+   "case_ids": [
+    "media_literacy__ai_slop_fake_news_lastweektonight"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E12",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__how_to_identify_fake_news",
+     "title": "How to identify Fake News? | What is Fake News? | Fact Check",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "identify",
+    "reports",
+    "viewed",
+    "check",
+    "fact",
+    "shared",
+    "distributed",
+    "identified"
+   ],
+   "case_ids": [
+    "media_literacy__how_to_identify_fake_news"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E13",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__anthropic_ceo_reacts_trump_cnn_attack",
+     "title": "Trump Attacks CNN as ‘Fake News’, Watch Anthropic CEO’s Reaction",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "anthropic",
+    "ceo",
+    "attacks",
+    "reaction",
+    "cnn",
+    "trump",
+    "hold",
+    "confronted"
+   ],
+   "case_ids": [
+    "us_politics__anthropic_ceo_reacts_trump_cnn_attack"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E14",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "ph_politics__lacson_panelo_fake_news_feud",
+     "title": "GRABE! PING LACSON HINAMON SI PAOLO PANELO! HULI ANG FAKE NEWS!",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "ang",
+    "lacson",
+    "paolo",
+    "panelo",
+    "ping",
+    "huli",
+    "grabe",
+    "hinamon"
+   ],
+   "case_ids": [
+    "ph_politics__lacson_panelo_fake_news_feud"
+   ],
+   "topics": [
+    "ph_politics"
+   ]
+  },
+  {
+   "event_id": "E15",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__trump_refuses_cnn_question",
+     "title": "I Don’t Talk To CNN, It's Fake News: Trump Refuses CNN Question | #donaldtrump #cnn #tariffs",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "india",
+    "tariffs",
+    "cnn",
+    "refuses",
+    "don",
+    "donaldtrump",
+    "updates",
+    "question"
+   ],
+   "case_ids": [
+    "us_politics__trump_refuses_cnn_question"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E16",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "spain_tv__la_semana_tarico_fake_news",
+     "title": "LA SEMANA DE TARICO FAKE NEWS I Programa Completo 17/10/26",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "semana",
+    "tarico",
+    "programa",
+    "completo",
+    "todonoticias",
+    "las",
+    "suscribite",
+    "nuestro"
+   ],
+   "case_ids": [
+    "spain_tv__la_semana_tarico_fake_news"
+   ],
+   "topics": [
+    "spain_tv"
+   ]
+  },
+  {
+   "event_id": "E17",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "brazil_politics__lula_aide_fake_news_probe",
+     "title": "BOMBA! Assessora de LULA e JANJA inevstigada pela PF por FAKE NEWS",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "por",
+    "bomba",
+    "assessora",
+    "lula",
+    "janja",
+    "inevstigada",
+    "pela",
+    "como"
+   ],
+   "case_ids": [
+    "brazil_politics__lula_aide_fake_news_probe"
+   ],
+   "topics": [
+    "brazil_politics"
+   ]
+  },
+  {
+   "event_id": "E18",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__trump_dodges_acosta_question",
+     "title": "\"CNN Is Fake News\" President Trump Dodges Jim Acosta Question Attempt",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "john",
+    "roberts",
+    "dodges",
+    "jim",
+    "acosta",
+    "take",
+    "let's",
+    "questions"
+   ],
+   "case_ids": [
+    "us_politics__trump_dodges_acosta_question"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E19",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__trump_calls_cnn_gutless_losers",
+     "title": "Trump calls CNN gutless losers. \"It's all garbage. It's all fake news.\"",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "kmph",
+    "garbage",
+    "gutless",
+    "losers",
+    "cnn",
+    "calls",
+    "it's",
+    "all"
+   ],
+   "case_ids": [
+    "us_politics__trump_calls_cnn_gutless_losers"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E20",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "entertainment__fake_news_pranks_parents",
+     "title": "Most hilarious & extreme Fake News Pranks on parents",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "hilarious",
+    "pranks",
+    "extreme",
+    "parents",
+    "stealing",
+    "chicken",
+    "reactions",
+    "cleaning"
+   ],
+   "case_ids": [
+    "entertainment__fake_news_pranks_parents"
+   ],
+   "topics": [
+    "entertainment"
+   ]
+  },
+  {
+   "event_id": "E21",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__fact_and_fiction_critical_thinking",
+     "title": "Fake News: Fact & Fiction - Episode 6: How to be a critical thinker",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "critical",
+    "thinker",
+    "fiction",
+    "episode",
+    "vocabulary",
+    "spin",
+    "bias",
+    "information"
+   ],
+   "case_ids": [
+    "media_literacy__fact_and_fiction_critical_thinking"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E22",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "france_media__fake_news_study_politician_panic",
+     "title": "FAKE NEWS : L'étude qui fait paniquer les politiciens",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "les",
+    "tude",
+    "qui",
+    "fait",
+    "paniquer",
+    "politiciens",
+    "pour",
+    "c'est"
+   ],
+   "case_ids": [
+    "france_media__fake_news_study_politician_panic"
+   ],
+   "topics": [
+    "france_media"
+   ]
+  },
+  {
+   "event_id": "E23",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "us_politics__trump_collins_treasonous_clash",
+     "title": "‘Fake News' Trump Clashes With Kaitlan Collins, Calls 'Treasonous'",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "kaitlan",
+    "collins",
+    "clashes",
+    "treasonous'",
+    "news'",
+    "hooknewsfeed",
+    "calls",
+    "trump"
+   ],
+   "case_ids": [
+    "us_politics__trump_collins_treasonous_clash"
+   ],
+   "topics": [
+    "us_politics"
+   ]
+  },
+  {
+   "event_id": "E24",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "india_pakistan__anti_pakistan_fake_news_india",
+     "title": "More anti-Pakistan fake news churns out of India",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "anti",
+    "pakistan",
+    "churns",
+    "india",
+    "out",
+    "controversial",
+    "indian",
+    "arnab"
+   ],
+   "case_ids": [
+    "india_pakistan__anti_pakistan_fake_news_india"
+   ],
+   "topics": [
+    "india_pakistan"
+   ]
+  },
+  {
+   "event_id": "E25",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__why_people_fall_for_misinformation",
+     "title": "Why people fall for misinformation - Joseph Isaac",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "joseph",
+    "isaac",
+    "fall",
+    "map",
+    "lesson",
+    "published",
+    "into",
+    "become"
+   ],
+   "case_ids": [
+    "media_literacy__why_people_fall_for_misinformation"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E26",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__protect_truth_sinan_aral",
+     "title": "How we can protect truth in the age of misinformation | Sinan Aral",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "ted",
+    "talks",
+    "sinan",
+    "aral",
+    "age",
+    "protect",
+    "truth",
+    "misinformation"
+   ],
+   "case_ids": [
+    "media_literacy__protect_truth_sinan_aral"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E27",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__misinformation_distrust_science_oreskes",
+     "title": "Misinformation and distrust in science - with Naomi Oreskes",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "science",
+    "naomi",
+    "oreskes",
+    "distrust",
+    "mistrust",
+    "tobacco",
+    "fossil",
+    "fuel"
+   ],
+   "case_ids": [
+    "media_literacy__misinformation_distrust_science_oreskes"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E28",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "entertainment__heard_you_saying_misinformation_meme",
+     "title": "heard you saying misinformation",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "heard",
+    "voiced",
+    "tani",
+    "saying",
+    "misinformation",
+    "abby",
+    "anywhere",
+    "drastic"
+   ],
+   "case_ids": [
+    "entertainment__heard_you_saying_misinformation_meme"
+   ],
+   "topics": [
+    "entertainment"
+   ]
+  },
+  {
+   "event_id": "E29",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__how_false_news_spreads_ted",
+     "title": "How false news can spread - Noah Tavlin",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "noah",
+    "tavlin",
+    "phenomenon",
+    "circular",
+    "quote",
+    "mark",
+    "twain",
+    "reporting"
+   ],
+   "case_ids": [
+    "media_literacy__how_false_news_spreads_ted"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E30",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__misinformation_age_critical_thinking",
+     "title": "The Misinformation Age: How The Internet Killed Critical Thinking",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "killed",
+    "self",
+    "age",
+    "critical",
+    "thinking",
+    "internet",
+    "misinformation",
+    "personal"
+   ],
+   "case_ids": [
+    "media_literacy__misinformation_age_critical_thinking"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E31",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__misinformation_john_oliver",
+     "title": "Misinformation: Last Week Tonight with John Oliver (HBO)",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "tonight",
+    "oliver",
+    "hbo",
+    "www",
+    "week",
+    "john",
+    "lastweektonight",
+    "nice"
+   ],
+   "case_ids": [
+    "media_literacy__misinformation_john_oliver"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E32",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__psychology_of_misinformation",
+     "title": "Explained in 60 Seconds: The Psychology of Misinformation",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "explained",
+    "seconds",
+    "psychology",
+    "reasons",
+    "progressive",
+    "original",
+    "whether",
+    "youtube"
+   ],
+   "case_ids": [
+    "media_literacy__psychology_of_misinformation"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E33",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__solid_10_minutes_misinformation",
+     "title": "A Solid 10 Minutes of Misinformation",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "solid",
+    "minutes",
+    "bunch",
+    "aren't",
+    "certain",
+    "every",
+    "something",
+    "saw"
+   ],
+   "case_ids": [
+    "media_literacy__solid_10_minutes_misinformation"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E34",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__the_misinformation_effect",
+     "title": "The Misinformation Effect",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "memory",
+    "memories",
+    "effect",
+    "psychology",
+    "encoding",
+    "episodic",
+    "traces",
+    "remember"
+   ],
+   "case_ids": [
+    "media_literacy__the_misinformation_effect"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E35",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__misinfo_spreads_faster_the_stream",
+     "title": "Why does misinformation spread faster than truth? | The Stream",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "faster",
+    "stream",
+    "bots",
+    "truth",
+    "misinformation",
+    "world",
+    "spread",
+    "online"
+   ],
+   "case_ids": [
+    "media_literacy__misinfo_spreads_faster_the_stream"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E36",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__real_news_vs_fake_news",
+     "title": "Real News vs. Fake News",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "toolkit",
+    "series",
+    "citizen",
+    "literacy",
+    "see",
+    "videos"
+   ],
+   "case_ids": [
+    "media_literacy__real_news_vs_fake_news"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E37",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__seven_types_of_misinformation",
+     "title": "7 types of misinformation",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "types",
+    "content",
+    "misleading",
+    "images",
+    "parody",
+    "ways",
+    "imposter",
+    "altered"
+   ],
+   "case_ids": [
+    "media_literacy__seven_types_of_misinformation"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E38",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__solid_13_minutes_misinformation",
+     "title": "A Solid 13 Minutes of Misinformation",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "solid",
+    "minutes",
+    "please",
+    "misinformation",
+    "apparently",
+    "lying",
+    "circle",
+    "dante"
+   ],
+   "case_ids": [
+    "media_literacy__solid_13_minutes_misinformation"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E39",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__fight_misinformation_jorgenson_ted",
+     "title": "A Surprisingly Effective Way to Fight Misinformation | Dave Jorgenson | TED",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "ted",
+    "dave",
+    "jorgenson",
+    "surprisingly",
+    "effective",
+    "fight",
+    "talks",
+    "way"
+   ],
+   "case_ids": [
+    "media_literacy__fight_misinformation_jorgenson_ted"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E40",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__fake_news_generator_bbc",
+     "title": "Fake News Generator: Who starts viral misinformation?  - BBC News",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "starts",
+    "generator",
+    "bbc",
+    "them",
+    "viral",
+    "coronavirus",
+    "lots",
+    "pandemic"
+   ],
+   "case_ids": [
+    "media_literacy__fake_news_generator_bbc"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E41",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__btn_misinfo_disinfo_explainer",
+     "title": "Why is there so much misinformation and disinformation? - BTN High",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "high",
+    "btn",
+    "disinformation",
+    "break",
+    "see",
+    "some",
+    "world",
+    "misinformation"
+   ],
+   "case_ids": [
+    "media_literacy__btn_misinfo_disinfo_explainer"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E42",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__loftus_misinformation_effect_nobel",
+     "title": "The misinformation effect | Elizabeth Loftus | Nobel Prize Summit 2023",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "summit",
+    "nobel",
+    "prize",
+    "#2023",
+    "elizabeth",
+    "loftus",
+    "effect",
+    "trust"
+   ],
+   "case_ids": [
+    "media_literacy__loftus_misinformation_effect_nobel"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E43",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__disinfo_vs_misinfo_the_quint",
+     "title": "What is The Difference Between Disinformation and Misinformation? | The Quint",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "quint",
+    "difference",
+    "disinformation",
+    "knowing",
+    "between",
+    "relax",
+    "support",
+    "misinformation"
+   ],
+   "case_ids": [
+    "media_literacy__disinfo_vs_misinfo_the_quint"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E44",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__unmasking_misinformation_tedx",
+     "title": "Unmasking Misinformation | Chris Coward | TEDxSnoIsleLibraries",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "chris",
+    "coward",
+    "unmasking",
+    "tedxsnoislelibraries",
+    "mask",
+    "shares",
+    "misinformation",
+    "information"
+   ],
+   "case_ids": [
+    "media_literacy__unmasking_misinformation_tedx"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E45",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__solid_11_minutes_misinformation",
+     "title": "A Solid 11 Minutes of Misinformation",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "solid",
+    "minutes",
+    "credits",
+    "randomlambda",
+    "facts",
+    "music",
+    "misinformation",
+    "incredibly"
+   ],
+   "case_ids": [
+    "media_literacy__solid_11_minutes_misinformation"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E46",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__dont_be_fooled_three_types",
+     "title": "Misinformation vs Disinformation vs Malinformation: Don't Be Fooled!",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "malinformation",
+    "disinformation",
+    "fooled",
+    "stay",
+    "understanding",
+    "navigate",
+    "difference",
+    "don't"
+   ],
+   "case_ids": [
+    "media_literacy__dont_be_fooled_three_types"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E47",
+   "size": 1,
+   "platforms": {
+    "youtube": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "media_literacy__rogan_destiny_misinformation",
+     "title": "Joe Rogan, Destiny and Misinformation",
+     "platform": "youtube",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "rogan",
+    "destiny",
+    "joe",
+    "ryanmcbeth",
+    "podcast",
+    "want",
+    "misinformation",
+    "criticized"
+   ],
+   "case_ids": [
+    "media_literacy__rogan_destiny_misinformation"
+   ],
+   "topics": [
+    "media_literacy"
+   ]
+  },
+  {
+   "event_id": "E48",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_deepfake__tweet_2681387433",
+     "title": "If you saw them over there, you’d be shocked. they’re more obsessed with Lisa th",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "obsessed",
+    "lisa",
+    "shocked",
+    "saw",
+    "them",
+    "beldyow",
+    "godlalisace",
+    "fave"
+   ],
+   "case_ids": [
+    "x_deepfake__tweet_2681387433"
+   ],
+   "topics": [
+    "deepfake"
+   ]
+  },
+  {
+   "event_id": "E49",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_deepfake__tweet_8970602788",
+     "title": "AI is becoming a powerful shield against online threats.  From detecting deepfak",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "powerful",
+    "shield",
+    "detecting",
+    "threats",
+    "deepfak",
+    "becoming",
+    "against",
+    "cybersecurity"
+   ],
+   "case_ids": [
+    "x_deepfake__tweet_8970602788"
+   ],
+   "topics": [
+    "deepfake"
+   ]
+  },
+  {
+   "event_id": "E50",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_deepfake__tweet_3757690189",
+     "title": "I am not comfortable but it’s the future. Agents have my social security number",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "comfortable",
+    "security",
+    "agents",
+    "future",
+    "number",
+    "but",
+    "have",
+    "social"
+   ],
+   "case_ids": [
+    "x_deepfake__tweet_3757690189"
+   ],
+   "topics": [
+    "deepfake"
+   ]
+  },
+  {
+   "event_id": "E51",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_deepfake__tweet_4260350399",
+     "title": "ಜಾಹ್ನವಿ ಕಪೂರ್​, ನೇಹಾ ಶರ್ಮಾ ಆಯ್ತು ಈ ಕಿಡಿಗೇಡಿಗಳ ಮುಂದಿನ ಟಾರ್ಗೆಟ್​ ಯಾರು? ತಲ್ಲಣ ಸೃಷ್ಟ",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "vijayavani",
+    "janhvi",
+    "kapoor",
+    "neha",
+    "sharma",
+    "deepfakeai",
+    "janhvikapoor",
+    "nehasharma"
+   ],
+   "case_ids": [
+    "x_deepfake__tweet_4260350399"
+   ],
+   "topics": [
+    "deepfake"
+   ]
+  },
+  {
+   "event_id": "E52",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_deepfake__tweet_9931780251",
+     "title": "SynthID Detector: Google ouvre la traçabilité des contenus IA au grand public \nh",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "synthid",
+    "ouvre",
+    "contenus",
+    "grand",
+    "google",
+    "des",
+    "detector",
+    "tra"
+   ],
+   "case_ids": [
+    "x_deepfake__tweet_9931780251"
+   ],
+   "topics": [
+    "deepfake"
+   ]
+  },
+  {
+   "event_id": "E53",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_deepfake__tweet_0726479068",
+     "title": "The Form Five student, believed to be the suspect, was suspended for five days i",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "five",
+    "believed",
+    "suspended",
+    "suspect",
+    "form",
+    "student",
+    "days",
+    "bfm"
+   ],
+   "case_ids": [
+    "x_deepfake__tweet_0726479068"
+   ],
+   "topics": [
+    "deepfake"
+   ]
+  },
+  {
+   "event_id": "E54",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_deepfake__tweet_2323035348",
+     "title": "#FMTNews Law firm says the Seremban schoolgirls are fearful of possible retaliat",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "fmtnews",
+    "firm",
+    "seremban",
+    "schoolgirls",
+    "fearful",
+    "retaliat",
+    "law",
+    "possible"
+   ],
+   "case_ids": [
+    "x_deepfake__tweet_2323035348"
+   ],
+   "topics": [
+    "deepfake"
+   ]
+  },
+  {
+   "event_id": "E55",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_deepfake__tweet_0473314726",
+     "title": "Student victims in deepfake case shouldn’t have faced suspect, police told",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "victims",
+    "shouldn",
+    "police",
+    "told",
+    "case",
+    "faced",
+    "suspect",
+    "student"
+   ],
+   "case_ids": [
+    "x_deepfake__tweet_0473314726"
+   ],
+   "topics": [
+    "deepfake"
+   ]
+  },
+  {
+   "event_id": "E56",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_deepfake__tweet_9337532852",
+     "title": "risk of ai deepfake music by mr_farman_ai",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "farman",
+    "risk",
+    "music",
+    "deepfake",
+    "kim",
+    "vault",
+    "t08",
+    "#000"
+   ],
+   "case_ids": [
+    "x_deepfake__tweet_9337532852"
+   ],
+   "topics": [
+    "deepfake"
+   ]
+  },
+  {
+   "event_id": "E57",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_fake_news__tweet_9379493327",
+     "title": "Não é fake News",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "mceci",
+    "vanjr36127007",
+    "cartaxo",
+    "centralreality",
+    "t11",
+    "#000",
+    "#2026"
+   ],
+   "case_ids": [
+    "x_fake_news__tweet_9379493327"
+   ],
+   "topics": [
+    "fake_news"
+   ]
+  },
+  {
+   "event_id": "E58",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_fake_news__tweet_8600695895",
+     "title": "Right from the PM to the rest of the party, you guys are really jokers.\n\nEven a",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "rest",
+    "party",
+    "jokers",
+    "guys",
+    "really",
+    "even",
+    "right",
+    "club"
+   ],
+   "case_ids": [
+    "x_fake_news__tweet_8600695895"
+   ],
+   "topics": [
+    "fake_news"
+   ]
+  },
+  {
+   "event_id": "E59",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_fake_news__tweet_1705211029",
+     "title": "BBC who faked a video claming Trump telling people to storm the congress and the",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "claming",
+    "storm",
+    "congress",
+    "bbc",
+    "faked",
+    "telling",
+    "trump",
+    "people"
+   ],
+   "case_ids": [
+    "x_fake_news__tweet_1705211029"
+   ],
+   "topics": [
+    "fake_news"
+   ]
+  },
+  {
+   "event_id": "E60",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_fake_news__tweet_0310792534",
+     "title": "FAKE NEWS!!!",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "stephen",
+    "mullins",
+    "skynews",
+    "paddymacc1",
+    "alibunkallsky",
+    "t11",
+    "#000",
+    "#2026"
+   ],
+   "case_ids": [
+    "x_fake_news__tweet_0310792534"
+   ],
+   "topics": [
+    "fake_news"
+   ]
+  },
+  {
+   "event_id": "E61",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_fake_news__tweet_2625210453",
+     "title": "Fake News never been a site during midterms",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "midterms",
+    "never",
+    "site",
+    "during",
+    "passthesaveact",
+    "berniesanders",
+    "t10",
+    "#000"
+   ],
+   "case_ids": [
+    "x_fake_news__tweet_2625210453"
+   ],
+   "topics": [
+    "fake_news"
+   ]
+  },
+  {
+   "event_id": "E62",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_fake_news__tweet_9070767274",
+     "title": "That you’re a sheep and fake news",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "sheep",
+    "james",
+    "t10",
+    "#000",
+    "#2026"
+   ],
+   "case_ids": [
+    "x_fake_news__tweet_9070767274"
+   ],
+   "topics": [
+    "fake_news"
+   ]
+  },
+  {
+   "event_id": "E63",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_fake_news__tweet_1324585331",
+     "title": "gente ????? queria saber o q essas contas ganham propagando fake news",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "gente",
+    "queria",
+    "saber",
+    "essas",
+    "contas",
+    "ganham",
+    "propagando",
+    "t10"
+   ],
+   "case_ids": [
+    "x_fake_news__tweet_1324585331"
+   ],
+   "topics": [
+    "fake_news"
+   ]
+  },
+  {
+   "event_id": "E64",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_fake_news__tweet_7348024600",
+     "title": "Fake news non ? Je la vois pas.",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "vois",
+    "pas",
+    "non",
+    "t10",
+    "#000",
+    "#2026"
+   ],
+   "case_ids": [
+    "x_fake_news__tweet_7348024600"
+   ],
+   "topics": [
+    "fake_news"
+   ]
+  },
+  {
+   "event_id": "E65",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_fake_news__tweet_4354748487",
+     "title": "would i ever share fake news?",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "share",
+    "ever",
+    "honourable",
+    "mention",
+    "t10",
+    "#000",
+    "#2026"
+   ],
+   "case_ids": [
+    "x_fake_news__tweet_4354748487"
+   ],
+   "topics": [
+    "fake_news"
+   ]
+  },
+  {
+   "event_id": "E66",
+   "size": 1,
+   "platforms": {
+    "twitter": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "x_fake_news__tweet_8161315901",
+     "title": "สื่อส้ม fake news รีกันหลายหมื่น แถลงการณ์ขอโทษที่บิดเบือน ติ่งปิดหูปิดตาปิดปาก",
+     "platform": "twitter",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "imf",
+    "t10",
+    "#000",
+    "#2026"
+   ],
+   "case_ids": [
+    "x_fake_news__tweet_8161315901"
+   ],
+   "topics": [
+    "fake_news"
+   ]
+  },
+  {
+   "event_id": "E67",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_001",
+     "title": "中央网信办开展“清朗·整治短视频虚假人设乱象”行动",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "短视",
+    "假人",
+    "人设",
+    "一是",
+    "等方",
+    "方式",
+    "二是",
+    "治短"
+   ],
+   "case_ids": [
+    "factcheck__piyao_001"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E68",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_002",
+     "title": "整治恶意炒作涉企信息，第二批典型案例曝光→",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "企业",
+    "账号",
+    "涉企",
+    "等账",
+    "作涉",
+    "炒作",
+    "信息",
+    "治恶"
+   ],
+   "case_ids": [
+    "factcheck__piyao_002"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E69",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_003",
+     "title": "整治涉企网络侵权 网信办持续优化营商网络环境",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "企业",
+    "涉企",
+    "业家",
+    "侵权",
+    "企侵",
+    "权信",
+    "信息",
+    "处置"
+   ],
+   "case_ids": [
+    "factcheck__piyao_003"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E70",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_004",
+     "title": "“魔改”《三国演义》《西游记》等，多个账号被查处！",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "应用",
+    "账号",
+    "违规",
+    "魔改",
+    "生成",
+    "查处",
+    "内容",
+    "三国"
+   ],
+   "case_ids": [
+    "factcheck__piyao_004"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E71",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_005",
+     "title": "今日辟谣（2026·10·16）",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "谷物",
+    "全谷",
+    "洛阳",
+    "粮食",
+    "杂粮",
+    "南水",
+    "水北",
+    "北调"
+   ],
+   "case_ids": [
+    "factcheck__piyao_005"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E72",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_006",
+     "title": "中国互联网联合辟谣平台9月辟谣榜",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "政策",
+    "灾情",
+    "谣言",
+    "国互",
+    "月辟",
+    "谣榜",
+    "出境",
+    "强降"
+   ],
+   "case_ids": [
+    "factcheck__piyao_006"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E73",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_007",
+     "title": "这份倡议书，值得一起读！",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "倡议",
+    "这份",
+    "份倡",
+    "议书",
+    "起读",
+    "一起",
+    "值得",
+    "得一"
+   ],
+   "case_ids": [
+    "factcheck__piyao_007"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E74",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_008",
+     "title": "今年寒露不一般，为60年一遇冷冬？",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "寒露",
+    "冷冬",
+    "年一",
+    "一遇",
+    "年寒",
+    "遇冷",
+    "关节",
+    "露不"
+   ],
+   "case_ids": [
+    "factcheck__piyao_008"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E75",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_009",
+     "title": "干货满满！这堂公开课教你“望闻问切”辨谣言",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "堂公",
+    "开课",
+    "望闻",
+    "闻问",
+    "问切",
+    "辨谣",
+    "干货",
+    "货满"
+   ],
+   "case_ids": [
+    "factcheck__piyao_009"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E76",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_010",
+     "title": "AI趣味视频｜秋补闯关，国庆解锁3个养生真相",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "国庆",
+    "养生",
+    "趣味",
+    "秋补",
+    "闯关",
+    "解锁",
+    "生真",
+    "味视"
+   ],
+   "case_ids": [
+    "factcheck__piyao_010"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E77",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_011",
+     "title": "网络辟谣沙龙接力，下一站陕西",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "陕西",
+    "谣沙",
+    "沙龙",
+    "接力",
+    "下一",
+    "辟谣",
+    "龙接",
+    "一站"
+   ],
+   "case_ids": [
+    "factcheck__piyao_011"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E78",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_012",
+     "title": "工信微报 | 速自查！这17款APP及SDK存在侵害用户权益行为",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "sdk",
+    "害用",
+    "户权",
+    "益行",
+    "用户",
+    "工信",
+    "信微",
+    "微报"
+   ],
+   "case_ids": [
+    "factcheck__piyao_012"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E79",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_013",
+     "title": "清朗河南 | 南水北调中线可约票钓鱼？误解！系运河正常维护",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "南水",
+    "水北",
+    "北调",
+    "运河",
+    "河南",
+    "调中",
+    "中线",
+    "朗河"
+   ],
+   "case_ids": [
+    "factcheck__piyao_013"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E80",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_014",
+     "title": "@科学辟谣 | 磁极即将倒转？",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "磁极",
+    "倒转",
+    "学辟",
+    "极即",
+    "即将",
+    "将倒",
+    "科学",
+    "属于"
+   ],
+   "case_ids": [
+    "factcheck__piyao_014"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E81",
+   "size": 1,
+   "platforms": {
+    "piyao": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__piyao_015",
+     "title": "“中国石油”微信公众号 | 关于近期柴油的消费提示",
+     "platform": "piyao",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "柴油",
+    "低温",
+    "最低",
+    "石油",
+    "号柴",
+    "国石",
+    "油的",
+    "的消"
+   ],
+   "case_ids": [
+    "factcheck__piyao_015"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E82",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_001",
+     "title": "Kmart used to sell pet monkeys in the 1960s. It wasn't alone Written by: Jordan Liles Oct. 17, 2026 We combed through the internet archives ",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "kmart",
+    "monkeys",
+    "#1960",
+    "pet",
+    "sell",
+    "archives",
+    "advertisements",
+    "wasn't"
+   ],
+   "case_ids": [
+    "factcheck__snopes_001"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E83",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_002",
+     "title": "Ilhan Omar didn't flee to Morocco after federal agents' raid on her home Written by: Nur Ibrahim Oct. 16, 2026 The source for this claim abo",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "morocco",
+    "omar",
+    "ilhan",
+    "frequently",
+    "home",
+    "flee",
+    "agents'",
+    "raid"
+   ],
+   "case_ids": [
+    "factcheck__snopes_002"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E84",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_003",
+     "title": "Trump didn't accuse Ukraine of election interference after strikes on Russian 'bot farms,' despite claims Written by: Laerke Christensen Oct",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "interference",
+    "strikes",
+    "russian",
+    "bot",
+    "ukraine",
+    "farms",
+    "election",
+    "article"
+   ],
+   "case_ids": [
+    "factcheck__snopes_003"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E85",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_004",
+     "title": "Are videos of Tesla's new 'flying' car performing mid-air stunts real? Written by: Laerke Christensen Oct. 16, 2026 The footage appeared to ",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "car",
+    "tesla's",
+    "performing",
+    "mid",
+    "stunts",
+    "footage",
+    "launch",
+    "roadster"
+   ],
+   "case_ids": [
+    "factcheck__snopes_004"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E86",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_005",
+     "title": "Did Department of Energy remove building accessibility requirements for disabled people? Written by: Anna Rascouët-Paz Oct. 16, 2026 The rul",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "accessibility",
+    "rule",
+    "remove",
+    "building",
+    "requirements",
+    "implemented",
+    "projects",
+    "change"
+   ],
+   "case_ids": [
+    "factcheck__snopes_005"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E87",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_006",
+     "title": "Trump admin cut down 430 trees at DC golf course renovation site, court docs confirm Written by: Jordan Liles Oct. 16, 2026 A federal judge ",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "golf",
+    "#430",
+    "trees",
+    "weekend",
+    "plans",
+    "course",
+    "court",
+    "confirm"
+   ],
+   "case_ids": [
+    "factcheck__snopes_006"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E88",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_007",
+     "title": "Does video show Katie Zacharia struggling to answer beauty pageant question? Written by: Emery Winter Oct. 16, 2026 The White House press se",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "zacharia",
+    "beauty",
+    "pageant",
+    "katie",
+    "struggling",
+    "teen",
+    "answer",
+    "miss"
+   ],
+   "case_ids": [
+    "factcheck__snopes_007"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E89",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_008",
+     "title": "'You are the snake': Marjorie Taylor Greene post criticizes Trump's 'broken campaign promises' Written by: Joey Esposito Oct. 16, 2026 The f",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "greene",
+    "marjorie",
+    "post",
+    "broken",
+    "taylor",
+    "fault",
+    "gaza",
+    "screenshot"
+   ],
+   "case_ids": [
+    "factcheck__snopes_008"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E90",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_009",
+     "title": "Proposed Maine underwater data center that could harm endangered whales is far from done deal Written by: Rae Deng Oct. 16, 2026 The company",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "underwater",
+    "maine",
+    "endangered",
+    "whales",
+    "data",
+    "center",
+    "company",
+    "idea"
+   ],
+   "case_ids": [
+    "factcheck__snopes_009"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E91",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_010",
+     "title": "Fake image depicting real attack on protester at Trump rally spreads online Written by: Rae Deng Oct. 15, 2026 Credible videos of the event ",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "protester",
+    "wearing",
+    "shirt",
+    "image",
+    "rally",
+    "depicting",
+    "hitting",
+    "tackling"
+   ],
+   "case_ids": [
+    "factcheck__snopes_010"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E92",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_011",
+     "title": "Did Ilhan Omar change her birth year in official records? Written by: Taija PerryCook Oct. 15, 2026 Critics have claimed the change indicate",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "omar",
+    "birth",
+    "records",
+    "change",
+    "ilhan",
+    "year",
+    "claimed",
+    "taija"
+   ],
+   "case_ids": [
+    "factcheck__snopes_011"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E93",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_012",
+     "title": "Did Nobel Committee member 'Peter Girnus' write letter about why Trump didn't win Peace Prize? Written by: Laerke Christensen Oct. 15, 2026 ",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "letter",
+    "peace",
+    "nobel",
+    "prize",
+    "committee",
+    "member",
+    "child",
+    "wants"
+   ],
+   "case_ids": [
+    "factcheck__snopes_012"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E94",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_013",
+     "title": "Trump order fast-tracks logging on federal lands, but posts exaggerate scale Written by: Jack Izzo Oct. 15, 2026 The order would allow feder",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "logging",
+    "order",
+    "executive",
+    "lands",
+    "allow",
+    "agencies",
+    "environmental",
+    "protection"
+   ],
+   "case_ids": [
+    "factcheck__snopes_013"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E95",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_014",
+     "title": "George Carlin joked about televised executions decades before Pentagon announcement Written by: Joey Esposito Oct. 15, 2026 (Updated: Oct. 1",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "carlin",
+    "announcement",
+    "pentagon",
+    "george",
+    "televised",
+    "executions",
+    "joked",
+    "updated"
+   ],
+   "case_ids": [
+    "factcheck__snopes_014"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  },
+  {
+   "event_id": "E96",
+   "size": 1,
+   "platforms": {
+    "snopes": 1
+   },
+   "multi_platform": false,
+   "labels": {
+    "None": 1
+   },
+   "label_present": 0,
+   "claim_variants": 1,
+   "claims": [
+    {
+     "case_id": "factcheck__snopes_015",
+     "title": "Maricopa County didn't apologize to Trump after uncovering fraud in 2020 election, despite claims Written by: Jordan Liles Oct. 15, 2026 The",
+     "platform": "snopes",
+     "label": null
+    }
+   ],
+   "top_tokens": [
+    "maricopa",
+    "county",
+    "election",
+    "#2020",
+    "arizona",
+    "apologize",
+    "uncovering",
+    "officials"
+   ],
+   "case_ids": [
+    "factcheck__snopes_015"
+   ],
+   "topics": [
+    "factcheck"
+   ]
+  }
+ ]
+}

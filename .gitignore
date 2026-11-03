@@ -14,6 +14,8 @@ secrets/
 
 # ---- 运行产物 ----
 logs/
+metadata/tasks.json.tmp
+metadata/tasks.bak.json
 
 # ---- 系统文件 ----
 Thumbs.db
