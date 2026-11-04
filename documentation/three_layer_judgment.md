@@ -89,6 +89,13 @@ judge_layers(members)   汇总三层：核查源优先，抽不到即 insufficie
 | 表述层 | 8 / 96 | 不实 8 |
 | **任一有证据** | **23 / 96** | `status=source_grounded` |
 
+> **2026-11-04 r3/r4 增补**：外部检索回填通道落地（`metadata/external_findings.jsonl` →
+> verify agent 幂等合并）。r3 回填 E01（印尼 Komdigi AI 标签规则，政府一手稿）/E02（Trump-CNN
+> Oval Office 交锋）/E05（CPAC2017 演讲）；r4 回填 E52（Google SynthID Detector 发布）/E53+E55
+> （马来西亚校园 deepfake 案两报道面）/E39（TED 官方讲者页）/E31（Guardian+HBO 剧集）。
+> **任一有证据 23 → 31/96**，事件层 source_says_true 9 → 17。检索产物在流水线重建时不会丢失
+> （jsonl 是源，合并是纯函数）；E53/E55 与 E01/E02 为"同一事件拆成多簇"的归簇保守下界实证。
+
 为什么只有 23/96：语料里只有 30 条核查源案例（Snopes 15 + 辟谣站 15），
 其余 68 条是 YouTube/X 的主张本身，**没有核查结论可抽**。
 这不是脚本的缺陷，而是语料的结构性欠账——也正是 roadmap 里
