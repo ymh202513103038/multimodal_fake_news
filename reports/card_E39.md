@@ -1,6 +1,6 @@
 # 事件卡 E39｜A Surprisingly Effective Way to Fight…
 
-> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-03T11:57:59+00:00 · 簇内 1 条案例 / 1 个平台
+> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T13:44:22+00:00 · 簇内 1 条案例 / 1 个平台
 
 ## 1. 事实基座（簇内成员，全部可点开复核）
 
@@ -19,11 +19,16 @@
 
 | 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |
 |----|--------------|----------|--------------------------|
-| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **证据不足** | — |
+| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **来源称：成立** | TED 官方讲者页：A surprisingly effective way to fight misinformation — Dave Jorgenson（Washington Post meme 主管在… · `external:ted.com` |
 | 素材层 | 配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。 | **证据不足** | — |
 | 表述层 | 说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？ | **证据不足** | — |
 
 - L1 二分类：**未定**（无核查源评级可映射，需外部检索或人工标注）
+
+### 来源原文摘录（可逐句复核）
+
+- **事件层**（external:ted.com / external_retrieval · `external:ted.com` · [原文](https://www.ted.com/talks/dave_jorgenson_a_surprisingly_effective_way_to_fight_misinformation)）：
+  > TED 官方讲者页：A surprisingly effective way to fight misinformation — Dave Jorgenson（Washington Post meme 主管在 TEDNext 2025 的演讲）
 
 ## 3. 证据缺口（这张卡的边界所在）
 

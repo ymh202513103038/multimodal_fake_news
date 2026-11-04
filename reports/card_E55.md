@@ -1,6 +1,6 @@
 # 事件卡 E55｜Student victims in deepfake case shouldn’t…
 
-> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-03T11:57:59+00:00 · 簇内 1 条案例 / 1 个平台
+> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T13:44:25+00:00 · 簇内 1 条案例 / 1 个平台
 
 ## 1. 事实基座（簇内成员，全部可点开复核）
 
@@ -19,11 +19,16 @@
 
 | 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |
 |----|--------------|----------|--------------------------|
-| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **证据不足** | — |
+| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **来源称：成立** | FMT 原文标题：Student victims in deepfake case shouldn't have faced suspect, police told——律师要求勿让受害学生与嫌犯当面对质；另见 The… · `external:freemalaysiatoday.com` |
 | 素材层 | 配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。 | **证据不足** | — |
 | 表述层 | 说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？ | **证据不足** | — |
 
 - L1 二分类：**未定**（无核查源评级可映射，需外部检索或人工标注）
+
+### 来源原文摘录（可逐句复核）
+
+- **事件层**（external:freemalaysiatoday.com / external_retrieval · `external:freemalaysiatoday.com` · [原文](https://www.freemalaysiatoday.com/category/nation/2026/10/18/student-victims-in-deepfake-case-shouldn-t-have-faced-suspect-police-told)）：
+  > FMT 原文标题：Student victims in deepfake case shouldn't have faced suspect, police told——律师要求勿让受害学生与嫌犯当面对质；另见 The Vibes：Over 300 schoolgirls may be victims, lawyer says
 
 ## 3. 证据缺口（这张卡的边界所在）
 

@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T13:40:13+00:00",
+ "generated_at": "2026-11-04T13:44:21+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 3,
+ "external_findings_merged": 8,
  "external_findings_bad": 0,
- "source_grounded": 26,
+ "source_grounded": 31,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 12,
-   "insufficient": 71,
+   "source_says_true": 17,
+   "insufficient": 66,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -2691,11 +2691,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:theguardian.com",
+       "field": "external_retrieval",
+       "quote": "The Guardian：John Oliver on digital misinformation: 'There needs to be more public pressure on platforms'——剧集存在且获主流报道；HBO 官方 press 页有 Last Week Tonight 剧集发布记录",
+       "url": "https://mediawell.ssrc.org/news-items/john-oliver-on-digital-misinformation-there-needs-to-be-more-public-pressure-on-platforms-the-guardian/"
+      }
+     ],
+     "rationale": "外部检索回填（theguardian.com，2026-11-04，检索者 ai-assist(external-retrieval r4)，置信 high）：Guardian 报道+HBO 官方发布+三平台剧集列表互证；该 case 为 misinformation 主题剧集（S7E9 Coronavirus Misinformation 等）",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -2745,7 +2753,7 @@
     "Misinformation Last Week Tonight with John Oliver HBO 辟谣",
     "Misinformation Last Week Tonight with John Oliver HBO debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E32",
@@ -3382,11 +3390,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:ted.com",
+       "field": "external_retrieval",
+       "quote": "TED 官方讲者页：A surprisingly effective way to fight misinformation — Dave Jorgenson（Washington Post meme 主管在 TEDNext 2025 的演讲）",
+       "url": "https://www.ted.com/talks/dave_jorgenson_a_surprisingly_effective_way_to_fight_misinformation"
+      }
+     ],
+     "rationale": "外部检索回填（ted.com，2026-11-04，检索者 ai-assist(external-retrieval r4)，置信 high）：一手平台页即权威出处；演讲真实存在",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -3436,7 +3452,7 @@
     "Surprisingly Effective Way to Fight Misinformation Dave Jorgenson TED 辟谣",
     "Surprisingly Effective Way to Fight Misinformation Dave Jorgenson TED debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E40",
@@ -4511,11 +4527,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:blog.google",
+       "field": "external_retrieval",
+       "quote": "Google 官方博客：We're making it easier to identify AI-generated content globally——SynthID Detector 公开上线（推文即报道此事的法语科技博客）",
+       "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/"
+      }
+     ],
+     "rationale": "外部检索回填（blog.google，2026-11-04，检索者 ai-assist(external-retrieval r4)，置信 high）：一手官方博客+三家科技媒体互证；产品发布事件真实",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -4570,7 +4594,7 @@
     "SynthID Detector Google ouvre la traçabilité des contenus IA au 辟谣",
     "SynthID Detector Google ouvre la traçabilité des contenus IA au debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E53",
@@ -4600,11 +4624,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:bernama.com",
+       "field": "external_retrieval",
+       "quote": "马来西亚国家通讯社 Bernama：Police Receive Five Reports Over AI-manipulated Explicit Images Of Schoolgirls——芙蓉某中学逾300女学生疑遭AI合成裸照，警方受理5项报告",
+       "url": "https://www.bernama.com/en/region/news.php?id=2621843"
+      }
+     ],
+     "rationale": "外部检索回填（bernama.com，2026-11-04，检索者 ai-assist(external-retrieval r4)，置信 high）：国家通讯社+NST+RTM+中文媒体四源互证；主张中'该生停课五天'细节未单独核实，事件本体多源确认",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -4659,7 +4691,7 @@
     "The Form Five student believed to be the suspect was 辟谣",
     "The Form Five student believed to be the suspect was debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E54",
@@ -4778,11 +4810,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:freemalaysiatoday.com",
+       "field": "external_retrieval",
+       "quote": "FMT 原文标题：Student victims in deepfake case shouldn't have faced suspect, police told——律师要求勿让受害学生与嫌犯当面对质；另见 The Vibes：Over 300 schoolgirls may be victims, lawyer says",
+       "url": "https://www.freemalaysiatoday.com/category/nation/2026/10/18/student-victims-in-deepfake-case-shouldn-t-have-faced-suspect-police-told"
+      }
+     ],
+     "rationale": "外部检索回填（freemalaysiatoday.com，2026-11-04，检索者 ai-assist(external-retrieval r4)，置信 high）：FMT 英文/马来文双语原文+The Vibes+世华媒体互证；与 E53 为同一案件的另一报道面（归簇漏并的实例，已留证）",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -4837,7 +4877,7 @@
     "Student victims in deepfake case shouldn have faced suspect police 辟谣",
     "Student victims in deepfake case shouldn have faced suspect police debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E56",

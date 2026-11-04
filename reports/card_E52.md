@@ -1,6 +1,6 @@
 # 事件卡 E52｜SynthID Detector: Google ouvre la traçabilité…
 
-> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-03T11:57:59+00:00 · 簇内 1 条案例 / 1 个平台
+> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T13:44:38+00:00 · 簇内 1 条案例 / 1 个平台
 
 ## 1. 事实基座（簇内成员，全部可点开复核）
 
@@ -20,11 +20,16 @@ h | `x_deepfake__tweet_9931780251` | [打开](https://x.com/i/web/status/2111744
 
 | 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |
 |----|--------------|----------|--------------------------|
-| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **证据不足** | — |
+| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **来源称：成立** | Google 官方博客：We're making it easier to identify AI-generated content globally——SynthID Detector… · `external:blog.google` |
 | 素材层 | 配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。 | **证据不足** | — |
 | 表述层 | 说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？ | **证据不足** | — |
 
 - L1 二分类：**未定**（无核查源评级可映射，需外部检索或人工标注）
+
+### 来源原文摘录（可逐句复核）
+
+- **事件层**（external:blog.google / external_retrieval · `external:blog.google` · [原文](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/)）：
+  > Google 官方博客：We're making it easier to identify AI-generated content globally——SynthID Detector 公开上线（推文即报道此事的法语科技博客）
 
 ## 3. 证据缺口（这张卡的边界所在）
 
