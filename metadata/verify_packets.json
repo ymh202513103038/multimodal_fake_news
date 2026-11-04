@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T14:10:54+00:00",
+ "generated_at": "2026-11-04T14:12:45+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 34,
+ "external_findings_merged": 35,
  "external_findings_bad": 0,
- "source_grounded": 57,
+ "source_grounded": 58,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 43,
-   "insufficient": 40,
+   "source_says_true": 44,
+   "insufficient": 39,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -2749,11 +2749,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:cunytv (The Open Mind)",
+       "field": "external_retrieval",
+       "quote": "CUNY TV《The Open Mind》专访：The Misinformation Age — Cailin O'Connor and James Owen Weatherall（同名书两位作者）——讲'互联网如何杀死批判性思维'主题的访谈/讲座真实存在；另有 Center for Inquiry 讲座视频《Surviving the Misinformation Age》同域",
+       "url": "https://www.thirteen.org/programs/the-open-mind/the-misinformation-age-0xqnez/"
+      }
+     ],
+     "rationale": "外部检索回填（cunytv (The Open Mind)，2026-11-04，检索者 ai-assist(external-retrieval r15)，置信 medium）：主题与书名精确对应、两个候选源视频都真实，但无法确认 dataset 捕获的是哪一段（Open Mind 访谈 vs CFI 讲座），故 medium；人工看片头即可消歧",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -2803,7 +2811,7 @@
     "The Misinformation Age How The Internet Killed Critical Thinking 辟谣",
     "The Misinformation Age How The Internet Killed Critical Thinking debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E31",
