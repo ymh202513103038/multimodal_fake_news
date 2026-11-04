@@ -198,3 +198,16 @@ $py = "fake_news_env\Scripts\python.exe"
 4. 若属于采集类（只是转命令），更省事：直接在 `agent_collect.ROUTES` 加一条
    `{script, argmap, flags, watch}`，不用写新文件；
 5. 跑 `orchestrator manifest` 自检，再用 `agents.py <agent> <action> --params '{...}'` 手测一次。
+
+## 11. 出卡工具补充（2026-11-04 r12）
+
+子进程方式出卡在 Windows 下偶发"调用失败/静默不写"（杀软扫描抖动，r5/r11/r12 三次踩坑）。
+批量出卡或提交前校验请改用进程内脚本：
+
+```powershell
+python prototype/refresh_cards.py --events E01,E13,E31 --require-grounded
+```
+
+- 进程内 import `agent_card`，不经子进程；出卡后自动校验 mtime/非空，
+  `--require-grounded` 额外要求卡内出现「来源称：」；任一失败非零退出；
+- `agents.py card` 子进程通道保留（单张手工调试仍可用），批量场景一律走 refresh_cards。
