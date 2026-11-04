@@ -1,6 +1,6 @@
 # 事件卡 E17｜BOMBA! Assessora de LULA e JANJA inevstigada…
 
-> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T13:54:51+00:00 · 簇内 1 条案例 / 1 个平台
+> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T14:00:49+00:00 · 簇内 1 条案例 / 1 个平台
 
 ## 1. 事实基座（簇内成员，全部可点开复核）
 
@@ -19,11 +19,16 @@
 
 | 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |
 |----|--------------|----------|--------------------------|
-| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **证据不足** | — |
+| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **来源称：成立** | Correio Braziliense 专栏（Paulo Cappelli，2026-10）：Justiça manda PF investigar ex-secretária de Lula por fake… · `external:cm.com.br` |
 | 素材层 | 配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。 | **证据不足** | — |
 | 表述层 | 说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？ | **证据不足** | — |
 
 - L1 二分类：**未定**（无核查源评级可映射，需外部检索或人工标注）
+
+### 来源原文摘录（可逐句复核）
+
+- **事件层**（external:cm.com.br / external_retrieval · `external:cm.com.br` · [原文](https://www.cm.com.br/colunistas/paulo-cappelli/2026/10/327677-justica-manda-pf-investigar-ex-secretaria-de-lula-por-fake-news-contra-vice-de-flavio-bolsonaro.html)）：
+  > Correio Braziliense 专栏（Paulo Cappelli，2026-10）：Justiça manda PF investigar ex-secretária de Lula por fake news contra vice de Flávio Bolsonaro——法院令联邦警察调查卢拉前助理涉假新闻案；Pleno News 同稿
 
 ## 3. 证据缺口（这张卡的边界所在）
 

@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T13:56:56+00:00",
+ "generated_at": "2026-11-04T14:00:37+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 24,
+ "external_findings_merged": 28,
  "external_findings_bad": 0,
- "source_grounded": 47,
+ "source_grounded": 51,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 33,
-   "insufficient": 50,
+   "source_says_true": 37,
+   "insufficient": 46,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -1422,11 +1422,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:tn.com.ar",
+       "field": "external_retrieval",
+       "quote": "TN（Todo Noticias，阿根廷）节目回放页：La semana de Tarico Fake News——节目单期可回看；Artear 官方节目页与 Ciudad 报道（2026-03 第三季开播）互证；case 即 2026-10-17 整期节目",
+       "url": "https://tn.com.ar/videos/show/novedades/2024/12/17/la-semana-de-tarico-fake-news-volve-a-ver-el-programa-del-sabado-14-de-diciembre/"
+      }
+     ],
+     "rationale": "外部检索回填（tn.com.ar，2026-11-04，检索者 ai-assist(external-retrieval r10)，置信 high）：节目本体真实存在（Ariel Tarico 主持的 fake news 讽刺节目，TN 台播出）；节目内容为讽刺演绎，标注时注意 satire 属性，勿当新闻主张核查",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -1476,7 +1484,7 @@
     "LA SEMANA DE TARICO FAKE NEWS Programa Completo 17 10 辟谣",
     "LA SEMANA DE TARICO FAKE NEWS Programa Completo 17 10 debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E17",
@@ -1508,11 +1516,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:cm.com.br",
+       "field": "external_retrieval",
+       "quote": "Correio Braziliense 专栏（Paulo Cappelli，2026-10）：Justiça manda PF investigar ex-secretária de Lula por fake news contra vice de Flávio Bolsonaro——法院令联邦警察调查卢拉前助理涉假新闻案；Pleno News 同稿",
+       "url": "https://www.cm.com.br/colunistas/paulo-cappelli/2026/10/327677-justica-manda-pf-investigar-ex-secretaria-de-lula-por-fake-news-contra-vice-de-flavio-bolsonaro.html"
+      }
+     ],
+     "rationale": "外部检索回填（cm.com.br，2026-11-04，检索者 ai-assist(external-retrieval r10)，置信 high）：事件（PF 立案调查）两家巴西媒体确认；注意 YT 标题'BOMBA! Assessora de LULA e JANJA'有 clickbait 成分——调查对象是卢拉前助理、事由涉对 Bolson",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -1562,7 +1578,7 @@
     "BOMBA Assessora de LULA JANJA inevstigada pela PF por FAKE 辟谣",
     "BOMBA Assessora de LULA JANJA inevstigada pela PF por FAKE debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E18",
@@ -2140,11 +2156,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:dailypakistan.com.pk",
+       "field": "external_retrieval",
+       "quote": "Daily Pakistan（2026-03-28）：Anti-Pakistan Propaganda Campaign exposes India, Afghanistan-Linked Fake Social Media Network；ARY（2026-05-04）：How India's Digital Propaganda War Targets Pakistan；Minute Mirror 两篇同题",
+       "url": "https://en.dailypakistan.com.pk/28-Mar-2026/anti-pakistan-propaganda-campaign-exposes-india-afghanistan-linked-fake-social-media-network"
+      }
+     ],
+     "rationale": "外部检索回填（dailypakistan.com.pk，2026-11-04，检索者 ai-assist(external-retrieval r10)，置信 medium）：镜像叙事语境：巴基斯坦系媒体多源记录'印度关联假账号网络'，但对面也有反向核查（Republic World：India Debunks Pakistani Propaganda）——本条判定=『巴基",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -2199,7 +2223,7 @@
     "More anti Pakistan fake news churns out of India 辟谣",
     "More anti Pakistan fake news churns out of India debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E25",
@@ -3142,11 +3166,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:aljazeera.com",
+       "field": "external_retrieval",
+       "quote": "Al Jazeera 官方剧集页：The Stream — Why does misinformation spread faster than truth?（2025-09-30）——case 即该期节目",
+       "url": "https://www.aljazeera.com/video/the-stream/2025/9/30/why-does-misinformation-spread-faster-than-truth"
+      }
+     ],
+     "rationale": "外部检索回填（aljazeera.com，2026-11-04，检索者 ai-assist(external-retrieval r10)，置信 high）：一手官方剧集页即权威出处",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -3196,7 +3228,7 @@
     "Why does misinformation spread faster than truth The Stream 辟谣",
     "Why does misinformation spread faster than truth The Stream debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E36",
