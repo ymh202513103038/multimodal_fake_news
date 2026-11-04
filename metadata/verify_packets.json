@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T14:00:37+00:00",
+ "generated_at": "2026-11-04T14:02:24+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 28,
+ "external_findings_merged": 31,
  "external_findings_bad": 0,
- "source_grounded": 51,
+ "source_grounded": 54,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 37,
-   "insufficient": 46,
+   "source_says_true": 40,
+   "insufficient": 43,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -992,11 +992,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:futurism.com",
+       "field": "external_retrieval",
+       "quote": "Futurism：John Oliver Aghast at How AI Slop Is Devouring the Web——Last Week Tonight 的 AI slop 专题获多家科技媒体报道；IMDb 亦有 2026 年 AI Chatbots 剧集条目",
+       "url": "https://futurism.com/john-oliver-ai-slop"
+      }
+     ],
+     "rationale": "外部检索回填（futurism.com，2026-11-04，检索者 ai-assist(external-retrieval r11)，置信 high）：科技媒体三源+IMDb 剧集条目互证；与 E31（misinformation 主题）同为 LWT 剧集，属同节目不同单集",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -1046,7 +1054,7 @@
     "AI Slop Fake News 辟谣",
     "AI Slop Fake News debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E12",
@@ -1164,11 +1172,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:stuff.co.nz",
+       "field": "external_retrieval",
+       "quote": "Stuff 原题：Anthropic boss shuffles into background as Trump calls CNN 'fake news'——白宫 AI 峰会上 Trump 现场骂 CNN，Anthropic CEO 在场的反应被镜头捕捉",
+       "url": "https://www.stuff.co.nz/world-news/361040391/anthropic-boss-shuffles-background-trump-calls-cnn-fake-news"
+      }
+     ],
+     "rationale": "外部检索回填（stuff.co.nz，2026-11-04，检索者 ai-assist(external-retrieval r11)，置信 high）：标题逐字对上（Anthropic CEO reaction 即 Amodei 在场的镜头反应）；Mediaite/Yahoo/Atlanta Black Star 多源报道同一场面",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -1218,7 +1234,7 @@
     "Trump Attacks CNN as Fake News Watch Anthropic CEO Reaction 辟谣",
     "Trump Attacks CNN as Fake News Watch Anthropic CEO Reaction debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E14",
@@ -1250,11 +1266,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:businessmirror.com.ph",
+       "field": "external_retrieval",
+       "quote": "BusinessMirror（2026-10-14）：Lacson wants Panelo to rectify misleading claim that ₱500 million 'wasted' in impeachment trial；Taliba：Lacson sa pahayag ni Panelo——参议员 Lacson 指控前发言人 Panelo 传播误导数据并公开叫阵，即 YT 标题的'HINAMON SI PAOLO PANELO / HULI ANG FAKE NEWS'",
+       "url": "https://businessmirror.com.ph/2026/10/14/lacson-wants-panelo-to-rectify-misleading-claim-that-%e2%82%a7500-million-wasted-in-impeachment-trial/"
+      }
+     ],
+     "rationale": "外部检索回填（businessmirror.com.ph，2026-11-04，检索者 ai-assist(external-retrieval r11)，置信 high）：主流财经报+他加禄语报互证；'HULI ANG FAKE NEWS'为频道式情绪化标题，事件本体（误导数据交锋）成立",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -1304,7 +1328,7 @@
     "GRABE PING LACSON HINAMON SI PAOLO PANELO HULI ANG FAKE 辟谣",
     "GRABE PING LACSON HINAMON SI PAOLO PANELO HULI ANG FAKE debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E15",
