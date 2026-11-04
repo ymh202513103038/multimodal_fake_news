@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T14:12:45+00:00",
+ "generated_at": "2026-11-04T14:15:35+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 35,
+ "external_findings_merged": 36,
  "external_findings_bad": 0,
- "source_grounded": 58,
+ "source_grounded": 59,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 44,
-   "insufficient": 39,
+   "source_says_true": 45,
+   "insufficient": 38,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -1368,11 +1368,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:themirror.com",
+       "field": "external_retrieval",
+       "quote": "Mirror 原题：Trump to CNN: 'I don't talk to CNN. It's fake news' after tariff ruling（2026-02-20，最高法院裁定关税违法后的记者会上，Trump 拒答 CNN 提问并说出本句原话）——与 case 标题逐字对上",
+       "url": "https://www.themirror.com/entertainment/tv/donald-trump-snaps-cnn-reporter-1696076"
+      }
+     ],
+     "rationale": "外部检索回填（themirror.com，2026-11-04，检索者 ai-assist(external-retrieval r17)，置信 high）：原话逐字锚定+四语种多源；从 needs_human_clip_id 池提前捞出（标题即新闻原题，检索可锚定）",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -1422,7 +1430,7 @@
     "Don Talk To CNN It Fake News Trump Refuses CNN 辟谣",
     "Don Talk To CNN It Fake News Trump Refuses CNN debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E16",
