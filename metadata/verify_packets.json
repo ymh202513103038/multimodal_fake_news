@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T14:02:24+00:00",
+ "generated_at": "2026-11-04T14:04:59+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 31,
+ "external_findings_merged": 32,
  "external_findings_bad": 0,
- "source_grounded": 54,
+ "source_grounded": 55,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 40,
-   "insufficient": 43,
+   "source_says_true": 41,
+   "insufficient": 42,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -812,11 +812,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:kpua.net",
+       "field": "external_retrieval",
+       "quote": "音乐媒体：Ken Carson drops 13-track Cartunez EP as Xperiment deluxe（2026-08/09，Opium 厂牌说唱歌手）；汽水音乐歌词页收录其歌曲 fake news——本 case 为音乐作品（official audio），非新闻主张",
+       "url": "https://www.kpua.net/2026/09/30/ken-carson-drops-13-track-cartunez-ep-as-xperiment-deluxe/"
+      }
+     ],
+     "rationale": "外部检索回填（kpua.net，2026-11-04，检索者 ai-assist(external-retrieval r12)，置信 high）：作品存在性确认；音乐类样本的标注语义=作品真实发行（非真假判断），L1 建议留空待人工按数据集口径定",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -866,7 +874,7 @@
     "Ken Carson fake news official audio 辟谣",
     "Ken Carson fake news official audio debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E10",

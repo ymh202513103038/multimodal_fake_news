@@ -1,6 +1,6 @@
 # 事件卡 E09｜Ken Carson - fake news (official audio)
 
-> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T13:54:51+00:00 · 簇内 1 条案例 / 1 个平台
+> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T14:05:00+00:00 · 簇内 1 条案例 / 1 个平台
 
 ## 1. 事实基座（簇内成员，全部可点开复核）
 
@@ -19,11 +19,16 @@
 
 | 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |
 |----|--------------|----------|--------------------------|
-| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **证据不足** | — |
+| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **来源称：成立** | 音乐媒体：Ken Carson drops 13-track Cartunez EP as Xperiment deluxe（2026-08/09，Opium 厂牌说唱歌手）；汽水音乐歌词页收录其歌曲 fake… · `external:kpua.net` |
 | 素材层 | 配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。 | **证据不足** | — |
 | 表述层 | 说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？ | **证据不足** | — |
 
 - L1 二分类：**未定**（无核查源评级可映射，需外部检索或人工标注）
+
+### 来源原文摘录（可逐句复核）
+
+- **事件层**（external:kpua.net / external_retrieval · `external:kpua.net` · [原文](https://www.kpua.net/2026/09/30/ken-carson-drops-13-track-cartunez-ep-as-xperiment-deluxe/)）：
+  > 音乐媒体：Ken Carson drops 13-track Cartunez EP as Xperiment deluxe（2026-08/09，Opium 厂牌说唱歌手）；汽水音乐歌词页收录其歌曲 fake news——本 case 为音乐作品（official audio），非新闻主张
 
 ## 3. 证据缺口（这张卡的边界所在）
 
