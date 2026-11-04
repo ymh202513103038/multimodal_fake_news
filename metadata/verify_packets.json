@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T14:08:31+00:00",
+ "generated_at": "2026-11-04T14:10:54+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 33,
+ "external_findings_merged": 34,
  "external_findings_bad": 0,
- "source_grounded": 56,
+ "source_grounded": 57,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 42,
-   "insufficient": 41,
+   "source_says_true": 43,
+   "insufficient": 40,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -3292,11 +3292,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:pbssocal.org",
+       "field": "external_retrieval",
+       "quote": "PBS MetroFocus 段落《REAL NEWS VS. FAKE NEWS》（Season 2018）——PBS 系多站官方页收录（KVIE/IdahoPTV 同 ID dwln88）；本 case 标题即该段落名",
+       "url": "https://www.pbssocal.org/shows/metrofocus/clip/real-news-vs-fake-news-dwln88"
+      }
+     ],
+     "rationale": "外部检索回填（pbssocal.org，2026-11-04，检索者 ai-assist(external-retrieval r14)，置信 medium）：同 ID 三站官方页互证节目存在；与 dataset 捕获视频为同一部的确认度为中等（标题精确匹配，无帧级比对），故 medium",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -3346,7 +3354,7 @@
     "Real News vs Fake News 辟谣",
     "Real News vs Fake News debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E37",
