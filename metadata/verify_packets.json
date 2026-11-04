@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T13:47:14+00:00",
+ "generated_at": "2026-11-04T13:50:07+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 13,
+ "external_findings_merged": 18,
  "external_findings_bad": 0,
- "source_grounded": 36,
+ "source_grounded": 41,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 22,
-   "insufficient": 61,
+   "source_says_true": 27,
+   "insufficient": 56,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -269,11 +269,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:themirror.com",
+       "field": "external_retrieval",
+       "quote": "Mirror：Karoline Leavitt blasts CNN as 'total disgrace' in lengthy social media rant；DailyMail：Leavitt slams CNN over Iran bombing coverage——白宫新闻秘书猛批 CNN 报道为 fake news 系多源报道的真实行为",
+       "url": "https://www.themirror.com/entertainment/celebrity-news/breaking-karoline-leavitt-cnn-rant-1700688"
+      }
+     ],
+     "rationale": "外部检索回填（themirror.com，2026-11-04，检索者 ai-assist(external-retrieval r6)，置信 high）：事件层成立（行为真实发生）；表述层另有线索：Reason 刊文指其对 CNN 报道的批评'不公'——人工可据此把表述层判为超出证据",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -323,7 +331,7 @@
     "Karoline Leavitt blasts CNN for their fake news coverage in 辟谣",
     "Karoline Leavitt blasts CNN for their fake news coverage in debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E04",
@@ -882,11 +890,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:the-independent (indy-web)",
+       "field": "external_retrieval",
+       "quote": "The Independent：Trump goes on 'fake news media' rant at major Republican rally；C-SPAN 用户剪辑：President Trump defends 1st Amendment in West Virginia rally——集会上'欢迎 fake news media'式桥段属 Trump 集会惯用桥段，多家报道",
+       "url": "https://indy-web-prod.brightsites.co.uk/bulletin/news/trump-media-approval-rating-nebraska-rally-b3061885.html"
+      }
+     ],
+     "rationale": "外部检索回填（the-independent (indy-web)，2026-11-04，检索者 ai-assist(external-retrieval r6)，置信 medium）：事件家族（集会攻击 fake news media）多源确认，但原句 I'd like to welcome the fake news media 未逐字锚定到具体场次，降 medium",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -936,7 +952,7 @@
     "like to welcome the fake news media 辟谣",
     "like to welcome the fake news media debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E11",
@@ -1570,11 +1586,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:mediaite.com",
+       "field": "external_retrieval",
+       "quote": "Mediaite 原题：'That's CNN, Fake News': Trump Refuses to Answer Question From Acosta——Trump 回避 Acosta 提问并称 CNN fake news；AP：Trump slams CNN for ignoring his 'takedown' of Jim Acosta",
+       "url": "https://www.mediaite.com/politics/trump/thats-cnn-fake-news-trump-refuses-to-answer-question-from-jim-acosta-about-him-not-taking-coronavirus-seriously/"
+      }
+     ],
+     "rationale": "外部检索回填（mediaite.com，2026-11-04，检索者 ai-assist(external-retrieval r6)，置信 high）：标题行为逐字对上；AP 通讯社+人民网转载互证",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -1624,7 +1648,7 @@
     "CNN Is Fake News President Trump Dodges Jim Acosta Question 辟谣",
     "CNN Is Fake News President Trump Dodges Jim Acosta Question debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E19",
@@ -1656,11 +1680,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:thenationaldesk.com",
+       "field": "external_retrieval",
+       "quote": "The National Desk：Trump blasts CNN and MSNBC, calls them 'gutless losers' over Iran strike coverage；News24：'Scum': Trump unleashes on 'gutless losers' at CNN——'gutless losers'/'garbage/fake news' 原话有多源逐字报道",
+       "url": "https://thenationaldesk.com/news/americas-news-now/trump-blasts-cnn-and-msnbc-calls-them-gutless-losers-over-iran-strike-coverage"
+      }
+     ],
+     "rationale": "外部检索回填（thenationaldesk.com，2026-11-04，检索者 ai-assist(external-retrieval r6)，置信 high）：原话级报道（gutless losers/garbage/fake news），事件真实",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -1710,7 +1742,7 @@
     "Trump calls CNN gutless losers It all garbage It all 辟谣",
     "Trump calls CNN gutless losers It all garbage It all debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E20",
@@ -2000,11 +2032,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:huffpost.com",
+       "field": "external_retrieval",
+       "quote": "HuffPost：Trump Flips Out In Midnight Meltdown Over 'Sick, Treasonous, And Demented' Reporters（URL slug: trump-called-the-press-treasonous）；Hindustan Times：Trump rips Kaitlan Collins after UN tiff",
+       "url": "https://www.huffpost.com/entry/trump-midnight-media-meltdown_n_6ab357a1e4b043d6b569d5f2"
+      }
+     ],
+     "rationale": "外部检索回填（huffpost.com，2026-11-04，检索者 ai-assist(external-retrieval r6)，置信 high）：标题把两线叠一片：Collins UN 会场冲突（HT/NDTV 多源）与'称记者 treasonous'午夜长文（HuffPost 两篇）——各自均多源确认",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -2054,7 +2094,7 @@
     "Fake News Trump Clashes With Kaitlan Collins Calls Treasonous 辟谣",
     "Fake News Trump Clashes With Kaitlan Collins Calls Treasonous debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E24",
