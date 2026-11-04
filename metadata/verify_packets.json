@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T13:54:50+00:00",
+ "generated_at": "2026-11-04T13:56:56+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 19,
+ "external_findings_merged": 24,
  "external_findings_bad": 0,
- "source_grounded": 42,
+ "source_grounded": 47,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 28,
-   "insufficient": 55,
+   "source_says_true": 33,
+   "insufficient": 50,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -632,11 +632,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:bbc.co.uk",
+       "field": "external_retrieval",
+       "quote": "BBC Bitesize 专文：Fake news and BBC My World；The Hindu：Angelina Jolie and BBC launch new show to help children identify fake news——BBC My World 系列（BBC World Service+微软合作，2019-11 上线）真实存在，本条为其假新闻识别主题集",
+       "url": "https://www.bbc.co.uk/bitesize/articles/zk2ckmn"
+      }
+     ],
+     "rationale": "外部检索回填（bbc.co.uk，2026-11-04，检索者 ai-assist(external-retrieval r9)，置信 high）：一手 BBC 域内专文+主流媒体报道互证",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -686,7 +694,7 @@
     "Fake News How to spot it BBC My World 辟谣",
     "Fake News How to spot it BBC My World debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E08",
@@ -1860,11 +1868,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:bbc.co.uk",
+       "field": "external_retrieval",
+       "quote": "BBC Learning English 官方课程页：Fake News: Fact and Fiction / Unit 1 / Session 6（多语言版本齐全）——注意：该系列实为 BBC Learning English 播客课程，非 British Council（数据集归档标注待人工复核修正）",
+       "url": "https://www.bbc.co.uk/learningenglish/persian/course/fakenews/unit-1/session-6/activity-1"
+      }
+     ],
+     "rationale": "外部检索回填（bbc.co.uk，2026-11-04，检索者 ai-assist(external-retrieval r9)，置信 high）：一手课程页多语言版本互证；顺带发现采集侧的来源归属标注可能有误（British Council→BBC Learning English）",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -1914,7 +1930,7 @@
     "Fake News Fact Fiction Episode How to be critical thinker 辟谣",
     "Fake News Fact Fiction Episode How to be critical thinker debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E22",
@@ -3027,11 +3043,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:nobaproject.com",
+       "field": "external_retrieval",
+       "quote": "Noba 官方博客：Noba Announces 2014 Student Video Award Winners；Linfield 校网：Foong wins top prize in video competition——本片（The Misinformation Effect，Eureka Foong, Linfield 14）为该奖获奖学生作品",
+       "url": "https://nobaproject.com/blog/2014-06-04-noba-announces-2014-student-video-award-winners"
+      }
+     ],
+     "rationale": "外部检索回填（nobaproject.com，2026-11-04，检索者 ai-assist(external-retrieval r5-style)，置信 high）：主办方官方博客+获奖者母校校网互证",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -3086,7 +3110,7 @@
     "The Misinformation Effect 辟谣",
     "The Misinformation Effect debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E35",
@@ -3556,11 +3580,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:video.link",
+       "field": "external_retrieval",
+       "quote": "BBC News 视频《Fake News Generator: Who starts viral misinformation?》(2020)——经教育嵌入服务 VideoLink 与日语 BBC News 学习博客（2020-05-07 条目）确认存在；BBC 官方新闻页未直接抓取",
+       "url": "https://video.link/w/Yh9Xc/"
+      }
+     ],
+     "rationale": "外部检索回填（video.link，2026-11-04，检索者 ai-assist(external-retrieval r9)，置信 medium）：嵌入服务+第三方学习博客两源确认，BBC 官方页未直接命中，降 medium；后续可补抓 bbc.co.uk/news 原页升级",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -3610,7 +3642,7 @@
     "Fake News Generator Who starts viral misinformation BBC News 辟谣",
     "Fake News Generator Who starts viral misinformation BBC News debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E41",
@@ -3909,11 +3941,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:ted.com",
+       "field": "external_retrieval",
+       "quote": "TED 官方讲者页：Unmasking misinformation | Chris Coward | TEDxSnoIsleLibraries；WSU Everett 活动页：TEDxSnoIsleLibraries 2020: Unmasking Misinformation；讲者为华盛顿大学 iSchool 师资",
+       "url": "https://www.ted.com/talks/chris_coward_unmasking_misinformation"
+      }
+     ],
+     "rationale": "外部检索回填（ted.com，2026-11-04，检索者 ai-assist(external-retrieval r9)，置信 high）：TED 一手页+主办方大学活动页+讲者机构师资页三重互证",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -3963,7 +4003,7 @@
     "Unmasking Misinformation Chris Coward TEDxSnoIsleLibraries 辟谣",
     "Unmasking Misinformation Chris Coward TEDxSnoIsleLibraries debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E45",
