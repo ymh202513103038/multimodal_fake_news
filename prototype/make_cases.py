@@ -34,6 +34,7 @@ from pathlib import Path
 
 from common import DATASET_DIR, MEDIA_DIR, METADATA_DIR, ROOT, read_jsonl, setup_logger
 from step4_youtube_media import find_ffmpeg
+from lang_detect import detect_lang
 
 log = setup_logger("make_cases")
 MEDIA_YT = MEDIA_DIR / "youtube"
@@ -115,6 +116,17 @@ def download_best_effort(url: str, dst: Path) -> bool:
         except Exception:  # noqa: BLE001
             continue
     return False
+
+
+def _case_text_for_index(c: dict) -> str:
+    """index 字段探测用正文：title + text.txt 前 2000 字（读不到就不加）。"""
+    parts = [c.get("title") or ""]
+    for p in (c.get("files") or {}).get("text", []):
+        if p.endswith("text.txt"):
+            f = DATASET_DIR / p
+            if f.exists():
+                parts.append(f.read_text(encoding="utf-8", errors="replace")[:2000])
+    return " ".join(parts)
 
 
 def build_x_case(meta: dict, name: str, topic: str, label: dict | None) -> dict:
@@ -397,6 +409,24 @@ def main() -> None:
                     used.add(name)
                     cases.append(build_factcheck_case(meta, name, site))
                     fc_added += 1
+
+    # ---- 字段保留 + lang 回填（2026-11-04）：重建不再丢 event/lang/人工字段 ----
+    # 旧 index 里非空的 event/lang/label 等值优先保留；lang 为空则用轻量探测补。
+    old_by_id: dict = {}
+    idx_path = DATASET_DIR / "index.json"
+    if idx_path.exists():
+        try:
+            for c in json.loads(idx_path.read_text(encoding="utf-8")).get("cases", []):
+                old_by_id[c.get("id")] = c
+        except Exception:  # noqa: BLE001
+            log.warning("旧 index.json 解析失败，本次重建不保留旧字段")
+    for c in cases:
+        old = old_by_id.get(c["id"]) or {}
+        for k in ("event", "lang", "label", "modality_type", "reason", "annotator"):
+            if not c.get(k) and old.get(k):
+                c[k] = old[k]
+        if not c.get("lang"):
+            c["lang"] = detect_lang(_case_text_for_index(c))
 
     index = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
