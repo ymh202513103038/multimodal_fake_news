@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T13:50:07+00:00",
+ "generated_at": "2026-11-04T13:51:42+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 18,
+ "external_findings_merged": 19,
  "external_findings_bad": 0,
- "source_grounded": 41,
+ "source_grounded": 42,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 27,
-   "insufficient": 56,
+   "source_says_true": 28,
+   "insufficient": 55,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -4801,11 +4801,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:freemalaysiatoday.com",
+       "field": "external_retrieval",
+       "quote": "FMT（马来文版原文，英文版标题同）：Kes sunting gambar pelajar: Mangsa tidak patut berdepan suspek, polis diberitahu——律所（吴健南）要求勿让受害学生与嫌犯当面对质；The Vibes：Over 300 schoolgirls may be victims of AI-edited nude images, lawyer says",
+       "url": "https://www.freemalaysiatoday.com/category/bahasa/tempatan/2026/10/18/kes-sunting-gambar-pelajar-mangsa-tidak-patut-berdepan-suspek-polis-diberitahu"
+      }
+     ],
+     "rationale": "外部检索回填（freemalaysiatoday.com，2026-11-04，检索者 ai-assist(external-retrieval r7)，置信 high）：推文即 FMT 报道标题的转载；与 E53/E55 同属马来西亚校园 deepfake 案（第三簇，归簇漏并又一实证）",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -4860,7 +4868,7 @@
     "Law firm says the Seremban schoolgirls are fearful of possible 辟谣",
     "Law firm says the Seremban schoolgirls are fearful of possible debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E55",
