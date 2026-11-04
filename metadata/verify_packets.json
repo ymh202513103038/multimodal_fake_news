@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T14:15:35+00:00",
+ "generated_at": "2026-11-04T14:17:18+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 36,
+ "external_findings_merged": 37,
  "external_findings_bad": 0,
- "source_grounded": 59,
+ "source_grounded": 60,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 45,
-   "insufficient": 38,
+   "source_says_true": 46,
+   "insufficient": 37,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -363,11 +363,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:themirror.com",
+       "field": "external_retrieval",
+       "quote": "case 字幕含 'I don't talk to CNN. It's fake news'/'CNN's a very corrupt organization'/'corrupt or incompetent'——与 2026-02-20 关税裁定记者会报道用词一致（见 E15 的 Mirror 原题报道）；2026 年 CNN 被禁入白宫与'corrupt'指控亦有完整报道链（USA Today 2026-06-04、LA Times 2026-09-29）",
+       "url": "https://www.themirror.com/entertainment/tv/donald-trump-snaps-cnn-reporter-1696076"
+      }
+     ],
+     "rationale": "外部检索回填（themirror.com，2026-11-04，检索者 ai-assist(external-retrieval r18)，置信 medium）：行为链多源确认（Trump 系统性骂 CNN corrupt/fake news）；本 clip 疑似即 E15 同一场记者会的另一上传（跨平台归簇漏并候选，帧级确认留人工）——若确认，E04+E15",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -417,7 +425,7 @@
     "Fake News CNN 辟谣",
     "Fake News CNN debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E05",

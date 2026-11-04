@@ -1,6 +1,6 @@
 # 事件卡 E04｜Fake News CNN
 
-> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T13:54:51+00:00 · 簇内 1 条案例 / 1 个平台
+> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T14:17:19+00:00 · 簇内 1 条案例 / 1 个平台
 
 ## 1. 事实基座（簇内成员，全部可点开复核）
 
@@ -19,11 +19,16 @@
 
 | 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |
 |----|--------------|----------|--------------------------|
-| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **证据不足** | — |
+| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **来源称：成立** | case 字幕含 'I don't talk to CNN. It's fake news'/'CNN's a very corrupt organization'/'corrupt or… · `external:themirror.com` |
 | 素材层 | 配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。 | **证据不足** | — |
 | 表述层 | 说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？ | **证据不足** | — |
 
 - L1 二分类：**未定**（无核查源评级可映射，需外部检索或人工标注）
+
+### 来源原文摘录（可逐句复核）
+
+- **事件层**（external:themirror.com / external_retrieval · `external:themirror.com` · [原文](https://www.themirror.com/entertainment/tv/donald-trump-snaps-cnn-reporter-1696076)）：
+  > case 字幕含 'I don't talk to CNN. It's fake news'/'CNN's a very corrupt organization'/'corrupt or incompetent'——与 2026-02-20 关税裁定记者会报道用词一致（见 E15 的 Mirror 原题报道）；2026 年 CNN 被禁入白宫与'corrupt'指控亦有完整报道链（USA Today 2026-06-04、LA Times 2026-09-29）
 
 ## 3. 证据缺口（这张卡的边界所在）
 

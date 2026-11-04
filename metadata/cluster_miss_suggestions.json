@@ -3,7 +3,11 @@
  "note": "归簇漏并建议（r7/r8）：外部检索时发现的'同一真实事件被拆成多簇'实例。cluster 是词面保守下界（阈值 0.45），此类漏并属已知边界（见 agent_cluster.py 头注）。本文件供 roadmap'cluster 加实体信号'做对照测试集：加实体信号后应能在不并入误并的前提下吃掉下列合并。合并动作仍需人工在 events.json 层面执行（本文件只是建议，不自动改簇）。",
  "items": [
   {
-   "event_ids": ["E53", "E54", "E55"],
+   "event_ids": [
+    "E53",
+    "E54",
+    "E55"
+   ],
    "should_merge_into": "E53",
    "same_real_event": "马来西亚芙蓉（Seremban）中学 300 名女学生 AI 合成裸照案（2026-10）",
    "evidence": [
@@ -15,7 +19,10 @@
    "miss_reason": "三簇标题词面重叠不足 0.45（分别来自不同媒体的不同措辞），且均为单平台 twitter"
   },
   {
-   "event_ids": ["E02", "E23"],
+   "event_ids": [
+    "E02",
+    "E23"
+   ],
    "should_merge_into": null,
    "same_real_event": null,
    "evidence": [
@@ -23,6 +30,20 @@
     "两者人物相同（Trump/CNN/Kaitlan Collins）但场次不同——建议保留分簇，作为'同人物不同事件不应合并'的反例对照"
    ],
    "miss_reason": null
+  },
+  {
+   "event_ids": [
+    "E04",
+    "E15"
+   ],
+   "should_merge_into": "E15",
+   "same_real_event": "2026-02-20 最高法院关税裁定记者会（Trump 拒答 CNN 并说 I do not talk to CNN. It is fake news）",
+   "evidence": [
+    "E15=转载频道标题逐字含该句（Mirror 原题报道，见 external_findings.jsonl）",
+    "E04=white_house_fake_news_cnn_clip，字幕含 I do not talk to CNN. It is fake news + CNN very corrupt/incompetent——同场记者会报道用词",
+    " USA Today/LA Times 记录 2026 年 CNN 被禁入白宫与 corrupt 指控的行为链"
+   ],
+   "miss_reason": "同话术、同平台（youtube）、不同上传频道——标题词面差异大，词面聚类漏并；需帧级比对确认后人工并簇"
   }
  ]
 }
