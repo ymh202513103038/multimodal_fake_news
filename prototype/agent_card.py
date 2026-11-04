@@ -199,11 +199,20 @@ def run(params: dict) -> dict:
                     "error": f"事件 {want} 不存在（现有 {len(all_events)} 个）"}
 
     REPORTS.mkdir(parents=True, exist_ok=True)
+    # mtime 自检（r5 教训代码化）：写前记旧 mtime，写后校验确实变新，
+    # 防止"调用成功但文件没更新"的静默失败（Windows 下偶发）。
+    pre_mtime = {}
+    for ev in targets:
+        out = REPORTS / f"card_{ev['event_id']}.md"
+        pre_mtime[out] = out.stat().st_mtime_ns if out.exists() else None
     written = []
+    stale = []
     for ev in targets:
         md = render(ev, packets.get(ev["event_id"]))
         out = REPORTS / f"card_{ev['event_id']}.md"
         out.write_text(md, encoding="utf-8")
+        if pre_mtime[out] is not None and out.stat().st_mtime_ns <= pre_mtime[out]:
+            stale.append(str(out.relative_to(ROOT)).replace("\\", "/"))
         written.append(str(out.relative_to(ROOT)).replace("\\", "/"))
 
     if len(written) > 1:
@@ -219,6 +228,7 @@ def run(params: dict) -> dict:
     return {
         "status": "ok",
         "outputs": {"cards": len(targets), "package_missing": not bool(packets),
+                    "stale_rewrites": stale,
                     "files": written[:5]},
         "artifacts": written,
         "metrics": {"cards": len(targets)},

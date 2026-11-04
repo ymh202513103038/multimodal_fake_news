@@ -1,0 +1,28 @@
+{
+ "generated_at": "2026-11-04T21:53:30+08:00",
+ "note": "归簇漏并建议（r7/r8）：外部检索时发现的'同一真实事件被拆成多簇'实例。cluster 是词面保守下界（阈值 0.45），此类漏并属已知边界（见 agent_cluster.py 头注）。本文件供 roadmap'cluster 加实体信号'做对照测试集：加实体信号后应能在不并入误并的前提下吃掉下列合并。合并动作仍需人工在 events.json 层面执行（本文件只是建议，不自动改簇）。",
+ "items": [
+  {
+   "event_ids": ["E53", "E54", "E55"],
+   "should_merge_into": "E53",
+   "same_real_event": "马来西亚芙蓉（Seremban）中学 300 名女学生 AI 合成裸照案（2026-10）",
+   "evidence": [
+    "E53=BFM News：Form Five student suspended…300 deepfake images",
+    "E54=FMT：Law firm says the Seremban schoolgirls are fearful（马来文/英文双语原文）",
+    "E55=FMT：Student victims shouldn't have faced suspect, police told",
+    "三簇的外部证据均指向同一案件：Bernama/NST/The Vibes/SinChew 互证（见 external_findings.jsonl）"
+   ],
+   "miss_reason": "三簇标题词面重叠不足 0.45（分别来自不同媒体的不同措辞），且均为单平台 twitter"
+  },
+  {
+   "event_ids": ["E02", "E23"],
+   "should_merge_into": null,
+   "same_real_event": null,
+   "evidence": [
+    "E02=2026-04 Oval Office 交锋（Fox 直播中断）；E23=UN 会场冲突+午夜长文称记者 treasonous",
+    "两者人物相同（Trump/CNN/Kaitlan Collins）但场次不同——建议保留分簇，作为'同人物不同事件不应合并'的反例对照"
+   ],
+   "miss_reason": null
+  }
+ ]
+}
