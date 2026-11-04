@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T14:04:59+00:00",
+ "generated_at": "2026-11-04T14:08:31+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 32,
+ "external_findings_merged": 33,
  "external_findings_bad": 0,
- "source_grounded": 55,
+ "source_grounded": 56,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 41,
-   "insufficient": 42,
+   "source_says_true": 42,
+   "insufficient": 41,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -3738,11 +3738,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:abc.net.au",
+       "field": "external_retrieval",
+       "quote": "ABC 官方专页：BTN High Media Literacy Special（Behind The News 少儿新闻节目的媒介素养特辑，含 misinformation/disinformation 主题）；ABC 监察官页另记录 2026-06 曾裁定 BTN High 另一集（公私学校对比）违反公正性/准确性",
+       "url": "https://www.abc.net.au/btn/specials/btn-high-media-literacy-special/106547228"
+      }
+     ],
+     "rationale": "外部检索回填（abc.net.au，2026-11-04，检索者 ai-assist(external-retrieval r13)，置信 high）：一手 ABC 域内专页；研究者元数据：该系列节目有公正性违裁记录（另一集），引用时建议注明",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -3792,7 +3800,7 @@
     "Why is there so much misinformation and disinformation BTN High 辟谣",
     "Why is there so much misinformation and disinformation BTN High debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E42",

@@ -1,28 +1,246 @@
 {
  "generated_at": "2026-11-04T21:52:30+08:00",
- "note": "事件分诊账本（r7）：对剩余 initial 事件按可核查性分诊。triage 只影响工作量排序，不改标签、不改 verdict；'low_value_claim' 意为该帖无独立可核查主张（个人观点/情绪/口号），外检收益趋零，留待若做社媒行为研究时再启用；'seed_layer' 为辟谣种子层，回填口径=人工从原文提取所辟主张后走标注链路（见 three_layer_judgment.md §7）。本文件由 DSH 盘点会话维护，人工可随时覆盖。",
+ "note": "事件分诊账本（r7）：对剩余 initial 事件按可核查性分诊。triage 只影响工作量排序，不改标签、不改 verdict；'low_value_claim' 意为该帖无独立可核查主张（个人观点/情绪/口号），外检收益趋零，留待若做社媒行为研究时再启用；'seed_layer' 为辟谣种子层，回填口径=人工从原文提取所辟主张后走标注链路（见 three_layer_judgment.md §7）。本文件由 DSH 盘点会话维护，人工可随时覆盖。 | 2026-11-04 r13 增补：needs_deep_search 与 needs_human_clip_id 全量入账；至此 initial 事件全部分诊完毕，外检主线关闭。",
  "items": [
-  {"event_id": "E48", "platform": "twitter", "triage": "low_value_claim", "reason": "个人观点碎片（'they're more obsessed with…'），无可证伪主张"},
-  {"event_id": "E49", "platform": "twitter", "triage": "low_value_claim", "reason": "泛科技营销式表述（AI 检测在线威胁），无具体事件"},
-  {"event_id": "E50", "platform": "twitter", "triage": "low_value_claim", "reason": "对 AI agent 的个人感受表述，非事实主张"},
-  {"event_id": "E51", "platform": "twitter", "triage": "low_value_claim", "reason": "卡纳达语碎片：点名两位女演员为 deepfake '下一目标'——涉及宝莱坞 deepfake 现象，若做专项可回查，但帖内无可核事件"},
-  {"event_id": "E56", "platform": "twitter", "triage": "low_value_claim", "reason": "音乐 deepfake 风险的泛化表达"},
-  {"event_id": "E57", "platform": "twitter", "triage": "low_value_claim", "reason": "'Não é fake News'（不是假新闻）——无上下文自指，无可核对象"},
-  {"event_id": "E58", "platform": "twitter", "triage": "low_value_claim", "reason": "政治骂帖（'you guys are jokers'），观点非事实"},
-  {"event_id": "E59", "platform": "twitter", "triage": "low_value_claim", "reason": "指控 BBC 伪造国会山视频——有可核潜力（BBC 'fake' 指控是知名阴谋论），但帖内无细节，若做专项可查 BBC/OpenAI 辟谣记录；暂按碎片处理"},
-  {"event_id": "E60", "platform": "twitter", "triage": "low_value_claim", "reason": "纯口号（'FAKE NEWS!!!'）"},
-  {"event_id": "E61", "platform": "twitter", "triage": "low_value_claim", "reason": "midterms 相关碎片，无具体主张"},
-  {"event_id": "E62", "platform": "twitter", "triage": "low_value_claim", "reason": "'you're a sheep and fake news'——人身攻击碎片"},
-  {"event_id": "E63", "platform": "twitter", "triage": "low_value_claim", "reason": "葡语情绪帖（想知这些账号 propagando fake news 能赚什么），无具体账号/事件"},
-  {"event_id": "E64", "platform": "twitter", "triage": "low_value_claim", "reason": "'Fake news non? Je la vois pas.'——法语碎片"},
-  {"event_id": "E65", "platform": "twitter", "triage": "low_value_claim", "reason": "'would i ever share fake news?'——自指碎片"},
-  {"event_id": "E66", "platform": "twitter", "triage": "low_value_claim", "reason": "泰语政治碎片（'สื่อส้ม' 橙媒指控+道歉声明），有可核潜力但帖内无锚点，暂按碎片处理"},
-  {"event_id": "E73", "platform": "piyao", "triage": "seed_layer", "reason": "辟谣种子层（倡议书）：回填口径=人工提取所辟主张后走标注链路，非外查"},
-  {"event_id": "E74", "platform": "piyao", "triage": "seed_layer", "reason": "种子层（寒露冷冬辟谣文）：所辟主张='60年一遇冷冬'系夸大噱头，可人工提取后标 L1=1（对象主张），但走标注不走外查"},
-  {"event_id": "E75", "platform": "piyao", "triage": "seed_layer", "reason": "种子层（辨谣方法公开课报道）：无单一主张"},
-  {"event_id": "E76", "platform": "piyao", "triage": "seed_layer", "reason": "种子层（秋季养生误区辟谣）：含3个可提取主张，走标注"},
-  {"event_id": "E77", "platform": "piyao", "triage": "seed_layer", "reason": "种子层（辟谣沙龙接力）：活动通报，无主张"},
-  {"event_id": "E78", "platform": "piyao", "triage": "seed_layer", "reason": "种子层（工信部 APP 通报）：行政通报非主张核查"},
-  {"event_id": "E80", "platform": "piyao", "triage": "seed_layer", "reason": "种子层（磁极倒转辟谣）：所辟主张='磁极即将倒转带来灾难'系伪科学恐慌，可人工提取后标 L1=1（对象主张）"}
+  {
+   "event_id": "E48",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "个人观点碎片（'they're more obsessed with…'），无可证伪主张"
+  },
+  {
+   "event_id": "E49",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "泛科技营销式表述（AI 检测在线威胁），无具体事件"
+  },
+  {
+   "event_id": "E50",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "对 AI agent 的个人感受表述，非事实主张"
+  },
+  {
+   "event_id": "E51",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "卡纳达语碎片：点名两位女演员为 deepfake '下一目标'——涉及宝莱坞 deepfake 现象，若做专项可回查，但帖内无可核事件"
+  },
+  {
+   "event_id": "E56",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "音乐 deepfake 风险的泛化表达"
+  },
+  {
+   "event_id": "E57",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "'Não é fake News'（不是假新闻）——无上下文自指，无可核对象"
+  },
+  {
+   "event_id": "E58",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "政治骂帖（'you guys are jokers'），观点非事实"
+  },
+  {
+   "event_id": "E59",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "指控 BBC 伪造国会山视频——有可核潜力（BBC 'fake' 指控是知名阴谋论），但帖内无细节，若做专项可查 BBC/OpenAI 辟谣记录；暂按碎片处理"
+  },
+  {
+   "event_id": "E60",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "纯口号（'FAKE NEWS!!!'）"
+  },
+  {
+   "event_id": "E61",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "midterms 相关碎片，无具体主张"
+  },
+  {
+   "event_id": "E62",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "'you're a sheep and fake news'——人身攻击碎片"
+  },
+  {
+   "event_id": "E63",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "葡语情绪帖（想知这些账号 propagando fake news 能赚什么），无具体账号/事件"
+  },
+  {
+   "event_id": "E64",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "'Fake news non? Je la vois pas.'——法语碎片"
+  },
+  {
+   "event_id": "E65",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "'would i ever share fake news?'——自指碎片"
+  },
+  {
+   "event_id": "E66",
+   "platform": "twitter",
+   "triage": "low_value_claim",
+   "reason": "泰语政治碎片（'สื่อส้ม' 橙媒指控+道歉声明），有可核潜力但帖内无锚点，暂按碎片处理"
+  },
+  {
+   "event_id": "E73",
+   "platform": "piyao",
+   "triage": "seed_layer",
+   "reason": "辟谣种子层（倡议书）：回填口径=人工提取所辟主张后走标注链路，非外查"
+  },
+  {
+   "event_id": "E74",
+   "platform": "piyao",
+   "triage": "seed_layer",
+   "reason": "种子层（寒露冷冬辟谣文）：所辟主张='60年一遇冷冬'系夸大噱头，可人工提取后标 L1=1（对象主张），但走标注不走外查"
+  },
+  {
+   "event_id": "E75",
+   "platform": "piyao",
+   "triage": "seed_layer",
+   "reason": "种子层（辨谣方法公开课报道）：无单一主张"
+  },
+  {
+   "event_id": "E76",
+   "platform": "piyao",
+   "triage": "seed_layer",
+   "reason": "种子层（秋季养生误区辟谣）：含3个可提取主张，走标注"
+  },
+  {
+   "event_id": "E77",
+   "platform": "piyao",
+   "triage": "seed_layer",
+   "reason": "种子层（辟谣沙龙接力）：活动通报，无主张"
+  },
+  {
+   "event_id": "E78",
+   "platform": "piyao",
+   "triage": "seed_layer",
+   "reason": "种子层（工信部 APP 通报）：行政通报非主张核查"
+  },
+  {
+   "event_id": "E80",
+   "platform": "piyao",
+   "triage": "seed_layer",
+   "reason": "种子层（磁极倒转辟谣）：所辟主张='磁极即将倒转带来灾难'系伪科学恐慌，可人工提取后标 L1=1（对象主张）"
+  },
+  {
+   "event_id": "E20",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "恶作剧合集类内容，检索未锚定到具体视频；体裁本身非新闻主张"
+  },
+  {
+   "event_id": "E22",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "法语研究解读视频，检索只回学术文献未命中具体视频，需深度检索"
+  },
+  {
+   "event_id": "E28",
+   "platform": "twitter",
+   "triage": "needs_deep_search",
+   "reason": "碎片句（heard you saying misinformation），无锚点"
+  },
+  {
+   "event_id": "E32",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "60秒心理学解说，泛型标题无法锚定具体视频（r12 检索无果）"
+  },
+  {
+   "event_id": "E33",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "Solid 10 Minutes（创作者内容），r11 检索无果"
+  },
+  {
+   "event_id": "E36",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "Real News vs Fake News 泛型标题，r13 检索无果"
+  },
+  {
+   "event_id": "E37",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "7 types of misinformation（Wardle 框架的某个演绎视频），具体视频未锚定"
+  },
+  {
+   "event_id": "E38",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "Solid 13 Minutes（同创作者系列），r13 检索无果"
+  },
+  {
+   "event_id": "E43",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "三词对比解说，泛型标题无法锚定（r12 检索无果）"
+  },
+  {
+   "event_id": "E45",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "Solid 11 Minutes（同创作者系列），r13 检索无果"
+  },
+  {
+   "event_id": "E46",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "MDM 三词对比解说（疑似 Shout Out UK 系），具体视频未锚定"
+  },
+  {
+   "event_id": "E47",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "Rogan-Destiny 播客片段，无具体片段锚点（r11/r13 两轮检索无果）"
+  },
+  {
+   "event_id": "E12",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "How to identify Fake News 泛型标题，未检索到具体视频"
+  },
+  {
+   "event_id": "E30",
+   "platform": "youtube",
+   "triage": "needs_deep_search",
+   "reason": "The Misinformation Age 主题视频，未锚定具体场次"
+  },
+  {
+   "event_id": "E04",
+   "platform": "youtube",
+   "triage": "needs_human_clip_id",
+   "reason": "Trump-CNN 片段族：需人工看视频锚定具体场次，机器检索无法区分同话术不同场次"
+  },
+  {
+   "event_id": "E06",
+   "platform": "youtube",
+   "triage": "needs_human_clip_id",
+   "reason": "Trump Interrupts Media shorts——同上，需人工锚定场次"
+  },
+  {
+   "event_id": "E08",
+   "platform": "youtube",
+   "triage": "needs_human_clip_id",
+   "reason": "Trump Calls CNN Reporter Fake News——与 E18 同族，需人工区分是否同一场面"
+  },
+  {
+   "event_id": "E15",
+   "platform": "youtube",
+   "triage": "needs_human_clip_id",
+   "reason": "I Dont Talk To CNN——同族，需人工锚定"
+  }
  ]
 }
