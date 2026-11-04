@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T13:44:21+00:00",
+ "generated_at": "2026-11-04T13:47:14+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 8,
+ "external_findings_merged": 13,
  "external_findings_bad": 0,
- "source_grounded": 31,
+ "source_grounded": 36,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 17,
-   "insufficient": 66,
+   "source_says_true": 22,
+   "insufficient": 61,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -2175,11 +2175,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:ed.ted.com",
+       "field": "external_retrieval",
+       "quote": "TED-Ed 官方课程页：Why people fall for misinformation — Joseph Isaac（含配套练习、多语言版本与 media-literacy 课程合集收录）",
+       "url": "https://ed.ted.com/lessons/why-people-fall-for-misinformation-joseph-isaac"
+      }
+     ],
+     "rationale": "外部检索回填（ed.ted.com，2026-11-04，检索者 ai-assist(external-retrieval r5)，置信 high）：一手平台页即权威出处；科普课程真实存在",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -2229,7 +2237,7 @@
     "Why people fall for misinformation Joseph Isaac 辟谣",
     "Why people fall for misinformation Joseph Isaac debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E26",
@@ -2261,11 +2269,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:ted.com",
+       "field": "external_retrieval",
+       "quote": "TED 官方讲者页（多语言版本齐全）：Sinan Aral — How we can protect truth in the age of misinformation",
+       "url": "https://www.ted.com/talks/sinan_aral_how_we_can_protect_truth_in_the_age_of_misinformation"
+      }
+     ],
+     "rationale": "外部检索回填（ted.com，2026-11-04，检索者 ai-assist(external-retrieval r5)，置信 high）：TED 一手页 + MIT IDE（讲者所在机构）视频页 + 大学图书馆编目三重互证",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -2315,7 +2331,7 @@
     "How we can protect truth in the age of misinformation 辟谣",
     "How we can protect truth in the age of misinformation debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E27",
@@ -2347,11 +2363,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:classcentral (The Royal Institution 频道目录)",
+       "field": "external_retrieval",
+       "quote": "Class Central 目录收录：Misinformation and Distrust in Science — The Royal Institution（讲者 Naomi Oreskes，哈佛科学史教授）；一手视频在 Ri 官方 YouTube 频道",
+       "url": "https://cc-master-800843789351.us-central1.run.app/course/youtube-misinformation-and-distrust-in-science-with-naomi-oreskes-478004"
+      }
+     ],
+     "rationale": "外部检索回填（classcentral (The Royal Institution 频道目录)，2026-11-04，检索者 ai-assist(external-retrieval r5)，置信 medium）：讲座真实存在（目录+转载两源），但一手视频页未直接抓取到 Ri 域名，置信降为 medium；后续可补抓 Ri 频道原始链接升级",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -2401,7 +2425,7 @@
     "Misinformation and distrust in science with Naomi Oreskes 辟谣",
     "Misinformation and distrust in science with Naomi Oreskes debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E28",
@@ -2519,11 +2543,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:ed.ted.com",
+       "field": "external_retrieval",
+       "quote": "TED-Ed 官方课程页：How false news can spread — Noah Tavlin（2015 年课程，writer-s-workshop 合集收录；Plex TED-Ed 剧集表 2015 A97 同名条目）",
+       "url": "https://ed.ted.com/lessons/how-false-news-can-spread-noah-tavlin"
+      }
+     ],
+     "rationale": "外部检索回填（ed.ted.com，2026-11-04，检索者 ai-assist(external-retrieval r5)，置信 high）：一手课程页+流媒体剧集表+教育开放课库三源互证",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -2573,7 +2605,7 @@
     "How false news can spread Noah Tavlin 辟谣",
     "How false news can spread Noah Tavlin debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E30",
@@ -3656,11 +3688,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:nationalacademies.org",
+       "field": "external_retrieval",
+       "quote": "National Academies《2023 Nobel Prize Summit: Truth, Trust, and Hope》会议论文集在线版收录本届峰会（Loftus 'The misinformation effect' 专场）；UCI 社会生态学院活动页亦记录该峰会",
+       "url": "https://www.nationalacademies.org/read/27247/chapter/9"
+      }
+     ],
+     "rationale": "外部检索回填（nationalacademies.org，2026-11-04，检索者 ai-assist(external-retrieval r5)，置信 high）：峰会论文集（国家科学院）+讲者所属校 UCI 活动页+FABBS 学会通报三源互证",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -3711,7 +3751,7 @@
     "The misinformation effect Elizabeth Loftus Nobel Prize Summit 2023 debunk",
     "The misinformation effect Elizabeth Loftus Nobel Prize Summit 2023 2023"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E43",

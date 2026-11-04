@@ -1,6 +1,6 @@
 # 事件卡 E27｜Misinformation and distrust in science - with…
 
-> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-03T11:57:58+00:00 · 簇内 1 条案例 / 1 个平台
+> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T13:47:42+00:00 · 簇内 1 条案例 / 1 个平台
 
 ## 1. 事实基座（簇内成员，全部可点开复核）
 
@@ -19,11 +19,16 @@
 
 | 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |
 |----|--------------|----------|--------------------------|
-| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **证据不足** | — |
+| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **来源称：成立** | Class Central 目录收录：Misinformation and Distrust in Science — The Royal Institution（讲者 Naomi… · `external:classcentral (The Royal Institution 频道目录)` |
 | 素材层 | 配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。 | **证据不足** | — |
 | 表述层 | 说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？ | **证据不足** | — |
 
 - L1 二分类：**未定**（无核查源评级可映射，需外部检索或人工标注）
+
+### 来源原文摘录（可逐句复核）
+
+- **事件层**（external:classcentral (The Royal Institution 频道目录) / external_retrieval · `external:classcentral (The Royal Institution 频道目录)` · [原文](https://cc-master-800843789351.us-central1.run.app/course/youtube-misinformation-and-distrust-in-science-with-naomi-oreskes-478004)）：
+  > Class Central 目录收录：Misinformation and Distrust in Science — The Royal Institution（讲者 Naomi Oreskes，哈佛科学史教授）；一手视频在 Ri 官方 YouTube 频道
 
 ## 3. 证据缺口（这张卡的边界所在）
 
