@@ -228,6 +228,49 @@ def run(params: dict) -> dict:
 
     packets = [_packet(e, cases) for e in events]
 
+    # ---- 外部检索证据合并（2026-11-04 r3）----
+    # metadata/external_findings.jsonl 由人工/LLM 检索后追加（一行一发现）。
+    # verify 每次重跑都重新合并——幂等，检索产物不会在重建时丢失。
+    # 只做两件事：把外部引文追加进对应层 evidence；原层为 insufficient 时
+    # 用发现里的 verdict 覆盖（词表与 evidence_rules 同源），rationale 注明
+    # 回填来源与检索者。状态重新判定为 source_grounded。
+    findings_path = METADATA_DIR / "external_findings.jsonl"
+    ext_merged = ext_bad = 0
+    if findings_path.exists():
+        by_event = {p["event_id"]: p for p in packets}
+        for line in findings_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                f = json.loads(line)
+            except json.JSONDecodeError:
+                ext_bad += 1
+                continue
+            p = by_event.get(f.get("event_id"))
+            layer = f.get("layer")
+            if not p or layer not in THREE_LAYERS:
+                ext_bad += 1
+                continue
+            ev = p["layers"][layer]
+            quote = str(f.get("quote") or "")[:300]
+            fsrc = str(f.get("source") or "external")
+            url = str(f.get("url") or "")
+            if quote or url:
+                ev["evidence"].append({"case_id": "", "source": f"external:{fsrc}",
+                                       "field": "external_retrieval",
+                                       "quote": quote, "url": url})
+            if ev["verdict"] == "insufficient" and f.get("verdict") in VERDICT_CN:
+                ev["verdict"] = f["verdict"]
+                # label_cn 是写盘冻结字段，必须与 verdict 同步，否则卡片判定列仍显示旧值
+                ev["label_cn"] = VERDICT_CN[f["verdict"]]
+                ev["rationale"] = (f"外部检索回填（{fsrc}，{f.get('found_at')}，"
+                                   f"检索者 {f.get('searcher')}，置信 "
+                                   f"{f.get('confidence')}）：{str(f.get('note') or '')[:100]}")
+                if p["status"] == "initial":
+                    p["status"] = "source_grounded"
+            ext_merged += 1
+
     # 统计：每层拿到多少条来源证据（这是本 Agent 的"产出率"，也是下一步的靶子）
     def cnt(layer: str) -> dict:
         c: dict[str, int] = {}
@@ -246,6 +289,8 @@ def run(params: dict) -> dict:
             for s in ("high", "medium", "low")
         },
         "clean": sum(1 for p in packets if not p["gaps"]),
+        "external_findings_merged": ext_merged,
+        "external_findings_bad": ext_bad,
         "source_grounded": sum(1 for p in packets if p["status"] == "source_grounded"),
         "layer_coverage": {k: cnt(k) for k in THREE_LAYERS},
         "packets": packets,
@@ -258,6 +303,7 @@ def run(params: dict) -> dict:
         "outputs": {"path": str(OUT.relative_to(ROOT)).replace("\\", "/"),
                     "count": len(packets),
                     "source_grounded": payload["source_grounded"],
+                    "external_findings_merged": ext_merged,
                     "layer_coverage": payload["layer_coverage"],
                     "by_severity": payload["by_severity"],
                     "note": "三层判定均归属来源原文；抽不到即 insufficient"},

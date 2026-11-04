@@ -1,6 +1,6 @@
 # 事件卡 E02｜Trump tells ‘FAKE NEWS’ CNN reporter to be…
 
-> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-03T11:57:58+00:00 · 簇内 2 条案例 / 1 个平台
+> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T13:41:08+00:00 · 簇内 2 条案例 / 1 个平台
 
 ## 1. 事实基座（簇内成员，全部可点开复核）
 
@@ -20,11 +20,16 @@
 
 | 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |
 |----|--------------|----------|--------------------------|
-| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **证据不足** | — |
+| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **来源称：成立** | Fox News halted for breaking alert as Donald Trump completely loses it at reporter——Fox 直播因 Trump 在 Oval… · `external:themirror.com` |
 | 素材层 | 配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。 | **证据不足** | — |
 | 表述层 | 说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？ | **证据不足** | — |
 
 - L1 二分类：**未定**（无核查源评级可映射，需外部检索或人工标注）
+
+### 来源原文摘录（可逐句复核）
+
+- **事件层**（external:themirror.com / external_retrieval · `external:themirror.com` · [原文](https://www.themirror.com/entertainment/donald-trump-fox-news-cnn-1988041)）：
+  > Fox News halted for breaking alert as Donald Trump completely loses it at reporter——Fox 直播因 Trump 在 Oval Office 对 CNN 记者动怒插播中断；另见 HuffPost：Trump Throws 'Dummy' Tantrum Over Kaitlan Collins' Uncomfortable Question
 
 ## 3. 证据缺口（这张卡的边界所在）
 

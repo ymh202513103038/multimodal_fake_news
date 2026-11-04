@@ -89,7 +89,12 @@ def render(ev: dict, packet: dict | None) -> str:
         basis = "—"
         if evs:
             e = evs[0]
-            basis = f"{_clip(e.get('quote', ''), 110)} `{e.get('case_id', '')}`"
+            cid = e.get("case_id", "")
+            if cid:
+                basis = f"{_clip(e.get('quote', ''), 110)} `{cid}`"
+            else:
+                # 外部检索证据：无 case_id，用来源域名标识（url 在引文段给出）
+                basis = f"{_clip(e.get('quote', ''), 110)} · `{e.get('source', 'external')}`"
         a(f"| {cn} | {q} | **{label}** | {basis} |")
     a("")
 
@@ -117,9 +122,15 @@ def render(ev: dict, packet: dict | None) -> str:
             src = e.get("source", "")
             fld = e.get("field", "")
             cid = e.get("case_id", "")
-            url = (cases.get(cid) or {}).get("url") or ""
+            if cid:
+                url = (cases.get(cid) or {}).get("url") or ""
+                tag = f"`{cid}`"
+            else:
+                # 外部检索证据：标识=来源域名，原文链接用发现自带的 url
+                url = e.get("url") or ""
+                tag = f"`{src}`"
             link = f" · [原文]({url})" if url else ""
-            a(f"- **{cn}**（{src} / {fld} · `{cid}`{link}）：")
+            a(f"- **{cn}**（{src} / {fld} · {tag}{link}）：")
             a(f"  > {e.get('quote', '')}")
         a("")
     a("## 3. 证据缺口（这张卡的边界所在）")

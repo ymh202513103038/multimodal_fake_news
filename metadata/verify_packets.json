@@ -1,20 +1,22 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-03T11:57:58+00:00",
+ "generated_at": "2026-11-04T13:40:13+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
-  "high": 250,
+  "high": 235,
   "medium": 98,
   "low": 53
  },
  "clean": 0,
- "source_grounded": 23,
+ "external_findings_merged": 3,
+ "external_findings_bad": 0,
+ "source_grounded": 26,
  "layer_coverage": {
   "event_layer": {
-   "insufficient": 74,
+   "source_says_true": 12,
+   "insufficient": 71,
    "source_mentions": 8,
-   "source_says_true": 9,
    "source_says_false": 5
   },
   "media_layer": {
@@ -56,11 +58,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:komdigi.go.id",
+       "field": "external_retrieval",
+       "quote": "印尼通信与数字事务部（Kemkomdigi）官网新闻稿：Deepfake Makin Sulit Dikenali, Kemkomdigi Kaji Aturan Label Konten AI（deepfake 日益难辨，正研究 AI 内容标签规则）——推文即转载此官方稿",
+       "url": "https://www.komdigi.go.id/berita/siaran-pers/detail/deepfake-makin-sulit-dikenali-kemkomdigi-kaji-aturan-label-konten-ai"
+      }
+     ],
+     "rationale": "外部检索回填（komdigi.go.id，2026-11-04，检索者 ai-assist(external-retrieval r3)，置信 high）：政府一手新闻稿+国家电台RRI+detik+CNN Indonesia 四源互证；主张=真实新闻转载，非造假",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -120,7 +130,7 @@
     "Deepfake Makin Sulit Dikenali Kemkomdigi Kaji Aturan Label Konten AI 辟谣",
     "Deepfake Makin Sulit Dikenali Kemkomdigi Kaji Aturan Label Konten AI debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E02",
@@ -160,11 +170,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:themirror.com",
+       "field": "external_retrieval",
+       "quote": "Fox News halted for breaking alert as Donald Trump completely loses it at reporter——Fox 直播因 Trump 在 Oval Office 对 CNN 记者动怒插播中断；另见 HuffPost：Trump Throws 'Dummy' Tantrum Over Kaitlan Collins' Uncomfortable Question",
+       "url": "https://www.themirror.com/entertainment/donald-trump-fox-news-cnn-1988041"
+      }
+     ],
+     "rationale": "外部检索回填（themirror.com，2026-11-04，检索者 ai-assist(external-retrieval r3)，置信 medium）：多源报道交锋确实发生（2026-04，Fox 直播中断）；媒体等级中档但四源一致；素材层未做反向验证，保持仅事件层回填",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -219,7 +237,7 @@
     "Trump tells FAKE NEWS CNN reporter to be quiet 辟谣",
     "Trump tells FAKE NEWS CNN reporter to be quiet debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E03",
@@ -421,11 +439,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:breitbart.com",
+       "field": "external_retrieval",
+       "quote": "Breitbart（2017-02-24）标题原文：Trump: 'We Are Fighting' 'Fake News' - 'They Shouldn't Be Allowed To Use' Anonymous Sources；CBC：Trump rails against media's use of anonymous sources in CPAC speech",
+       "url": "https://www.breitbart.com/clips/2017/02/24/trump-we-are-fighting-fake-news-they-shouldnt-be-allowed-to-use-anonymous-sources-cnn-clinton-news-network/"
+      }
+     ],
+     "rationale": "外部检索回填（breitbart.com，2026-11-04，检索者 ai-assist(external-retrieval r3)，置信 high）：2017-02-24 CPAC 公开演讲，现场视频与多家报道（含 NYT 观点版）确认演讲话与事件真实发生",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -480,7 +506,7 @@
     "Trump We are fighting fake news 辟谣",
     "Trump We are fighting fake news debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E06",
@@ -5832,12 +5858,14 @@
    "case_ids": [
     "factcheck__piyao_001"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -5879,11 +5907,6 @@
    },
    "gaps": [
     {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
-    {
      "code": "single_platform",
      "severity": "medium",
      "hint": "只在一个平台出现，跨阵营互证不成立"
@@ -5923,12 +5946,14 @@
    "case_ids": [
     "factcheck__piyao_002"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -5970,11 +5995,6 @@
    },
    "gaps": [
     {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
-    {
      "code": "single_platform",
      "severity": "medium",
      "hint": "只在一个平台出现，跨阵营互证不成立"
@@ -6014,12 +6034,14 @@
    "case_ids": [
     "factcheck__piyao_003"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6061,11 +6083,6 @@
    },
    "gaps": [
     {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
-    {
      "code": "single_platform",
      "severity": "medium",
      "hint": "只在一个平台出现，跨阵营互证不成立"
@@ -6105,12 +6122,14 @@
    "case_ids": [
     "factcheck__piyao_004"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6152,11 +6171,6 @@
    },
    "gaps": [
     {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
-    {
      "code": "single_platform",
      "severity": "medium",
      "hint": "只在一个平台出现，跨阵营互证不成立"
@@ -6196,12 +6210,14 @@
    "case_ids": [
     "factcheck__piyao_005"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6243,11 +6259,6 @@
    },
    "gaps": [
     {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
-    {
      "code": "single_platform",
      "severity": "medium",
      "hint": "只在一个平台出现，跨阵营互证不成立"
@@ -6287,12 +6298,14 @@
    "case_ids": [
     "factcheck__piyao_006"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6334,11 +6347,6 @@
    },
    "gaps": [
     {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
-    {
      "code": "single_platform",
      "severity": "medium",
      "hint": "只在一个平台出现，跨阵营互证不成立"
@@ -6378,12 +6386,14 @@
    "case_ids": [
     "factcheck__piyao_007"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6417,11 +6427,6 @@
     "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
-    {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
     {
      "code": "single_platform",
      "severity": "medium",
@@ -6467,12 +6472,14 @@
    "case_ids": [
     "factcheck__piyao_008"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6506,11 +6513,6 @@
     "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
-    {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
     {
      "code": "single_platform",
      "severity": "medium",
@@ -6556,12 +6558,14 @@
    "case_ids": [
     "factcheck__piyao_009"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6595,11 +6599,6 @@
     "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
-    {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
     {
      "code": "single_platform",
      "severity": "medium",
@@ -6645,12 +6644,14 @@
    "case_ids": [
     "factcheck__piyao_010"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6684,11 +6685,6 @@
     "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
-    {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
     {
      "code": "single_platform",
      "severity": "medium",
@@ -6734,12 +6730,14 @@
    "case_ids": [
     "factcheck__piyao_011"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6773,11 +6771,6 @@
     "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
-    {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
     {
      "code": "single_platform",
      "severity": "medium",
@@ -6823,12 +6816,14 @@
    "case_ids": [
     "factcheck__piyao_012"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6862,11 +6857,6 @@
     "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
-    {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
     {
      "code": "single_platform",
      "severity": "medium",
@@ -6912,12 +6902,14 @@
    "case_ids": [
     "factcheck__piyao_013"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -6959,11 +6951,6 @@
    },
    "gaps": [
     {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
-    {
      "code": "single_platform",
      "severity": "medium",
      "hint": "只在一个平台出现，跨阵营互证不成立"
@@ -7003,12 +6990,14 @@
    "case_ids": [
     "factcheck__piyao_014"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -7042,11 +7031,6 @@
     "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
-    {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
     {
      "code": "single_platform",
      "severity": "medium",
@@ -7092,12 +7076,14 @@
    "case_ids": [
     "factcheck__piyao_015"
    ],
-   "authority_domains": [],
+   "authority_domains": [
+    "piyao.org.cn"
+   ],
    "media_cases": [],
    "precheck": {
     "platform_count": 1,
     "variant_count": 1,
-    "authority_source_count": 0,
+    "authority_source_count": 1,
     "label_present": false,
     "domain_count": 1
    },
@@ -7138,11 +7124,6 @@
     "note": "判定均归属来源原文；insufficient = 抽不到证据，需外部检索/人工"
    },
    "gaps": [
-    {
-     "code": "no_authority_source",
-     "severity": "high",
-     "hint": "簇内没有任何核查机构/通讯社/官方来源，事件层无法内证，必须外查"
-    },
     {
      "code": "single_platform",
      "severity": "medium",
