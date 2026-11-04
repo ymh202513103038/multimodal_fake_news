@@ -1,6 +1,6 @@
 # 事件卡 E08｜Trump Calls CNN Reporter 'Fake News'
 
-> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T13:54:51+00:00 · 簇内 1 条案例 / 1 个平台
+> 由真途（Zhentu）多智能体流水线自动生成 · 2026-11-04T14:19:31+00:00 · 簇内 1 条案例 / 1 个平台
 
 ## 1. 事实基座（簇内成员，全部可点开复核）
 
@@ -19,11 +19,16 @@
 
 | 层 | 要回答的问题 | 来源判定 | 依据（原文摘录 · 案例） |
 |----|--------------|----------|--------------------------|
-| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **证据不足** | — |
+| 事件层 | 这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？ | **来源称：成立** | La Stampa（2026-08-19）：Nuovo scontro tra Trump e una giornalista Cnn: 'Stai zitta, sei una finta… · `external:lastampa.it` |
 | 素材层 | 配图／视频／音频是否属于该事件？旧素材、AI 生成、跨事件错配都在这一层判。 | **证据不足** | — |
 | 表述层 | 说法是否超出证据？'彻底摧毁／全部投降／无一幸存'这类强断言有无支撑？ | **证据不足** | — |
 
 - L1 二分类：**未定**（无核查源评级可映射，需外部检索或人工标注）
+
+### 来源原文摘录（可逐句复核）
+
+- **事件层**（external:lastampa.it / external_retrieval · `external:lastampa.it` · [原文](https://www.lastampa.it/esteri/2026/08/19/video/nuovo_scontro_tra_trump_e_una_giornalista_cnn_stai_zitta_sei_una_finta_reporter-15717593/)）：
+  > La Stampa（2026-08-19）：Nuovo scontro tra Trump e una giornalista Cnn: 'Stai zitta, sei una finta reporter'——特朗普与 CNN 记者新冲突：'闭嘴，你是假记者'；USA Today（08-18）：Video shows Trump tell CNN reporter repeatedly to 'be quiet'；澎湃：特朗普当众羞辱 CNN 记者
 
 ## 3. 证据缺口（这张卡的边界所在）
 

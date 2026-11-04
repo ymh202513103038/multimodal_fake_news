@@ -1,6 +1,6 @@
 {
  "schema_version": "verify.v2",
- "generated_at": "2026-11-04T14:17:18+00:00",
+ "generated_at": "2026-11-04T14:19:30+00:00",
  "source_events": "metadata/events.json",
  "count": 96,
  "by_severity": {
@@ -9,13 +9,13 @@
   "low": 53
  },
  "clean": 0,
- "external_findings_merged": 37,
+ "external_findings_merged": 38,
  "external_findings_bad": 0,
- "source_grounded": 60,
+ "source_grounded": 61,
  "layer_coverage": {
   "event_layer": {
-   "source_says_true": 46,
-   "insufficient": 37,
+   "source_says_true": 47,
+   "insufficient": 36,
    "source_mentions": 8,
    "source_says_false": 5
   },
@@ -734,11 +734,19 @@
    },
    "layers": {
     "event_layer": {
-     "verdict": "insufficient",
-     "evidence": [],
-     "rationale": "",
+     "verdict": "source_says_true",
+     "evidence": [
+      {
+       "case_id": "",
+       "source": "external:lastampa.it",
+       "field": "external_retrieval",
+       "quote": "La Stampa（2026-08-19）：Nuovo scontro tra Trump e una giornalista Cnn: 'Stai zitta, sei una finta reporter'——特朗普与 CNN 记者新冲突：'闭嘴，你是假记者'；USA Today（08-18）：Video shows Trump tell CNN reporter repeatedly to 'be quiet'；澎湃：特朗普当众羞辱 CNN 记者",
+       "url": "https://www.lastampa.it/esteri/2026/08/19/video/nuovo_scontro_tra_trump_e_una_giornalista_cnn_stai_zitta_sei_una_finta_reporter-15717593/"
+      }
+     ],
+     "rationale": "外部检索回填（lastampa.it，2026-11-04，检索者 ai-assist(external-retrieval r19)，置信 high）：事件族多语种多源确认（2026-08 冲突：be quiet/fake reporter；背景=CNN 被禁 Air Force One）；clip 与具体场次的帧级对应仍留人工，但事件层成立",
      "question": "这件事本身发生了吗？有无独立信源（对方阵营／第三方核查／官方通报）？",
-     "label_cn": "证据不足"
+     "label_cn": "来源称：成立"
     },
     "media_layer": {
      "verdict": "insufficient",
@@ -788,7 +796,7 @@
     "Trump Calls CNN Reporter Fake News 辟谣",
     "Trump Calls CNN Reporter Fake News debunk"
    ],
-   "status": "initial"
+   "status": "source_grounded"
   },
   {
    "event_id": "E09",
