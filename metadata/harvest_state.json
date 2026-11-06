@@ -40,6 +40,22 @@
       "quota_used": 505,
       "stopped": null,
       "at": "2026-11-02T01:30:27+00:00"
+    },
+    {
+      "date": "2026-11-05",
+      "queries": 10,
+      "new_videos": 116,
+      "quota_used": 1010,
+      "stopped": null,
+      "at": "2026-11-05T03:38:46+00:00"
+    },
+    {
+      "date": "2026-11-06",
+      "queries": 5,
+      "new_videos": 25,
+      "quota_used": 505,
+      "stopped": null,
+      "at": "2026-11-06T01:30:35+00:00"
     }
   ]
 }
