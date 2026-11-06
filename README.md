@@ -148,7 +148,7 @@ $py = "fake_news_env\Scripts\python.exe"
 
 ## Git / GitHub 约定
 
-- **本仓库是公开仓库**（2026-11-03 决定）：<https://github.com/ymh202513103038/multimodal_fake_news>
+- **本仓库是公开仓库**（2026-11-03 决定）：<https://github.com/yuminghao2025/multimodal_fake_news>
   - 公开范围：全部脚本、文档、标注规范、案例文本与媒体本体、流水线产物（事件簇/核查包/事件卡）；
   - 公开的代价与对策见 [compliance_checklist.md](compliance_checklist.md) §公开仓库边界：
     媒体随仓库公开意味着任何人可下载，因此**不上传付费墙/会员专属内容**，收到版权方要求时按
@@ -157,5 +157,5 @@ $py = "fake_news_env\Scripts\python.exe"
   仓库里不得出现任何 API key、Cookie、账号密码——提交前用
   `git grep -I -E 'AIzaSy|api[_-]?key\s*='` 自查一次；
 - 环境重建：`python -m venv fake_news_env` → `pip install -r requirements.txt`
-- 推送远端：`git remote add origin https://github.com/ymh202513103038/multimodal_fake_news.git`
+- 推送远端：`git remote add origin https://github.com/yuminghao2025/multimodal_fake_news.git`
   → `git push -u origin main`（本机已配 `http.https://github.com.proxy`，走 Clash 代理）
